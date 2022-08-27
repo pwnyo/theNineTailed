@@ -1,0 +1,13 @@
+{
+  "nineTailed:HangoutOption": {
+    "TEXT": [
+      "Hang Out",
+      "Spend time with another character."
+    ]
+  },
+  "nineTailed:LinkedRewardItem": {
+    "TEXT": [
+      "the linked card reward"
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "nineTailed:Nindo": {
+    "NAME": "Nindo",
+    "DESCRIPTION": "Draw 1 card. NL The next Attack you play costs 0."
+  },
+  "nineTailed:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "nineTailed:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL ninetailed:Multiword_Keyword."
+  },
+  "nineTailed:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! ninetailed:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ninetailed:Keywords."
+  },
+  "nineTailed:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "nineTailed:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "nineTailed:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X ninetailed:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 ninetailed:Keywords."
+  },
+  "nineTailed:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "nineTailed:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "nineTailed:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "nineTailed:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !nineTailed:ENERGY_DAMAGE! damage total.)"
+  },
+  "nineTailed:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !nineTailed:m2! poison to an enemy."
+  },
+  "nineTailed:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "nineTailed:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "nineTailed:Rasengan": {
+    "NAME": "Rasengan",
+    "DESCRIPTION": "Costs 1 less [E] for each ninetailed:Clone. NL Deal !D! damage."
+  },
+  "nineTailed:CloneStrike": {
+    "NAME": "Clone Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Channel !M! ninetailed:Clone."
+  },
+  "nineTailed:BeatUp": {
+    "NAME": "Beat Up",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Draw 1 card."
+  },
+  "nineTailed:BeStill": {
+    "NAME": "Be Still",
+    "DESCRIPTION": "Trigger the passive ability of all ninetailed:Clones. NL Enter Calm. NL End your turn.",
+    "UPGRADE_DESCRIPTION": "Trigger the passive ability of all ninetailed:Clones. NL Enter Calm."
+  },
+  "nineTailed:BigBallRasengan": {
+    "NAME": "Big Ball Rasengan",
+    "DESCRIPTION": "Costs 1 less [E] for each ninetailed:Clone. NL Deal !D! damage."
+  },
+  "nineTailed:Mischief": {
+    "NAME": "Mischief",
+    "DESCRIPTION": "Deal !D! damage for each of your buffs.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Hits !M! times.)"
+    ]
+  },
+  "nineTailed:Decoys": {
+    "NAME": "Decoys",
+    "DESCRIPTION": "Discard up to 3 cards. NL Gain !M! Block for each card discarded."
+  },
+  "nineTailed:FakeOut": {
+    "NAME": "Fake Out",
+    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded from your hand, return it to your hand and increase its damage by !M! this combat."
+  },
+  "nineTailed:FoxCloak": {
+    "NAME": "Fox Cloak",
+    "DESCRIPTION": "Gain !B! Block. NL Channel 1 ninetailed:Tail."
+  },
+  "nineTailed:HandSeals": {
+    "NAME": "Hand Seals",
+    "DESCRIPTION": "Discard 1 card. NL Draw cards equal to its cost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Draw cards equal to its cost."
+  },
+  "nineTailed:NeverGiveUp": {
+    "NAME": "Never Give Up",
+    "DESCRIPTION": "Gain !B! Block. NL If your HP is at or below 50%, gain !M! additional Block."
+  },
+  "nineTailed:DoubleTeam": {
+    "NAME": "Double Team",
+    "DESCRIPTION": "Deal !D! damage twice. NL Draw !M! card. NL Discard !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Draw !M! cards. NL Discard !M! cards."
+  },
+  "nineTailed:Regroup": {
+    "NAME": "Regroup",
+    "DESCRIPTION": "Gain !M! Mantra. NL Evoke your next Orb."
+  },
+  "nineTailed:SexyJutsu": {
+    "NAME": "Sexy Jutsu",
+    "DESCRIPTION": "Apply !M! Weak. NL If the last card played this combat was an Attack, gain !nineTailed:m2! Vigor. NL Exhaust."
+  },
+  "nineTailed:ShadowClones": {
+    "NAME": "Shadow Clones",
+    "DESCRIPTION": "Channel !M! ninetailed:Clone.",
+    "UPGRADE_DESCRIPTION": "Channel !M! ninetailed:Clones."
+  },
+  "nineTailed:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "nineTailed:Substitution": {
+    "NAME": "Substitution",
+    "DESCRIPTION": "Gain !B! Block. NL If this card is discarded from your hand, gain !M! Block."
+  },
+  "nineTailed:SurpriseAttack": {
+    "NAME": "Surprise Attack",
+    "DESCRIPTION": "Deal !D! damage. NL If the last card played this combat was a Skill, gain !M! Vigor."
+  },
+  "nineTailed:ThousandYearsOfDeath": {
+    "NAME": "1000 Years of Death",
+    "DESCRIPTION": "Deal !D! damage. NL If you have Vigor, deal triple damage."
+  },
+  "nineTailed:UzumakiBarrage": {
+    "NAME": "Uzumaki Barrage",
+    "DESCRIPTION": "Deal !D! damage for each ninetailed:Clone."
+  },
+  "nineTailed:WildSwipe": {
+    "NAME": "Wild Swipe",
+    "DESCRIPTION": "Lose 1 HP. NL Deal !D! damage. NL Channel 1 ninetailed:Tail."
+  },
+  "nineTailed:BodyDouble": {
+    "NAME": "Body Double",
+    "DESCRIPTION": "Costs 1 less [E] if you are in a Stance. NL Gain !M! Orb slot. NL Exit your Stance.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less [E] if you are in a Stance. NL Gain !M! Orb slots. NL Exit your Stance."
+  }
+}
