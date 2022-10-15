@@ -1,8 +1,10 @@
 package nineTailed.cards.common.skill;
 
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.cards.blue.Glacier;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nineTailed.actions.TailChakraAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Tail;
@@ -14,28 +16,30 @@ public class FoxCloak extends AbstractDynamicCard {
     public final static String ID = makeID(FoxCloak.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public FoxCloak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 6;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        block();
         addToBot(new ChannelAction(new Tail()));
+        addToBot(new ChannelAction(new Tail()));
+        //addToBot(new TailChakraAction());
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

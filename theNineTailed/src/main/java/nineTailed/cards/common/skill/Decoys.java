@@ -13,7 +13,7 @@ public class Decoys extends AbstractDynamicCard {
     public final static String ID = makeID(Decoys.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
@@ -22,11 +22,11 @@ public class Decoys extends AbstractDynamicCard {
 
     public Decoys() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DecoysAction(3, magicNumber));
+        addToBot(new DecoysAction(magicNumber, 4));
     }
 
     @Override

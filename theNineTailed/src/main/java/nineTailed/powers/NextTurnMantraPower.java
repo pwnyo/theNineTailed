@@ -8,9 +8,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.MantraPower;
 import nineTailed.NarutoMod;
 
-public class NextTurnChakraPower extends AbstractPower {
+public class NextTurnMantraPower extends AbstractPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = NarutoMod.makeID("NextTurnChakraPower");
@@ -19,7 +20,7 @@ public class NextTurnChakraPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    public NextTurnChakraPower(final AbstractCreature owner, final int amount) {
+    public NextTurnMantraPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -42,7 +43,7 @@ public class NextTurnChakraPower extends AbstractPower {
     public void atStartOfTurn() {
         flash();
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new ChakraPower(p, amount)));
+        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, amount)));
         addToBot(new RemoveSpecificPowerAction(p, p, POWER_ID));
     }
 }

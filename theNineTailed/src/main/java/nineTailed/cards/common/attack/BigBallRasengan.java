@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Clone;
+import nineTailed.patches.CustomTags;
 import nineTailed.patches.IOrbListener;
 
 import static nineTailed.NarutoMod.makeCardPath;
@@ -19,16 +20,17 @@ public class BigBallRasengan extends AbstractDynamicCard implements IOrbListener
     public final static String ID = makeID(BigBallRasengan.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 4;
+    private static final int COST = 3;
 
     public BigBallRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 24;
+        baseDamage = damage = 18;
+        tags.add(CustomTags.RASEN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

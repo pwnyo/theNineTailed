@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Clone;
+import nineTailed.patches.CustomTags;
 import nineTailed.patches.IOrbListener;
 
 import static nineTailed.NarutoMod.makeCardPath;
@@ -31,12 +33,13 @@ public class Rasenshuriken extends AbstractDynamicCard implements IOrbListener {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 4;
 
     public Rasenshuriken() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 25;
-        exhaust = true;
+        baseDamage = damage = 6;
+        baseMagicNumber = magicNumber = 4;
+        tags.add(CustomTags.RASEN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -44,17 +47,18 @@ public class Rasenshuriken extends AbstractDynamicCard implements IOrbListener {
         this.addToBot(new SFXAction("ATTACK_WHIRLWIND"));
         this.addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
 
-        this.addToBot(new SFXAction("ATTACK_HEAVY"));
-        this.addToBot(new VFXAction(p, new CleaveEffect(), 0.0F));
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+        for (int i = 0; i < magicNumber; i++) {
+            dmg(m, AbstractGameAction.AttackEffect.NONE);
+            this.addToBot(new SFXAction("ATTACK_HEAVY"));
+            this.addToBot(new VFXAction(p, new CleaveEffect(), 0.0F));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

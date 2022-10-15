@@ -34,6 +34,6 @@ public class CloneImpulseAction extends AbstractGameAction {
             }
         }
 
-        this.tickDuration();// 33
-    }// 34
+        this.tickDuration();
+    }
 }

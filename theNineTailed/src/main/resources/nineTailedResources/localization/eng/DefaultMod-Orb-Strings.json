@@ -13,15 +13,25 @@
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
       " #yChakra. NL #yEvoke: Gain #b",
-      " #yStrength this turn. NL Unaffected by #yFocus."
+      " [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Clone": {
     "NAME": "Clone",
     "DESCRIPTION": [
       "#yPassive: At the end of turn, gain #b",
-      " #yVigor and increase this Orb's #yChakra by #b1. NL #yEvoke: Gain #b",
-      " #yChakra. NL Unaffected by #yFocus."
+      " #yVigor. NL #yEvoke: Gain #b",
+      " #yVigor. NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Truthseeker": {
+    "NAME": "Truthseeker",
+    "DESCRIPTION": [
+      "#yPassive: At the end of turn, deal #b",
+      " damage to ALL enemies and gain #b",
+      " #yBlock. NL #yEvoke: Deal #b",
+      " damage to ALL enemies and gain #b",
+      " #yBlock. NL Unaffected by #yFocus."
     ]
   }
 }

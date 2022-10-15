@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nineTailed.orbs.Tail;
 import nineTailed.powers.ChakraPower;
 
@@ -16,8 +17,8 @@ public class TailChakraAction extends AbstractGameAction {
 
     public void update() {
         int count = 0;
-        for(int i = 0; i < AbstractDungeon.player.orbs.size(); ++i) {
-            if (AbstractDungeon.player.orbs.get(i) instanceof Tail)  {
+        for (AbstractOrb o : AbstractDungeon.player.orbs) {
+            if (o instanceof Tail)  {
                 count++;
             }
         }

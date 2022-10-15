@@ -48,11 +48,17 @@
                         " #yChakra, gain #b1 #yEnergy."
                 ]
         },
-        "nineTailed:NextTurnChakraPower": {
-                "NAME": "Next Turn Chakra",
+        "nineTailed:AmphibiousModePower": {
+                "NAME": "Amphibious Mode",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, enter #yCalm."
+                ]
+        },
+        "nineTailed:NextTurnMantraPower": {
+                "NAME": "Next Turn Mantra",
                 "DESCRIPTIONS": [
                         "At the start of your turn, gain #b",
-                        " #yChakra."
+                        " #yMantra."
                 ]
         },
         "nineTailed:StrainPower": {
@@ -60,6 +66,37 @@
                 "DESCRIPTIONS": [
                         "Whenever you obtain #b",
                         " #yStrain, #yEvoke your next #yOrb."
+                ]
+        },
+        "nineTailed:ProphecyPower": {
+                "NAME": "Prophecy",
+                "DESCRIPTIONS": [
+                        "Whenever you enter #yDivinity, draw #b",
+                        " card.",
+                        " cards."
+                ]
+        },
+        "nineTailed:SerialSpheresPower": {
+                "NAME": "Serial Spheres",
+                "DESCRIPTIONS": [
+                        "Whenever you play a card containing \"Rasen\", draw #b",
+                        " card.",
+                        " cards."
+                ]
+        },
+        "nineTailed:SageModePower": {
+                "NAME": "Sage Mode",
+                "DESCRIPTIONS": [
+                        "Whenever you exit #yCalm, gain #b ",
+                        " #yVigor and #yMantra."
+                ]
+        },
+        "nineTailed:KuramaModePower": {
+                "NAME": "Kurama Mode",
+                "DESCRIPTIONS": [
+                        "Whenever you play a #yPower, #yChannel #b ",
+                        " #yTail.",
+                        " #yTails."
                 ]
         }
 }

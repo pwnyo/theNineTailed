@@ -1,15 +1,19 @@
 package nineTailed.cards.basic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.green.Eviscerate;
+import com.megacrit.cardcrawl.cards.green.MasterfulStab;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.watcher.FreeAttackPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Clone;
+import nineTailed.patches.CustomTags;
 import nineTailed.patches.IOrbListener;
 
 import static nineTailed.NarutoMod.makeCardPath;
@@ -24,11 +28,12 @@ public class Rasengan extends AbstractDynamicCard implements IOrbListener {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public Rasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 15;
+        baseDamage = damage = 12;
+        tags.add(CustomTags.RASEN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,7 +50,7 @@ public class Rasengan extends AbstractDynamicCard implements IOrbListener {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(2);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }
@@ -80,4 +85,5 @@ public class Rasengan extends AbstractDynamicCard implements IOrbListener {
     public void onLoseOrbSlot() {
         countOrbs();
     }
+
 }

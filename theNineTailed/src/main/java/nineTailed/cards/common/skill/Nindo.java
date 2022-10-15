@@ -15,7 +15,7 @@ public class Nindo extends AbstractDynamicCard {
     public final static String ID = makeID(Nindo.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
@@ -28,7 +28,7 @@ public class Nindo extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(1));
+        addToBot(new DrawCardAction(magicNumber));
         addToBot(new ApplyPowerAction(p, p, new FreeAttackPower(p, 1)));
     }
 
@@ -36,7 +36,7 @@ public class Nindo extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

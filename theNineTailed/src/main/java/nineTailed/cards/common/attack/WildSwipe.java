@@ -28,22 +28,22 @@ public class WildSwipe extends AbstractDynamicCard {
 
     public WildSwipe() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 10;
-        baseMagicNumber = magicNumber = 1;
+        baseDamage = damage = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new ClawEffect(m.hb.cX, m.hb.cY, Color.CYAN, Color.WHITE), 0.1F));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         addToBot(new ChannelAction(new Tail()));
-        addToBot(new DiscardAction(p, p, 1, true));
+        addToBot(new DiscardAction(p, p, 1, !upgraded));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(3);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

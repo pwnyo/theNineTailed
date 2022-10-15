@@ -1,6 +1,7 @@
 package nineTailed.cards.common.skill;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.defect.ImpulseAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.actions.watcher.NotStanceCheckAction;
@@ -20,47 +21,31 @@ public class BodyDouble extends AbstractDynamicCard {
     public final static String ID = makeID(BodyDouble.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public BodyDouble() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 1;
+        baseBlock = block = 4;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        block();
         addToBot(new IncreaseMaxOrbAction(magicNumber));
-        addToBot(new NotStanceCheckAction(NeutralStance.STANCE_ID, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
-        addToBot(new ChangeStanceAction(NeutralStance.STANCE_ID));
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        checkStance();
-    }
-
-    @Override
-    public void triggerExhaustedCardsOnStanceChange(AbstractStance newStance) {
-        checkStance();
-    }
-    void checkStance() {
-        boolean check = AbstractDungeon.player.stance.ID != NeutralStance.STANCE_ID;
-        glow(check);
-        if (check) {
-            setCostForTurn(cost - 1);
-        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBlock(2);
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

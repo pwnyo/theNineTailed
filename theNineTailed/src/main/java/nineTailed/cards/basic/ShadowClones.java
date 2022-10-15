@@ -1,10 +1,17 @@
 package nineTailed.cards.basic;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.actions.watcher.NotStanceCheckAction;
+import com.megacrit.cardcrawl.cards.purple.EmptyBody;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.NeutralStance;
+import com.megacrit.cardcrawl.vfx.combat.EmptyStanceEffect;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Clone;
@@ -29,18 +36,29 @@ public class ShadowClones extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-            addToBot(new ChannelAction(new Clone()));
+        addToBot(new ChannelAction(new Clone()));
+        if (upgraded) {
+            addToBot(new DrawCardAction(1));
+            addToBot(new DiscardAction(p, p, 1, false));
         }
-        addToBot(new DrawCardAction(1));
-        addToBot(new DiscardAction(p, p, 1, false));
+        addToBot(new NotStanceCheckAction(NeutralStance.STANCE_ID, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
+        addToBot(new ChangeStanceAction(NeutralStance.STANCE_ID));
     }
+
+    /*
+    @Override
+    public void triggerOnManualDiscard() {
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new DrawCardAction(magicNumber));
+        addToBot(new NotStanceCheckAction(NeutralStance.STANCE_ID, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
+        addToBot(new ChangeStanceAction(NeutralStance.STANCE_ID));
+    }
+    */
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -41,7 +41,7 @@ public class Clone extends AbstractOrb {
         ID = ORB_ID;
         name = orbString.NAME;
         img = IMG;
-        evokeAmount = baseEvokeAmount = 0;
+        evokeAmount = baseEvokeAmount = 2;
         passiveAmount = basePassiveAmount = 1;
         updateDescription();
         angle = MathUtils.random(360.0f);
@@ -57,7 +57,7 @@ public class Clone extends AbstractOrb {
     @Override
     public void onEvoke() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChakraPower(p, evokeAmount)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, evokeAmount)));
     }
     @Override
     public void triggerEvokeAnimation() {
@@ -73,7 +73,7 @@ public class Clone extends AbstractOrb {
 
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, passiveAmount)));
-        this.evokeAmount += this.passiveAmount;
+        //this.evokeAmount += this.passiveAmount;
         this.updateDescription();
     }
 

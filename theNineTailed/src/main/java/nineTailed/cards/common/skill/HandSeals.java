@@ -1,5 +1,6 @@
 package nineTailed.cards.common.skill;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.actions.HandSealsAction;
@@ -9,11 +10,12 @@ import nineTailed.characters.NineTailed;
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
+@AutoAdd.Ignore
 public class HandSeals extends AbstractDynamicCard {
     public final static String ID = makeID(HandSeals.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
