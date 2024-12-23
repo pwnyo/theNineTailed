@@ -1,46 +1,4 @@
 {
-        "nineTailed:CommonPower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-        },
-        "nineTailed:RarePower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-        },
-        "nineTailed:MorePower": {
-                "NAME": "More",
-                "DESCRIPTIONS": [
-                        "The next time you play a card from a different color than the previous one, draw #b",
-                        " card.",
-                        " cards.",
-                        " NL (Previous color: #y",
-                        ")."
-                ]
-        },
-        "nineTailed:LosePower": {
-                "NAME": "Lose ",
-                "DESCRIPTIONS": [
-                        "The next time you play a card from a different color than the previous one, draw #b",
-                        " card.",
-                        " cards.",
-                        " NL (Previous color: #y",
-                        ")."
-                ]
-        },
-        "nineTailed:FoxTokenPower": {
-                "NAME": "Fox Sign",
-                "DESCRIPTIONS": [
-                        "Whenever you obtain #b",
-                        " #yFox #ySigns, enter #yWrath."
-                ]
-        },
-        "nineTailed:FrogTokenPower": {
-                "NAME": "Frog Sign",
-                "DESCRIPTIONS": [
-                        "Whenever you obtain #b",
-                        " #yFrog #ySigns, enter #yCalm."
-                ]
-        },
         "nineTailed:ChakraPower": {
                 "NAME": "Chakra",
                 "DESCRIPTIONS": [
@@ -54,11 +12,25 @@
                         "At the start of your turn, enter #yCalm."
                 ]
         },
+        "nineTailed:EmpathyPower": {
+                "NAME": "Empathy",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, lose #b",
+                        " HP and gain #b",
+                        " #yBlock."
+                ]
+        },
         "nineTailed:NextTurnMantraPower": {
                 "NAME": "Next Turn Mantra",
                 "DESCRIPTIONS": [
                         "At the start of your turn, gain #b",
                         " #yMantra."
+                ]
+        },
+        "nineTailed:NextTurnExitPower": {
+                "NAME": "Next Turn Exit",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, exit your #yStance."
                 ]
         },
         "nineTailed:StrainPower": {
@@ -71,9 +43,8 @@
         "nineTailed:ProphecyPower": {
                 "NAME": "Prophecy",
                 "DESCRIPTIONS": [
-                        "Whenever you enter #yDivinity, draw #b",
-                        " card.",
-                        " cards."
+                        "Whenever you play a #yPower, gain #b",
+                        " #yMantra."
                 ]
         },
         "nineTailed:SerialSpheresPower": {
@@ -97,6 +68,55 @@
                         "Whenever you play a #yPower, #yChannel #b ",
                         " #yTail.",
                         " #yTails."
+                ]
+        },
+        "nineTailed:TeamworkPower": {
+                "NAME": "Teamwork",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, add #yTeamwork into your hand.",
+                        "At the start of your turn, add #b",
+                        " copies of #yTeamwork into your hand."
+                ]
+        },
+        "nineTailed:UnderstandingPower": {
+                "NAME": "Understanding",
+                "DESCRIPTIONS": [
+                        "At the start of its turn, forfeits the battle if HP is at or below #b",
+                        "."
+                ]
+        },
+        "nineTailed:UnpredictablePower": {
+                "NAME": "Unpredictable",
+                "DESCRIPTIONS": [
+                        "Whenever you discard a card from your hand, gain #b",
+                        " #yVigor."
+                ]
+        },
+        "nineTailed:OutnumberPower": {
+                "NAME": "Outnumber",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel #yClones, #yChannel #b",
+                        " more."
+                ]
+        },
+        "nineTailed:AsuraFormPower": {
+                "NAME": "Asura Form",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel #yTails, #yChannel #b",
+                        " times as many."
+                ]
+        },
+        "nineTailed:AsuraFormPower": {
+                "NAME": "Asura Form",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b",
+                        " #yOrb slots."
+                ]
+        },
+        "nineTailed:LoseEnergyOnStanceChangePower": {
+                "NAME": "Six Paths",
+                "DESCRIPTIONS": [
+                        "You can't gain [E] from changing Stances this turn."
                 ]
         }
 }

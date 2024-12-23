@@ -1,5 +1,6 @@
 package nineTailed.cards.placeholder;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +13,7 @@ import nineTailed.characters.NineTailed;
 
 import static nineTailed.NarutoMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
     
     public static final String ID = NarutoMod.makeID(DefaultSecondMagicNumberSkill.class.getSimpleName());

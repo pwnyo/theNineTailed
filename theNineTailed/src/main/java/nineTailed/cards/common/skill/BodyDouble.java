@@ -1,16 +1,9 @@
 package nineTailed.cards.common.skill;
 
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.defect.ImpulseAction;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.actions.watcher.NotStanceCheckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.AbstractStance;
-import com.megacrit.cardcrawl.stances.NeutralStance;
-import com.megacrit.cardcrawl.vfx.combat.EmptyStanceEffect;
+import nineTailed.actions.BodyDoubleAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 
@@ -30,22 +23,23 @@ public class BodyDouble extends AbstractDynamicCard {
 
     public BodyDouble() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 4;
-        exhaust = true;
+        baseBlock = block = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         block();
-        addToBot(new IncreaseMaxOrbAction(magicNumber));
+        addToBot(new BodyDoubleAction());
+    }
+
+    public void triggerOnGlowCheck() {
+        glow(AbstractDungeon.player.hand.size() == 5);
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(2);
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBlock(3);
             initializeDescription();
         }
     }

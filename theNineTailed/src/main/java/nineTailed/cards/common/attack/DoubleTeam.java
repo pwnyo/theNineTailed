@@ -16,7 +16,7 @@ public class DoubleTeam extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Attack.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
@@ -24,7 +24,7 @@ public class DoubleTeam extends AbstractDynamicCard {
 
     public DoubleTeam() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 2;
+        baseDamage = damage = 3;
         baseMagicNumber = magicNumber = 1;
     }
 

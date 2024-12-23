@@ -1,6 +1,5 @@
 package nineTailed.cards.uncommon.skill;
 
-import com.megacrit.cardcrawl.cards.purple.InnerPeace;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.actions.FrogSongAction;
@@ -15,7 +14,7 @@ public class FrogSong extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ALL;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
@@ -23,7 +22,7 @@ public class FrogSong extends AbstractDynamicCard {
 
     public FrogSong() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

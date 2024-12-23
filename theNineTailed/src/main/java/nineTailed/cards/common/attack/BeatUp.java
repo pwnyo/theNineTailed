@@ -29,7 +29,7 @@ public class BeatUp extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-            dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+            dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         }
         addToBot(new DrawCardAction(1));
     }
@@ -38,7 +38,7 @@ public class BeatUp extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeDamage(1);
             initializeDescription();
         }
     }

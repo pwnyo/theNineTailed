@@ -26,6 +26,7 @@ public class CartCrusher extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 10;
         isInnate = true;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,7 +38,7 @@ public class CartCrusher extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(4);
             initializeDescription();
         }
     }

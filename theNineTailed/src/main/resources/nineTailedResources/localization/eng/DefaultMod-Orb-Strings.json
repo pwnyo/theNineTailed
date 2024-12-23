@@ -12,15 +12,15 @@
     "NAME": "Tail",
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
-      " #yChakra. NL #yEvoke: Gain #b",
-      " [E] . NL Unaffected by #yFocus."
+      " #yChakra. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Clone": {
     "NAME": "Clone",
     "DESCRIPTION": [
-      "#yPassive: At the end of turn, gain #b",
-      " #yVigor. NL #yEvoke: Gain #b",
+      "#yPassive: You have #b",
+      " additional #yStrength. At the end of turn, reduce this Orb's #yVigor by #b",
+      " and Evoke at #b0. NL #yEvoke: Gain #b",
       " #yVigor. NL Unaffected by #yFocus."
     ]
   },
@@ -32,6 +32,14 @@
       " #yBlock. NL #yEvoke: Deal #b",
       " damage to ALL enemies and gain #b",
       " #yBlock. NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:OneTail": {
+    "NAME": "One Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yPlated #yArmor. NL #yEvoke: Gain #b1 Chakra and deal #b",
+      " damage to a random enemy. NL Unaffected by #yFocus."
     ]
   }
 }

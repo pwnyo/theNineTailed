@@ -23,10 +23,10 @@ public class HandSealsAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == DURATION) {// 42
-            if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {// 43
-                this.isDone = true;// 44
-                return;// 45
+        if (this.duration == DURATION) {
+            if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                this.isDone = true;
+                return;
             }
 
             if (this.p.hand.size() <= 1) {
@@ -35,7 +35,7 @@ public class HandSealsAction extends AbstractGameAction {
                 c.triggerOnManualDiscard();
 
                 GameActionManager.incrementDiscard(false);
-                addToBot(new DrawCardAction(c.costForTurn));
+                addToTop(new DrawCardAction(c.costForTurn));
 
                 AbstractDungeon.player.hand.applyPowers();
                 this.tickDuration();
@@ -58,7 +58,7 @@ public class HandSealsAction extends AbstractGameAction {
                 c.triggerOnManualDiscard();
 
                 GameActionManager.incrementDiscard(false);
-                addToBot(new DrawCardAction(c.costForTurn));
+                addToTop(new DrawCardAction(c.costForTurn));
             }
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

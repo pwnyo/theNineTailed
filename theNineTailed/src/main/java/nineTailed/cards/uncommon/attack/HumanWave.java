@@ -1,7 +1,5 @@
 package nineTailed.cards.uncommon.attack;
 
-import com.megacrit.cardcrawl.cards.green.AllOutAttack;
-import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.actions.HumanWaveAction;
@@ -30,7 +28,7 @@ public class HumanWave extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new HumanWaveAction(p, multiDamage, block, damageTypeForTurn, freeToPlayOnce, energyOnUse));
+        addToBot(new HumanWaveAction(multiDamage, block, damageTypeForTurn, freeToPlayOnce, energyOnUse));
     }
 
     @Override

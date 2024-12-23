@@ -1,10 +1,9 @@
 package nineTailed.cards.common.attack;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import nineTailed.actions.VigorDamageAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 
@@ -20,31 +19,15 @@ public class ThousandYearsOfDeath extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public ThousandYearsOfDeath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 3;
+        baseDamage = damage = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SMASH);
-    }
-
-    @Override
-    public void applyPowers() {
-        if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
-            baseDamage *= 3;
-        }
-        super.applyPowers();
-        if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
-            baseDamage /= 3;
-        }
-    }
-
-    @Override
-    public void triggerOnGlowCheck() {
-        glow(AbstractDungeon.player.hasPower(VigorPower.POWER_ID));
+        addToBot(new VigorDamageAction(m, new DamageInfo(p, damage)));
     }
 
     @Override

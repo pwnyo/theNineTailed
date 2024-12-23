@@ -14,7 +14,7 @@ import nineTailed.NarutoMod;
 public class NextTurnMantraPower extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = NarutoMod.makeID("NextTurnChakraPower");
+    public static final String POWER_ID = NarutoMod.makeID("NextTurnMantraPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

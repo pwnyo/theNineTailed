@@ -3,8 +3,6 @@ package nineTailed.cards.uncommon.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.IceCream;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.powers.SageModePower;
@@ -25,11 +23,11 @@ public class SageMode extends AbstractDynamicCard {
 
     public SageMode() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SageModePower(p,magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new SageModePower(p, magicNumber)));
     }
 
     @Override

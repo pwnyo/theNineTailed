@@ -1,5 +1,6 @@
 package nineTailed.cards.placeholder;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,6 +13,7 @@ import nineTailed.characters.NineTailed;
 
 import static nineTailed.NarutoMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class DefaultUncommonAttack extends AbstractDynamicCard {
     
     public static final String ID = NarutoMod.makeID(DefaultUncommonAttack.class.getSimpleName());

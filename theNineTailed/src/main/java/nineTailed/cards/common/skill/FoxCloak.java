@@ -1,10 +1,8 @@
 package nineTailed.cards.common.skill;
 
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.cards.blue.Glacier;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nineTailed.actions.TailChakraAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Tail;
@@ -25,21 +23,19 @@ public class FoxCloak extends AbstractDynamicCard {
 
     public FoxCloak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        exhaust = true;
+        baseBlock = block = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        block();
         addToBot(new ChannelAction(new Tail()));
-        addToBot(new ChannelAction(new Tail()));
-        //addToBot(new TailChakraAction());
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBlock(3);
             initializeDescription();
         }
     }

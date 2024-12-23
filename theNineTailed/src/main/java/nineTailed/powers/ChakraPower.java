@@ -23,7 +23,7 @@ public class ChakraPower extends AbstractPower {
 
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
-    private static final int COUNT = 3;
+    private static final int COUNT = 2;
 
     public ChakraPower(final AbstractCreature owner, final int amount) {
         name = NAME;

@@ -18,22 +18,21 @@ public class MultiClones extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = -1;
 
     public MultiClones() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MultiCloneAction(magicNumber));
+        addToBot(new MultiCloneAction(freeToPlayOnce, energyOnUse));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

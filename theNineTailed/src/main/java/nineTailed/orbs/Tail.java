@@ -14,9 +14,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Plasma;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
@@ -39,7 +36,15 @@ public class Tail extends AbstractOrb {
     private float vfxIntervalMax = 0.4f;
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
+    private AbstractPlayer p;
 
+    public Tail(String orbId, String imgPath, int passive, int evoke) {
+        this();
+        ID =  NarutoMod.makeID(orbId);
+        img = TextureLoader.getTexture(makeOrbPath(imgPath));
+        basePassiveAmount = passiveAmount = passive;
+        baseEvokeAmount = evokeAmount = evoke;
+    }
     public Tail() {
         ID = ORB_ID;
         name = orbString.NAME;
@@ -49,32 +54,32 @@ public class Tail extends AbstractOrb {
         updateDescription();
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
+
+        p = AbstractDungeon.player;
     }
 
     @Override
     public void updateDescription() {
         applyFocus();
-        description = DESC[0] + passiveAmount + DESC[1] + evokeAmount + DESC[2];
+        description = DESC[0] + passiveAmount + DESC[1];
     }
 
     @Override
     public void applyFocus() {
-        passiveAmount = basePassiveAmount;
-        evokeAmount = baseEvokeAmount;
     }
 
     @Override
     public void onEvoke() {
-        AbstractPlayer p = AbstractDungeon.player;
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, evokeAmount), evokeAmount));// 34
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, evokeAmount), evokeAmount));// 35
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(evokeAmount));
     }
 
     @Override
     public void onStartOfTurn() {
-        AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), 0.1f));
+        float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();
+        if (Settings.FAST_MODE) {
+            speedTime = 0.0F;
+        }
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChakraPower(p, passiveAmount)));
     }
 

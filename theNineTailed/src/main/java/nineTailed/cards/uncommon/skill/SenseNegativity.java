@@ -1,13 +1,9 @@
 package nineTailed.cards.uncommon.skill;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.blue.GoForTheEyes;
-import com.megacrit.cardcrawl.cards.purple.FearNoEvil;
-import com.megacrit.cardcrawl.cards.red.SpotWeakness;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.MantraPower;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 
@@ -19,7 +15,7 @@ public class SenseNegativity extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
@@ -32,7 +28,7 @@ public class SenseNegativity extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null && m.getIntentBaseDmg() >= 0) {
-            addToBot(new ApplyPowerAction(p, p, new MantraPower(p, 3)));
+            addToBot(new ScryAction(2));
             addToBot(new DrawCardAction(magicNumber));
         }
     }

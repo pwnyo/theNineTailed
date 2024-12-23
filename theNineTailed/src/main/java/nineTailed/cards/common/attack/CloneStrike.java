@@ -24,7 +24,8 @@ public class CloneStrike extends AbstractDynamicCard {
 
     public CloneStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 6;
+        baseDamage = damage = 8;
+        baseMagicNumber = magicNumber = 1;
         tags.add(CardTags.STRIKE);
     }
 

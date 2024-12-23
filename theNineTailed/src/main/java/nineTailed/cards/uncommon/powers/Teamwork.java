@@ -1,46 +1,42 @@
-package nineTailed.cards.common.skill;
+package nineTailed.cards.uncommon.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.CalmStance;
 import nineTailed.cards.AbstractDynamicCard;
+import nineTailed.cards.temp.Fistbump;
 import nineTailed.characters.NineTailed;
-import nineTailed.powers.NextTurnMantraPower;
+import nineTailed.powers.TeamworkPower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
-public class BeStill extends AbstractDynamicCard {
-    public final static String ID = makeID(BeStill.class.getSimpleName());
+public class Teamwork extends AbstractDynamicCard {
+    public final static String ID = makeID(Teamwork.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
     private static final int COST = 1;
 
-    public BeStill() {
+    public Teamwork() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 3;
+        cardsToPreview = new Fistbump();
+        isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
-        addToBot(new ApplyPowerAction(p, p, new NextTurnMantraPower(p, magicNumber)));
-        if (!upgraded) {
-            addToBot(new PressEndTurnButtonAction());
-        }
+        addToBot(new ApplyPowerAction(p, p, new TeamworkPower(p, 1)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            isEthereal = false;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

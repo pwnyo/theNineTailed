@@ -24,8 +24,18 @@ import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.events.IdentityCrisisEvent;
 import nineTailed.potions.PlaceholderPotion;
+import nineTailed.potions.Ramen;
+import nineTailed.potions.ToadOil;
+import nineTailed.potions.YangVessel;
 import nineTailed.relics.BottledPlaceholderRelic;
+import nineTailed.relics.boss.Habanero;
+import nineTailed.relics.boss.SpiralScroll;
+import nineTailed.relics.commoner.Bells;
+import nineTailed.relics.commoner.CrystalNecklace;
 import nineTailed.relics.commoner.SealedScroll;
+import nineTailed.relics.rarer.BullHorn;
+import nineTailed.relics.rarer.ExplicitBook;
+import nineTailed.relics.rarer.RedScarf;
 import nineTailed.util.IDCheckDontTouchPls;
 import nineTailed.util.TextureLoader;
 import nineTailed.variables.DefaultCustomVariable;
@@ -251,9 +261,10 @@ public class NarutoMod implements
     
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
-        
-        
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, NineTailed.Enums.NARUTO);
+
+        BaseMod.addPotion(Ramen.class, Color.ORANGE, Color.YELLOW, Color.YELLOW, Ramen.POTION_ID, NineTailed.Enums.NARUTO);
+        BaseMod.addPotion(ToadOil.class, Color.GREEN, null, Color.CHARTREUSE, ToadOil.POTION_ID, NineTailed.Enums.NARUTO);
+        BaseMod.addPotion(YangVessel.class, Color.WHITE, Color.WHITE, null, YangVessel.POTION_ID, NineTailed.Enums.NARUTO);
         
         logger.info("Done editing potions");
     }
@@ -262,11 +273,16 @@ public class NarutoMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
         
-        
         BaseMod.addRelicToCustomPool(new SealedScroll(), NineTailed.Enums.NARUTO_ORANGE);
-        
-        
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        BaseMod.addRelicToCustomPool(new Bells(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new CrystalNecklace(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new ExplicitBook(), NineTailed.Enums.NARUTO_ORANGE);
+
+        BaseMod.addRelicToCustomPool(new BullHorn(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new RedScarf(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new SpiralScroll(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new Habanero(), NineTailed.Enums.NARUTO_ORANGE);
+
         logger.info("Done adding relics!");
     }
     

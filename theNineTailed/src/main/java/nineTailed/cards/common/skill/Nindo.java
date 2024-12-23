@@ -24,7 +24,7 @@ public class Nindo extends AbstractDynamicCard {
 
     public Nindo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

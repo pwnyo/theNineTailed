@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
-import nineTailed.orbs.Clone;
 
 public class SpecificImpulseAction extends AbstractGameAction {
     String orbType;

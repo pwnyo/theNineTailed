@@ -1,21 +1,11 @@
 [
   {
+    "PROPER_NAME": "Understanding",
     "NAMES": [
-      "keyword",
-      "keywords"
+      "Understanding",
+      "understanding"
     ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
-  },
-  {
-    "PROPER_NAME": "Multiword Keyword",
-    "NAMES": [
-      "Multiword Keyword",
-      "multiword_keyword",
-      "multiword_keywords",
-      "multikey",
-      "multikeyword"
-    ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+    "DESCRIPTION": "Enemy forfeits if HP is at or below its #yUnderstanding."
   },
   {
     "PROPER_NAME": "Tail",
@@ -25,7 +15,18 @@
       "tails",
       "Tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yChakra. When #yEvoked, gains temporary #yStrength."
+    "DESCRIPTION": "Orb: Gains #yChakra and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Biju Tail",
+    "NAMES": [
+      "Biju Tail",
+      "Biju_Tail",
+      "Biju_Tails",
+      "biju_tail",
+      "biju_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains a unique #yPower and #yEnergy."
   },
   {
     "PROPER_NAME": "Clone",
@@ -35,7 +36,7 @@
       "clones",
       "Clones"
     ],
-    "DESCRIPTION": "Orb: Gains #yVigor. When #yEvoked, gains #yChakra (increases each turn)."
+    "DESCRIPTION": "Orb: Gains #yStrength and #yVigor."
   },
   {
     "PROPER_NAME": "Chakra",
@@ -43,6 +44,13 @@
       "Chakra",
       "chakra"
     ],
-    "DESCRIPTION": "Gain [E] when you obtain #b3 #yChakra."
+    "DESCRIPTION": "Gain [E] when you obtain #b2 #yChakra."
+  },
+  {
+    "PROPER_NAME": "One Tail",
+    "NAMES": [
+      "One Tail"
+    ],
+    "DESCRIPTION": "Orb: Gains #yPlated #yArmor and deals damage when #yEvoked."
   }
 ]

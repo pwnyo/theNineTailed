@@ -3,13 +3,11 @@ package nineTailed.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.cards.purple.SimmeringFury;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.CorruptionPower;
-import com.megacrit.cardcrawl.stances.WrathStance;
+import com.megacrit.cardcrawl.stances.CalmStance;
 import nineTailed.NarutoMod;
 import nineTailed.util.TextureLoader;
 
@@ -44,7 +42,7 @@ public class AmphibiousModePower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ChangeStanceAction(WrathStance.STANCE_ID));
+        addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
     }
 
     @Override

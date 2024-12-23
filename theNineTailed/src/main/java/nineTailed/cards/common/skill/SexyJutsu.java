@@ -1,11 +1,10 @@
 package nineTailed.cards.common.skill;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import nineTailed.actions.SexyJutsuAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
@@ -32,13 +31,13 @@ public class SexyJutsu extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToTop(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
-        addToBot(new SexyJutsuAction(m, magicNumber));
+        addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+        addToBot(new SexyJutsuAction(m, magicNumber2));
     }
 
     public void triggerOnGlowCheck() {
         boolean check = (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() &&
-                ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.ATTACK);
+                (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.ATTACK);
         glow(check);
     }
 

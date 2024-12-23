@@ -1,5 +1,6 @@
-package nineTailed.cards.uncommon.attack;
+package nineTailed.cards.unused;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
@@ -12,6 +13,7 @@ import nineTailed.orbs.Tail;
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
+@AutoAdd.Ignore
 public class GivePaw extends AbstractDynamicCard {
     public final static String ID = makeID(GivePaw.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

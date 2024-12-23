@@ -1,17 +1,11 @@
 package nineTailed.cards.common.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.actions.watcher.NotStanceCheckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.stances.CalmStance;
-import com.megacrit.cardcrawl.stances.NeutralStance;
-import com.megacrit.cardcrawl.vfx.combat.EmptyStanceEffect;
+import nineTailed.actions.FrogStrikeAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 
@@ -27,23 +21,18 @@ public class FrogStrike extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public FrogStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 12;
+        baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 2;
         tags.add(CardTags.STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        if (p.stance.ID.equals(CalmStance.STANCE_ID)) {
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-        }
-        else {
-            addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
-        }
+        addToBot(new FrogStrikeAction(m, magicNumber));
     }
 
     @Override

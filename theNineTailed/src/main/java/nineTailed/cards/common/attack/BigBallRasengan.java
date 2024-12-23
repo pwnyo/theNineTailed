@@ -2,21 +2,14 @@ package nineTailed.cards.common.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import nineTailed.cards.AbstractDynamicCard;
+import nineTailed.cards.basic.AbstractRasengan;
 import nineTailed.characters.NineTailed;
-import nineTailed.orbs.Clone;
-import nineTailed.patches.CustomTags;
-import nineTailed.patches.IOrbListener;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
-public class BigBallRasengan extends AbstractDynamicCard implements IOrbListener {
+public class BigBallRasengan extends AbstractRasengan {
     public final static String ID = makeID(BigBallRasengan.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
@@ -29,58 +22,19 @@ public class BigBallRasengan extends AbstractDynamicCard implements IOrbListener
 
     public BigBallRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 18;
-        tags.add(CustomTags.RASEN);
+        baseDamage = damage = 20;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        dmg(m, AbstractGameAction.AttackEffect.SMASH);
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(6);
+            upgradeDamage(4);
             initializeDescription();
         }
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        countOrbs();
-    }
-
-    void countOrbs() {
-        if (CardCrawlGame.dungeon == null || AbstractDungeon.currMapNode == null ||
-                AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
-            return;
-        }
-        int count = 0;
-        for (AbstractOrb o : AbstractDungeon.player.orbs) {
-            if (o instanceof Clone)
-                count++;
-        }
-        setCostForTurn(cost - count);
-    }
-    @Override
-    public void onChannel(AbstractOrb o) {
-        countOrbs();
-    }
-
-    @Override
-    public void onEvoke(AbstractOrb o) {
-        countOrbs();
-    }
-
-    @Override
-    public void onGainOrbSlot() {
-        countOrbs();
-    }
-
-    @Override
-    public void onLoseOrbSlot() {
-        countOrbs();
     }
 }

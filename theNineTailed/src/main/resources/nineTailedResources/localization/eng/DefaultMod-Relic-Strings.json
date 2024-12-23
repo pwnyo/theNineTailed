@@ -35,7 +35,83 @@
     "NAME": "Sealed Scroll",
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
-      "At the start of your turn, Channel #b1 #yTail if your HP is at or below #b50%."
+      "At the start of each combat, #yChannel #b1 #yTail."
+    ]
+  },
+  "nineTailed:Bells": {
+    "NAME": "Bells",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Every time you discard #b",
+      " cards, draw #b1 card."
+    ]
+  },
+  "nineTailed:PaperFlowers": {
+    "NAME": "Paper Flowers",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Enter Divinity when you obtain #b8 #yMantra rather than #b10."
+    ]
+  },
+  "nineTailed:CrystalNecklace": {
+    "NAME": "Crystal Necklace",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Every time you Channel #b",
+      " #yTails, gain #b1 #yOrb slot."
+    ]
+  },
+  "nineTailed:BrokenMask": {
+    "NAME": "Broken Mask",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Whenever you take unblocked Attack damage, apply #b",
+      " #yUnderstanding back."
+    ]
+  },
+  "nineTailed:RedScarf": {
+    "NAME": "Red Scarf",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Whenever you enter #yCalm, #yScry #b2 and draw #b1 card."
+    ]
+  },
+  "nineTailed:BullHorn": {
+    "NAME": "Bull Horn",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yPower, gain #b",
+      " #yBlock."
+    ]
+  },
+  "nineTailed:ExplicitBook": {
+    "NAME": "Explicit Book",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "The first #b",
+      " times you #yEvoke a #yClone each combat, apply #b",
+      " #yVulnerable and #yWeak to ALL enemies."
+    ]
+  },
+  "nineTailed:SpiralScroll": {
+    "NAME": "Spiral Scroll",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yChannel #b1 #yTail."
+    ]
+  },
+  "nineTailed:RightHand": {
+    "NAME": "RightHand",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose 1 of 3 unique cards to add to your deck."
+    ]
+  },
+  "nineTailed:Habanero": {
+    "NAME": "Habanero",
+    "FLAVOR": "TBA",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b"
     ]
   }
 }

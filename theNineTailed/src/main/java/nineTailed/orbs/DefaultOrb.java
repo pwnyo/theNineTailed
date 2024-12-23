@@ -20,11 +20,12 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import nineTailed.NarutoMod;
+import nineTailed.patches.IOrbListener;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makeOrbPath;
 
-public class DefaultOrb extends AbstractOrb {
+public class DefaultOrb extends AbstractOrb implements IOrbListener {
     
     public static final String ORB_ID = NarutoMod.makeID("DefaultOrb");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
@@ -116,5 +117,25 @@ public class DefaultOrb extends AbstractOrb {
     @Override
     public AbstractOrb makeCopy() {
         return new Tail();
+    }
+
+    @Override
+    public void onChannel(AbstractOrb o) {
+
+    }
+
+    @Override
+    public void onEvoke(AbstractOrb o) {
+
+    }
+
+    @Override
+    public void onGainOrbSlot() {
+
+    }
+
+    @Override
+    public void onLoseOrbSlot() {
+
     }
 }

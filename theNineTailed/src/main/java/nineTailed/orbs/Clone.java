@@ -5,20 +5,22 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.actions.defect.EvokeSpecificOrbAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import nineTailed.NarutoMod;
-import nineTailed.powers.ChakraPower;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makeOrbPath;
@@ -44,6 +46,15 @@ public class Clone extends AbstractOrb {
         evokeAmount = baseEvokeAmount = 2;
         passiveAmount = basePassiveAmount = 1;
         updateDescription();
+        if (AbstractDungeon.player != null) {
+            AbstractPlayer p = AbstractDungeon.player;
+            float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();
+            if (Settings.FAST_MODE) {
+                speedTime = 0.0F;
+            }
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, passiveAmount)));
+        }
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
     }
@@ -51,30 +62,39 @@ public class Clone extends AbstractOrb {
     @Override
     public void updateDescription() {
         applyFocus();
-        description = DESC[0] + passiveAmount + DESC[1] + evokeAmount + DESC[2];
+        description = DESC[0] + passiveAmount + DESC[1] + passiveAmount + DESC[2] + evokeAmount + DESC[3];
+    }
+
+    @Override
+    public void applyFocus() {
+    }
+
+    @Override
+    public void onEndOfTurn() {
+        float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();
+        if (Settings.FAST_MODE) {
+            speedTime = 0.0F;
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
+        this.evokeAmount -= this.passiveAmount;
+        if (evokeAmount <= 0)
+        {
+            AbstractDungeon.actionManager.addToBottom(new EvokeSpecificOrbAction(this));
+        }
     }
 
     @Override
     public void onEvoke() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, evokeAmount)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
+        if (evokeAmount > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, evokeAmount)));
+        }
     }
     @Override
     public void triggerEvokeAnimation() {
         AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
-    }
-
-    public void onEndOfTurn() {
-        AbstractPlayer p = AbstractDungeon.player;
-        float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();// 61
-        if (Settings.FAST_MODE) {// 62
-            speedTime = 0.0F;// 63
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, passiveAmount)));
-        //this.evokeAmount += this.passiveAmount;
-        this.updateDescription();
     }
 
     @Override
@@ -101,8 +121,8 @@ public class Clone extends AbstractOrb {
         hb.render(sb);
     }
     protected void renderText(SpriteBatch sb) {
-        //FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.evokeAmount), this.cX + NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + NUM_Y_OFFSET - 4.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, this.c.a), this.fontScale);// 164 167
-        //FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.passiveAmount), this.cX + NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, this.c, this.fontScale);// 172 175
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.evokeAmount), this.cX + NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + NUM_Y_OFFSET - 4.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, this.c.a), this.fontScale);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.passiveAmount), this.cX + NUM_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, this.c, this.fontScale);
     }
 
     @Override

@@ -2,14 +2,12 @@ package nineTailed.cards.rare;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.ThunderStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import nineTailed.actions.UzumakiBarrageAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Clone;
@@ -33,13 +31,14 @@ public class UzumakiBarrage extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 4;
         baseMagicNumber = magicNumber = 0;
+        isMultiDamage = true;
         exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         countClones();
         for (int i = 0; i < magicNumber; i++) {
-            addToTop(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+            addToTop(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
         }
     }
 

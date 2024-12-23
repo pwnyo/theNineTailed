@@ -1,11 +1,9 @@
 package nineTailed.cards.uncommon.skill;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.blue.DoubleEnergy;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import nineTailed.actions.ChakraArmsAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 
@@ -25,18 +23,17 @@ public class ChakraArms extends AbstractDynamicCard {
 
     public ChakraArms() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(EnergyPanel.totalCount));
+        addToBot(new ChakraArmsAction(upgraded ? 1 : 0));
+        addToBot(new DiscardAction(p, p, 1, false));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            exhaust = false;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

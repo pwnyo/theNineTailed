@@ -1,5 +1,6 @@
 package nineTailed.cards.common.skill;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.actions.DecoysAction;
@@ -22,11 +23,12 @@ public class Decoys extends AbstractDynamicCard {
 
     public Decoys() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseBlock = block = 4;
         baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DecoysAction(magicNumber, 4));
+        addToBot(new DrawCardAction(this.magicNumber, new DecoysAction(block)));
     }
 
     @Override

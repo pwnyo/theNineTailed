@@ -1,12 +1,12 @@
 package nineTailed.cards.common.attack;
 
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
-import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
+import nineTailed.patches.DamageUpMod;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
@@ -21,29 +21,32 @@ public class FakeOut extends AbstractDynamicCard {
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
     private static final int COST = 1;
+    private DamageUpMod damageUpMod;
 
     public FakeOut() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 4;
+        baseDamage = damage = 9;
+        baseMagicNumber = magicNumber = 6;
+
+        damageUpMod = new DamageUpMod(0);
+        CardModifierManager.addModifier(this, damageUpMod);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        damageUpMod.amount = 0;
     }
 
     @Override
     public void triggerOnManualDiscard() {
-        addToBot(new DiscardToHandAction(this));
-        addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        damageUpMod.amount += magicNumber;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(3);
             initializeDescription();
         }
     }

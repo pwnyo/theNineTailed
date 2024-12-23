@@ -2,8 +2,6 @@ package nineTailed.cards.uncommon.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.purple.Evaluate;
-import com.megacrit.cardcrawl.cards.red.Anger;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;

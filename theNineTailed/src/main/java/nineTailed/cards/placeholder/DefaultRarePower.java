@@ -1,5 +1,6 @@
 package nineTailed.cards.placeholder;
 
+import basemod.AutoAdd;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +13,7 @@ import nineTailed.powers.RarePower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class DefaultRarePower extends AbstractDynamicCard {
     
     public static final String ID = NarutoMod.makeID(DefaultRarePower.class.getSimpleName());

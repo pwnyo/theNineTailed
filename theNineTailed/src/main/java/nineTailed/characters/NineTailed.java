@@ -24,7 +24,6 @@ import nineTailed.cards.basic.Defend;
 import nineTailed.cards.basic.Rasengan;
 import nineTailed.cards.basic.ShadowClones;
 import nineTailed.cards.basic.Strike;
-import nineTailed.cards.placeholder.DefaultCommonAttack;
 import nineTailed.relics.commoner.SealedScroll;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -48,8 +47,8 @@ public class NineTailed extends CustomPlayer {
     }
     
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 81;
-    public static final int MAX_HP = 81;
+    public static final int STARTING_HP = 82;
+    public static final int MAX_HP = 82;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 3;
@@ -116,11 +115,11 @@ public class NineTailed extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         retVal.add(Rasengan.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
         retVal.add(ShadowClones.ID);
 
         return retVal;
@@ -150,7 +149,7 @@ public class NineTailed extends CustomPlayer {
     
     @Override
     public int getAscensionMaxHPLoss() {
-        return 5;
+        return 6;
     }
     
     @Override
@@ -175,7 +174,7 @@ public class NineTailed extends CustomPlayer {
     
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new Rasengan();
     }
     
     @Override
@@ -201,8 +200,10 @@ public class NineTailed extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
     }
     

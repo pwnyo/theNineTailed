@@ -1,13 +1,11 @@
 package nineTailed.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nineTailed.orbs.Tail;
-import nineTailed.powers.ChakraPower;
 
 public class TailBlockAction extends AbstractGameAction {
     AbstractPlayer p;

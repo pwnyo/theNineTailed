@@ -9,5 +9,15 @@
     "TEXT": [
       "the linked card reward"
     ]
+  },
+  "nineTailed:FlashbackAction": {
+    "TEXT": [
+      "Choose a Card to Shuffle a Copy into Your Draw Pile."
+    ]
+  },
+  "nineTailed:HiraishinAction": {
+    "TEXT": [
+      "Put into Your Hand."
+    ]
   }
 }

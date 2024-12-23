@@ -32,14 +32,14 @@ public class HaremJutsu extends AbstractDynamicCard {
         for (int i = 0; i < magicNumber; i++) {
             addToBot(new ChannelAction(new Clone()));
         }
-        addToBot(new HaremAction(1));
+        addToBot(new HaremAction());
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

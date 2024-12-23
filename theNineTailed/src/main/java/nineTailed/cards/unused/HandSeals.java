@@ -1,4 +1,4 @@
-package nineTailed.cards.common.skill;
+package nineTailed.cards.unused;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +25,6 @@ public class HandSeals extends AbstractDynamicCard {
     public HandSeals() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = 1;
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
