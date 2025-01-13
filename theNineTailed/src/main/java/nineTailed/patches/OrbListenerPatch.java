@@ -3,11 +3,13 @@ package nineTailed.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.Dark;
+import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class OrbListenerPatch {
@@ -67,6 +69,18 @@ public class OrbListenerPatch {
                 if (c instanceof IOrbListener) {
                     IOrbListener listener = (IOrbListener) c;
                     listener.onLoseOrbSlot();
+                }
+            }
+        }
+    }
+    @SpirePatch(clz = AbstractPlayer.class, method = "removeNextOrb")
+    public static class OnRemoveNextOrb {
+        @SpirePrefixPatch
+        public static void Prefix(AbstractPlayer __player) {
+            if (!__player.orbs.isEmpty() && !(__player.orbs.get(0) instanceof EmptyOrbSlot)) {
+                if (__player.orbs.get(0) instanceof IOrbListenerOrb) {
+                    IOrbListenerOrb listener = (IOrbListenerOrb)__player.orbs.get(0);
+                    listener.onRemoveOrb();
                 }
             }
         }

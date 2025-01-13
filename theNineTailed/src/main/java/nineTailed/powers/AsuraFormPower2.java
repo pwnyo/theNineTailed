@@ -43,6 +43,7 @@ public class AsuraFormPower2 extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
+        flash();
         addToBot(new IncreaseMaxOrbAction(amount));
     }
 

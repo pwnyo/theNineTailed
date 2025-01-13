@@ -45,12 +45,18 @@ public class Unwind extends AbstractDynamicCard {
         addToBot(new ChangeStanceAction(NeutralStance.STANCE_ID));
         addToBot(new DrawCardAction(magicNumber));
     }
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+        return false;
+    }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.stances.CalmStance;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import nineTailed.NarutoMod;
 import nineTailed.util.TextureLoader;
 
@@ -27,7 +28,7 @@ public class RedScarf extends CustomRelic {
 
     @Override
     public void onChangeStance(AbstractStance prevStance, AbstractStance newStance) {
-        if (!prevStance.ID.equals(newStance.ID) && newStance.ID.equals(CalmStance.STANCE_ID)) {
+        if (!prevStance.ID.equals(newStance.ID) && newStance.ID.equals(NeutralStance.STANCE_ID)) {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new ScryAction(2));

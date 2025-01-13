@@ -7,15 +7,18 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.green.PiercingWail;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
@@ -42,8 +45,8 @@ public class Truthseeker extends AbstractOrb {
         ID = ORB_ID;
         name = orbString.NAME;
         img = IMG;
-        passiveAmount = basePassiveAmount = 2;
-        evokeAmount = baseEvokeAmount = 6;
+        passiveAmount = basePassiveAmount = 6;
+        evokeAmount = baseEvokeAmount = 1;
         updateDescription();
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
@@ -52,7 +55,7 @@ public class Truthseeker extends AbstractOrb {
     @Override
     public void updateDescription() {
         applyFocus();
-        description = DESC[0] + evokeAmount + DESC[1] + passiveAmount + DESC[2];
+        description = DESC[0] + passiveAmount + DESC[1] + evokeAmount + DESC[2];
     }
 
     @Override
@@ -63,28 +66,22 @@ public class Truthseeker extends AbstractOrb {
 
     @Override
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(AbstractDungeon.player, evokeAmount));
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAllEnemiesAction(AbstractDungeon.player,
-                        DamageInfo.createDamageMatrix(evokeAmount, true, true),
-                        DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        AbstractPlayer p = AbstractDungeon.player;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, evokeAmount)));
     }
 
     @Override
-    public void onStartOfTurn() {
-        float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();
+    public void onEndOfTurn() {
+        AbstractPlayer p = AbstractDungeon.player;
+        float speedTime = 0.6F / (float)p.orbs.size();
         if (Settings.FAST_MODE) {
             speedTime = 0.0F;
         }
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), speedTime));
 
-        AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(AbstractDungeon.player, evokeAmount));
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAllEnemiesAction(AbstractDungeon.player,
-                        DamageInfo.createDamageMatrix(evokeAmount, true, true),
-                        DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
+            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(mo, p, passiveAmount, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
     }
 
     @Override

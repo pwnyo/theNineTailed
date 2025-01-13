@@ -26,23 +26,30 @@ public class TeamCombo extends AbstractDynamicCard {
 
     public TeamCombo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 2;
-        baseMagicNumber = magicNumber = 3;
+        baseDamage = damage = 4;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
+        for (int i = 0; i < 3; i++) {
             addToBot(new DamageRandomEnemyAction(new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
-        addToBot(new ChannelAction(new Clone()));
-        addToBot(new ChannelAction(new Clone()));
+    }
+
+    @Override
+    public void triggerOnManualDiscard() {
+        for (int i = 0; i < magicNumber; i++) {
+            addToBot(new ChannelAction(new Clone()));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(1);
+            upgradeMagicNumber(1);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

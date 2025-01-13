@@ -14,7 +14,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Rasenshuriken extends AbstractRasengan {
     public final static String ID = makeID(Rasenshuriken.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Rasenshuriken.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -25,7 +25,7 @@ public class Rasenshuriken extends AbstractRasengan {
 
     public Rasenshuriken() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 5;
+        baseDamage = damage = 6;
         baseMagicNumber = magicNumber = 4;
         requirement = 2;
         discount = 2;
@@ -45,7 +45,7 @@ public class Rasenshuriken extends AbstractRasengan {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

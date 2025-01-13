@@ -3,6 +3,7 @@ package nineTailed.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -48,14 +49,15 @@ public class SageModePower extends AbstractPower {
     @Override
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
         if (!oldStance.ID.equals(newStance.ID) && newStance.ID.equals(CalmStance.STANCE_ID)) {
+            flash();
             AbstractPlayer p = AbstractDungeon.player;
-            addToTop(new ApplyPowerAction(p, p, new VigorPower(p, amount)));
             addToTop(new ApplyPowerAction(p, p, new MantraPower(p, amount)));
+            addToTop(new ScryAction(amount));
         }
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 }

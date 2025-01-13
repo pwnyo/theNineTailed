@@ -1,33 +1,60 @@
 package nineTailed.orbs.biju;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.defect.LightningOrbEvokeAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import nineTailed.NarutoMod;
 import nineTailed.orbs.Tail;
 import nineTailed.powers.ChakraPower;
+import nineTailed.util.TextureLoader;
 
 import java.util.ArrayList;
 
+import static nineTailed.NarutoMod.makeOrbPath;
+
 public abstract class BijuTail extends Tail {
-    AbstractPlayer p;
-    public BijuTail(String orbId, String imgPath, int passive, int evoke) {
-        super(orbId, imgPath, passive, evoke);
+    private final OrbStrings orbString;
+    private final String[] DESC;
+
+    public BijuTail(String orbId, String imgPath) {
+        this(1, orbId, imgPath);
+    }
+    public BijuTail(int passiveAmount, String orbId, String imgPath) {
+        super(passiveAmount);
+        ID =  NarutoMod.makeID(orbId);
+        img = TextureLoader.getTexture(makeOrbPath(imgPath));
+
+        orbString = CardCrawlGame.languagePack.getOrbString(ID);
+        DESC = orbString.DESCRIPTION;
+        name = orbString.NAME;
+
+        updateDescription();
     }
 
     @Override
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChakraPower(p, passiveAmount)));
-        AbstractDungeon.actionManager.addToTop(new LightningOrbEvokeAction(new DamageInfo(p, evokeAmount, DamageInfo.DamageType.THORNS), false));
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
     }
 
     protected void gainPower(AbstractPlayer p, AbstractPower pow) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, pow));
     }
+
+    @Override
+    public void updateDescription() {
+        applyFocus();
+        description = DESC[0] + passiveAmount + DESC[1];
+    }
+
     public static BijuTail getRandomBijuTail() {
-        ArrayList<BijuTail> orbs = new ArrayList();
+        ArrayList<BijuTail> orbs = new ArrayList<>();
         orbs.add(new Tail1());
         orbs.add(new Tail2());
         orbs.add(new Tail3());

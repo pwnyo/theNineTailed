@@ -2,27 +2,30 @@
   {
     "PROPER_NAME": "Understanding",
     "NAMES": [
-      "Understanding",
       "understanding"
     ],
     "DESCRIPTION": "Enemy forfeits if HP is at or below its #yUnderstanding."
   },
   {
+    "PROPER_NAME": "Truthseeker",
+    "NAMES": [
+      "truthseeker",
+      "truthseekers"
+    ],
+    "DESCRIPTION": "Orb: Makes ALL enemies lose HP and gains #yBuffer."
+  },
+  {
     "PROPER_NAME": "Tail",
     "NAMES": [
-      "Tail",
       "tail",
-      "tails",
-      "Tails"
+      "tails"
     ],
     "DESCRIPTION": "Orb: Gains #yChakra and #yEnergy."
   },
   {
     "PROPER_NAME": "Biju Tail",
     "NAMES": [
-      "Biju Tail",
-      "Biju_Tail",
-      "Biju_Tails",
+      "biju tail",
       "biju_tail",
       "biju_tails"
     ],
@@ -31,17 +34,14 @@
   {
     "PROPER_NAME": "Clone",
     "NAMES": [
-      "Clone",
       "clone",
-      "clones",
-      "Clones"
+      "clones"
     ],
     "DESCRIPTION": "Orb: Gains #yStrength and #yVigor."
   },
   {
     "PROPER_NAME": "Chakra",
     "NAMES": [
-      "Chakra",
       "chakra"
     ],
     "DESCRIPTION": "Gain [E] when you obtain #b2 #yChakra."
@@ -49,8 +49,74 @@
   {
     "PROPER_NAME": "One Tail",
     "NAMES": [
-      "One Tail"
+      "one tail",
+      "one_tail",
+      "one_tails",
+      "tail1"
     ],
-    "DESCRIPTION": "Orb: Gains #yPlated #yArmor and deals damage when #yEvoked."
+    "DESCRIPTION": "Orb: Gains #yPlated #yArmor and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Two Tail",
+    "NAMES": [
+      "two tail",
+      "two_tail",
+      "two_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains #yFlame #yBarrier and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Three Tail",
+    "NAMES": [
+      "three tail",
+      "three_tail",
+      "three_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains #yJuggernaut and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Four Tail",
+    "NAMES": [
+      "four tail",
+      "four_tail",
+      "four_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains #yRage and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Five Tail",
+    "NAMES": [
+      "five tail",
+      "five_tail",
+      "five_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains #yVigor and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Six Tail",
+    "NAMES": [
+      "six tail",
+      "six_tail",
+      "six_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains #yNoxious #yFumes and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Seven Tail",
+    "NAMES": [
+      "seven tail",
+      "seven_tail",
+      "seven_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains #yForesight and #yEnergy."
+  },
+  {
+    "PROPER_NAME": "Eight Tail",
+    "NAMES": [
+      "eight tail",
+      "eight_tail",
+      "eight_tails"
+    ],
+    "DESCRIPTION": "Orb: Gains additional card draw and #yEnergy."
   }
 ]

@@ -23,16 +23,17 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.events.IdentityCrisisEvent;
-import nineTailed.potions.PlaceholderPotion;
 import nineTailed.potions.Ramen;
 import nineTailed.potions.ToadOil;
 import nineTailed.potions.YangVessel;
-import nineTailed.relics.BottledPlaceholderRelic;
 import nineTailed.relics.boss.Habanero;
+import nineTailed.relics.boss.RightHand;
 import nineTailed.relics.boss.SpiralScroll;
 import nineTailed.relics.commoner.Bells;
 import nineTailed.relics.commoner.CrystalNecklace;
+import nineTailed.relics.commoner.PaperFlowers;
 import nineTailed.relics.commoner.SealedScroll;
+import nineTailed.relics.rarer.BrokenMask;
 import nineTailed.relics.rarer.BullHorn;
 import nineTailed.relics.rarer.ExplicitBook;
 import nineTailed.relics.rarer.RedScarf;
@@ -76,17 +77,17 @@ public class NarutoMod implements
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f);
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f);
     
-    private static final String ATTACK_DEFAULT_GRAY = "nineTailedResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "nineTailedResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "nineTailedResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_NARUTO_ORANGE = "nineTailedResources/images/512/bg_attack_naruto.png";
+    private static final String SKILL_NARUTO_ORANGE = "nineTailedResources/images/512/bg_skill_naruto.png";
+    private static final String POWER_NARUTO_ORANGE = "nineTailedResources/images/512/bg_power_naruto.png";
     
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "nineTailedResources/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "nineTailedResources/images/512/card_small_orb.png";
+    private static final String ENERGY_ORB_NARUTO_ORANGE = "nineTailedResources/images/512/card_naruto_energy.png";
+    private static final String CARD_ENERGY_ORB = "nineTailedResources/images/512/card_naruto_energy_small.png";
     
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "nineTailedResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "nineTailedResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "nineTailedResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "nineTailedResources/images/1024/card_default_gray_orb.png";
+    private static final String ATTACK_NARUTO_ORANGE_PORTRAIT = "nineTailedResources/images/1024/bg_attack_naruto.png";
+    private static final String SKILL_NARUTO_ORANGE_PORTRAIT = "nineTailedResources/images/1024/bg_skill_naruto.png";
+    private static final String POWER_NARUTO_ORANGE_PORTRAIT = "nineTailedResources/images/1024/bg_power_naruto.png";
+    private static final String ENERGY_ORB_NARUTO_ORANGE_PORTRAIT = "nineTailedResources/images/1024/card_naruto_energy.png";
     
     private static final String THE_DEFAULT_BUTTON = "nineTailedResources/images/charSelect/DefaultCharacterButton.png";
     private static final String THE_DEFAULT_PORTRAIT = "nineTailedResources/images/charSelect/DefaultCharacterPortraitBG.png";
@@ -141,9 +142,9 @@ public class NarutoMod implements
         
         BaseMod.addColor(NineTailed.Enums.NARUTO_ORANGE, ORANGE, ORANGE, ORANGE,
                 ORANGE, ORANGE, ORANGE, ORANGE,
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
-                ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
+                ATTACK_NARUTO_ORANGE, SKILL_NARUTO_ORANGE, POWER_NARUTO_ORANGE, ENERGY_ORB_NARUTO_ORANGE,
+                ATTACK_NARUTO_ORANGE_PORTRAIT, SKILL_NARUTO_ORANGE_PORTRAIT, POWER_NARUTO_ORANGE_PORTRAIT,
+                ENERGY_ORB_NARUTO_ORANGE_PORTRAIT, CARD_ENERGY_ORB);
         
         logger.info("Done creating the color");
         
@@ -275,13 +276,28 @@ public class NarutoMod implements
         
         BaseMod.addRelicToCustomPool(new SealedScroll(), NineTailed.Enums.NARUTO_ORANGE);
         BaseMod.addRelicToCustomPool(new Bells(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new PaperFlowers(), NineTailed.Enums.NARUTO_ORANGE);
         BaseMod.addRelicToCustomPool(new CrystalNecklace(), NineTailed.Enums.NARUTO_ORANGE);
         BaseMod.addRelicToCustomPool(new ExplicitBook(), NineTailed.Enums.NARUTO_ORANGE);
 
         BaseMod.addRelicToCustomPool(new BullHorn(), NineTailed.Enums.NARUTO_ORANGE);
         BaseMod.addRelicToCustomPool(new RedScarf(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new BrokenMask(), NineTailed.Enums.NARUTO_ORANGE);
         BaseMod.addRelicToCustomPool(new SpiralScroll(), NineTailed.Enums.NARUTO_ORANGE);
         BaseMod.addRelicToCustomPool(new Habanero(), NineTailed.Enums.NARUTO_ORANGE);
+        BaseMod.addRelicToCustomPool(new RightHand(), NineTailed.Enums.NARUTO_ORANGE);
+
+        UnlockTracker.markRelicAsSeen(SealedScroll.ID);
+        UnlockTracker.markRelicAsSeen(Bells.ID);
+        UnlockTracker.markRelicAsSeen(PaperFlowers.ID);
+        UnlockTracker.markRelicAsSeen(CrystalNecklace.ID);
+        UnlockTracker.markRelicAsSeen(ExplicitBook.ID);
+        UnlockTracker.markRelicAsSeen(BullHorn.ID);
+        UnlockTracker.markRelicAsSeen(RedScarf.ID);
+        UnlockTracker.markRelicAsSeen(BrokenMask.ID);
+        UnlockTracker.markRelicAsSeen(SpiralScroll.ID);
+        UnlockTracker.markRelicAsSeen(Habanero.ID);
+        UnlockTracker.markRelicAsSeen(RightHand.ID);
 
         logger.info("Done adding relics!");
     }

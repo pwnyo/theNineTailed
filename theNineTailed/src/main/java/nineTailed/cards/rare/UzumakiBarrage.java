@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.blue.ThunderStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,13 +16,12 @@ import nineTailed.orbs.Clone;
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
-@AutoAdd.Ignore
 public class UzumakiBarrage extends AbstractDynamicCard {
     public final static String ID = makeID(UzumakiBarrage.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("UzumakiBarrage.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
@@ -47,7 +47,7 @@ public class UzumakiBarrage extends AbstractDynamicCard {
         super.applyPowers();
         countClones();
         if (baseMagicNumber > 0) {
-            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[baseMagicNumber == 1 ? 0 : 1];
             initializeDescription();
         }
     }
@@ -62,7 +62,7 @@ public class UzumakiBarrage extends AbstractDynamicCard {
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
         if (baseMagicNumber > 0) {
-            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[baseMagicNumber == 1 ? 0 : 1];
         }
         initializeDescription();
     }

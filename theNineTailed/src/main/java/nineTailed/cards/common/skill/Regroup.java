@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeWithoutRemovingOrbAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.actions.watcher.NotStanceCheckAction;
+import com.megacrit.cardcrawl.cards.blue.Dualcast;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.NeutralStance;
@@ -18,7 +19,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Regroup extends AbstractDynamicCard {
     public final static String ID = makeID(Regroup.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Regroup2.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -32,10 +33,8 @@ public class Regroup extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (upgraded) {
-            addToBot(new AnimateOrbAction(1));
-            addToBot(new EvokeWithoutRemovingOrbAction(1));
-        }
+        addToBot(new AnimateOrbAction(1));
+        addToBot(new EvokeWithoutRemovingOrbAction(1));
         addToBot(new AnimateOrbAction(1));
         addToBot(new EvokeOrbAction(1));
         addToBot(new NotStanceCheckAction(NeutralStance.STANCE_ID, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
@@ -46,7 +45,7 @@ public class Regroup extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

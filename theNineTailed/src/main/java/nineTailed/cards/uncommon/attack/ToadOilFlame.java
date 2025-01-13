@@ -25,7 +25,7 @@ public class ToadOilFlame extends AbstractDynamicCard {
 
     public ToadOilFlame() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 11;
+        baseDamage = damage = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

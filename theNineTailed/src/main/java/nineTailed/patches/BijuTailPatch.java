@@ -3,21 +3,19 @@ package nineTailed.patches;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nineTailed.orbs.Tail;
 import nineTailed.orbs.biju.*;
+import nineTailed.powers.BijuTailPower;
 
-@SpirePatch(
-        clz = AbstractPlayer.class,
-        method = "channelOrb"
-
-)
+@SpirePatch(clz = AbstractPlayer.class, method = "channelOrb")
 public class BijuTailPatch {
-    @SpireInsertPatch(
-            loc=2885
-    )
+    @SpirePrefixPatch
     public static void replaceOrb(AbstractPlayer __player, @ByRef AbstractOrb orb[]) {
-        if (__player.hasPower("BijuTailPower")) {
+        if (__player.hasPower(BijuTailPower.POWER_ID)) {
+            int nextTail = __player.getPower(BijuTailPower.POWER_ID).amount;
             int nextSlot = Math.min(__player.filledOrbCount() + 1, __player.maxOrbs);
             switch (nextSlot) {
                 case 1:
@@ -36,8 +34,8 @@ public class BijuTailPatch {
                     orb[0] = new Tail7(); break;
                 case 8:
                     orb[0] = new Tail8(); break;
-                case 10:
-                    orb[0] = new Tail10(); break;
+                case 9:
+                    orb[0] = new Tail(); break;
             }
         }
     }

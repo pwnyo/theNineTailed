@@ -5,11 +5,13 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.green.PiercingWail;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
@@ -33,11 +35,11 @@ public class FrogSongAction extends AbstractGameAction {
             }
 
             for (AbstractMonster m :  AbstractDungeon.getCurrRoom().monsters.monsters) {
-                addToBot(new ApplyPowerAction(m ,p, new StrengthPower(m, -amount), -amount, true, AttackEffect.NONE));
+                addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -amount), -amount, true, AttackEffect.NONE));
             }
             for (AbstractMonster m :  AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.hasPower(ArtifactPower.POWER_ID)) {
-                    addToBot(new ApplyPowerAction(m ,p, new StrengthPower(m, -amount), -amount, true, AttackEffect.NONE));
+                    addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, -amount), -amount, true, AttackEffect.NONE));
                 }
             }
         } else {

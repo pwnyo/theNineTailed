@@ -1,16 +1,18 @@
 package nineTailed.relics.boss;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import nineTailed.NarutoMod;
 import nineTailed.orbs.Tail;
 import nineTailed.relics.commoner.SealedScroll;
 import nineTailed.util.TextureLoader;
 
-import static nineTailed.NarutoMod.makeRelicOutlinePath;
-import static nineTailed.NarutoMod.makeRelicPath;
+import static nineTailed.NarutoMod.*;
+import static nineTailed.NarutoMod.makeID;
 
 public class SpiralScroll extends CustomRelic {
     // ID, images, text.

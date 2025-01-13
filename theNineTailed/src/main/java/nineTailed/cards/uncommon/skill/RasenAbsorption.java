@@ -2,6 +2,7 @@ package nineTailed.cards.uncommon.skill;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.colorless.SecretWeapon;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,19 +11,21 @@ import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.patches.CustomTags;
 
+import java.util.Iterator;
+
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
 public class RasenAbsorption extends AbstractDynamicCard {
     public final static String ID = makeID(RasenAbsorption.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("RasenAbsorption.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public RasenAbsorption() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -35,57 +38,24 @@ public class RasenAbsorption extends AbstractDynamicCard {
     }
 
     @Override
-    public void applyPowers() {
-        AbstractPlayer p = AbstractDungeon.player;
-
-        int rasenCount = 0;
-        for (AbstractCard c : p.hand.group)
-        {
-            if (isRasen(c))
-            {
-                rasenCount++;
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (canUse) {
+            for (AbstractCard c : p.drawPile.group) {
+                if (c.hasTag(CustomTags.RASEN)) {
+                    return true;
+                }
             }
-        }
-        for (AbstractCard c : p.drawPile.group)
-        {
-            if (isRasen(c))
-            {
-                rasenCount++;
-            }
-        }
-        for (AbstractCard c : p.discardPile.group)
-        {
-            if (isRasen(c))
-            {
-                rasenCount++;
-            }
-        }
 
-        if (rasenCount > 0) {
-            magicNumber = rasenCount + (upgraded ? 1 : 0);
-            super.applyPowers();
-            this.rawDescription = (upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION) +
-                    (rasenCount == 1 ? cardStrings.EXTENDED_DESCRIPTION[0] : cardStrings.EXTENDED_DESCRIPTION[1]);
-            this.initializeDescription();
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         }
-
-    }
-
-    public void onMoveToDiscard() {
-        this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
-        this.initializeDescription();
-    }
-
-    public static boolean isRasen(AbstractCard c)
-    {
-        return c.hasTag(CustomTags.RASEN);
+        return false;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

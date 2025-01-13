@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.defect.EvokeSpecificOrbAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -15,17 +16,19 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import nineTailed.NarutoMod;
+import nineTailed.patches.IOrbListenerOrb;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makeOrbPath;
 
-public class Clone extends AbstractOrb {
+public class Clone extends AbstractOrb implements IOrbListenerOrb {
 
     public static final String ORB_ID = NarutoMod.makeID("Clone");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
@@ -43,7 +46,7 @@ public class Clone extends AbstractOrb {
         ID = ORB_ID;
         name = orbString.NAME;
         img = IMG;
-        evokeAmount = baseEvokeAmount = 2;
+        evokeAmount = baseEvokeAmount = 3;
         passiveAmount = basePassiveAmount = 1;
         updateDescription();
         if (AbstractDungeon.player != null) {
@@ -54,6 +57,7 @@ public class Clone extends AbstractOrb {
             }
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, passiveAmount)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, passiveAmount)));
         }
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
@@ -88,8 +92,10 @@ public class Clone extends AbstractOrb {
     public void onEvoke() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -passiveAmount)));
         if (evokeAmount > 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, evokeAmount)));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, evokeAmount));
         }
     }
     @Override
@@ -133,5 +139,12 @@ public class Clone extends AbstractOrb {
     @Override
     public AbstractOrb makeCopy() {
         return new Clone();
+    }
+
+    @Override
+    public void onRemoveOrb() {
+        AbstractPlayer p = AbstractDungeon.player;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -passiveAmount)));
     }
 }

@@ -44,6 +44,7 @@ public class UnderstandingPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         if (owner.currentHealth <= amount && owner instanceof AbstractMonster) {
+            flash();
             this.addToTop(new InstantKillAction(owner));
         }
     }

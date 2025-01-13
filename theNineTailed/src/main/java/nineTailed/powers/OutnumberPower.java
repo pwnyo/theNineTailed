@@ -44,7 +44,7 @@ public class OutnumberPower extends AbstractPower {
 
     @Override
     public void onChannel(AbstractOrb orb) {
-        if (orb.ID == Clone.ORB_ID && !BonusChannelField.isBonus.get(orb)) {
+        if (orb instanceof Clone && !BonusChannelField.isBonus.get(orb)) {
             Clone clone = new Clone();
             BonusChannelField.isBonus.set(clone, true);
             addToBot(new ChannelAction(clone));

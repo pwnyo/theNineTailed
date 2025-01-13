@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class Tail5 extends BijuTail {
     public Tail5() {
-        super("FiveTail", "tail-5",1,1);
+        super(2,"Tail5", "tail-5");
     }
 
     @Override

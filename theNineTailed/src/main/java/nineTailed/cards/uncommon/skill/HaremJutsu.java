@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class HaremJutsu extends AbstractDynamicCard {
     public final static String ID = makeID(HaremJutsu.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("HaremJutsu.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

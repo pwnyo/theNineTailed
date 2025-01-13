@@ -1,41 +1,9 @@
 {
-  "nineTailed:PlaceholderRelic": {
-    "NAME": "Placeholder Energy Relic",
-    "FLAVOR": "The snake is a friend.",
-    "DESCRIPTIONS": [
-      "Gain #b1 [E] ."
-    ]
-  },
-  "nineTailed:PlaceholderRelic2": {
-    "NAME": "Placeholder Relic 2",
-    "FLAVOR": "You feel stronger.",
-    "DESCRIPTIONS": [
-      "At the start of each combat, gain #b1 #yStrength."
-    ]
-  },
-  "nineTailed:DefaultClickableRelic": {
-    "NAME": "Right-Clicky Relic",
-    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
-    "DESCRIPTIONS": [
-      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
-      "YOU ARE MINE!"
-    ]
-  },
-  "nineTailed:BottledPlaceholderRelic": {
-    "NAME": "Bottled Placeholder",
-    "FLAVOR": "What is this?",
-    "DESCRIPTIONS": [
-      "Choose a card. Whenever you take play any card, draw the chosen card.",
-      "Whenever you play a card, draw ",
-      ".",
-      "Select a card to bottle for "
-    ]
-  },
   "nineTailed:SealedScroll": {
     "NAME": "Sealed Scroll",
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
-      "At the start of each combat, #yChannel #b1 #yTail."
+      "At the start of each combat, #yChannel #b1 #yninetailed:Tail."
     ]
   },
   "nineTailed:Bells": {
@@ -50,7 +18,8 @@
     "NAME": "Paper Flowers",
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
-      "Enter Divinity when you obtain #b8 #yMantra rather than #b10."
+      "Enter Divinity when you obtain #b",
+      " #yMantra rather than #b10."
     ]
   },
   "nineTailed:CrystalNecklace": {
@@ -58,7 +27,7 @@
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
       "Every time you Channel #b",
-      " #yTails, gain #b1 #yOrb slot."
+      " #yninetailed:Tails, gain #b1 #yOrb slot."
     ]
   },
   "nineTailed:BrokenMask": {
@@ -66,14 +35,14 @@
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
       "Whenever you take unblocked Attack damage, apply #b",
-      " #yUnderstanding back."
+      " #yninetailed:Understanding back."
     ]
   },
   "nineTailed:RedScarf": {
     "NAME": "Red Scarf",
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
-      "Whenever you enter #yCalm, #yScry #b2 and draw #b1 card."
+      "Whenever you enter #yNeutral, #yScry #b2 and draw #b1 card."
     ]
   },
   "nineTailed:BullHorn": {
@@ -89,7 +58,7 @@
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
       "The first #b",
-      " times you #yEvoke a #yClone each combat, apply #b",
+      " times you #yEvoke a #yninetailed:Clone each combat, apply #b",
       " #yVulnerable and #yWeak to ALL enemies."
     ]
   },
@@ -97,14 +66,15 @@
     "NAME": "Spiral Scroll",
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
-      "At the start of your turn, #yChannel #b1 #yTail."
+      "At the start of your turn, #yChannel #b1 #yninetailed:Tail."
     ]
   },
   "nineTailed:RightHand": {
-    "NAME": "RightHand",
+    "NAME": "Right Hand",
     "FLAVOR": "TBA",
     "DESCRIPTIONS": [
-      "Upon pickup, choose 1 of 3 unique cards to add to your deck."
+      "Upon pickup, choose 1 of 3 unique #ySasuke cards to add to your deck.",
+      "Choose a Card"
     ]
   },
   "nineTailed:Habanero": {

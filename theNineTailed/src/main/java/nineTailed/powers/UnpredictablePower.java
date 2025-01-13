@@ -2,16 +2,21 @@ package nineTailed.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DarkEmbracePower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import nineTailed.NarutoMod;
+import nineTailed.patches.DiscardHookPatch;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makePowerPath;
 
-public class UnpredictablePower extends AbstractPower {
+public class UnpredictablePower extends AbstractPower implements DiscardHookPatch.OnDiscard2 {
     public AbstractCreature source;
 
     public static final String POWER_ID = NarutoMod.makeID("UnpredictablePower");
@@ -32,19 +37,22 @@ public class UnpredictablePower extends AbstractPower {
         type = PowerType.BUFF;
         isTurnBased = false;
 
-
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
     }
 
+
+    @Override
+    public void onManualDiscard2() {
+        flash();
+        addToBot(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount)));
+        addToBot(new GainBlockAction(owner, amount));
+    }
+
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 }

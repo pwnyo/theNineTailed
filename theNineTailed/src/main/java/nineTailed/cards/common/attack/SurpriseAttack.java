@@ -32,6 +32,7 @@ public class SurpriseAttack extends AbstractDynamicCard {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         addToBot(new SurpriseAttackAction(magicNumber));
     }
+
     public void triggerOnGlowCheck() {
         boolean check = (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() &&
                 (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.SKILL);

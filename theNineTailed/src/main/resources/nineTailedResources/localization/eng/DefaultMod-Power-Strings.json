@@ -6,18 +6,33 @@
                         " #yChakra, gain #b1 #yEnergy."
                 ]
         },
+        "nineTailed:BijuTailPower": {
+                "NAME": "Gathering",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel a #yTail, #yChannel a #b",
+                        " #yTail and trigger its passive ability instead."
+                ]
+        },
         "nineTailed:AmphibiousModePower": {
                 "NAME": "Amphibious Mode",
                 "DESCRIPTIONS": [
                         "At the start of your turn, enter #yCalm."
                 ]
         },
-        "nineTailed:EmpathyPower": {
-                "NAME": "Empathy",
+        "nineTailed:GatheringPower": {
+                "NAME": "Gathering",
+                "DESCRIPTIONS": [
+                        "At the end of your turn, gain #b",
+                        " #yBlock for each #yChanneled #yTail."
+                ]
+        },
+        "nineTailed:NinshuPower": {
+                "NAME": "Ninshu",
                 "DESCRIPTIONS": [
                         "At the start of your turn, lose #b",
-                        " HP and gain #b",
-                        " #yBlock."
+                        " HP and shuffle #b",
+                        " random #yPower into your draw pile.",
+                        " random #yPowers into your draw pile."
                 ]
         },
         "nineTailed:NextTurnMantraPower": {
@@ -36,21 +51,22 @@
         "nineTailed:StrainPower": {
                 "NAME": "Strain",
                 "DESCRIPTIONS": [
-                        "Whenever you obtain #b",
-                        " #yStrain, #yEvoke your next #yOrb."
+                        "At the start of your turn, lose #b",
+                        " HP."
                 ]
         },
         "nineTailed:ProphecyPower": {
                 "NAME": "Prophecy",
                 "DESCRIPTIONS": [
-                        "Whenever you play a #yPower, gain #b",
-                        " #yMantra."
+                        "Whenever you enter #yDivinity, draw #b",
+                        " card.",
+                        " cards."
                 ]
         },
         "nineTailed:SerialSpheresPower": {
                 "NAME": "Serial Spheres",
                 "DESCRIPTIONS": [
-                        "Whenever you play a card containing \"Rasen\", draw #b",
+                        "Whenever you draw a card containing \"Rasen\", draw #b",
                         " card.",
                         " cards."
                 ]
@@ -58,8 +74,9 @@
         "nineTailed:SageModePower": {
                 "NAME": "Sage Mode",
                 "DESCRIPTIONS": [
-                        "Whenever you exit #yCalm, gain #b ",
-                        " #yVigor and #yMantra."
+                        "Whenever you exit #yCalm, Scry #b ",
+                        " and gain #b ",
+                        " #yMantra."
                 ]
         },
         "nineTailed:KuramaModePower": {
@@ -89,7 +106,22 @@
                 "NAME": "Unpredictable",
                 "DESCRIPTIONS": [
                         "Whenever you discard a card from your hand, gain #b",
-                        " #yVigor."
+                        " #yVigor and #yBlock."
+                ]
+        },
+        "nineTailed:BoilingStrengthPower": {
+                "NAME": "Boiling Strength",
+                "DESCRIPTIONS": [
+                        "Whenever you play a #yPower, gain #b",
+                        " #yStrength."
+                ]
+        },
+        "nineTailed:TouchPassPower": {
+                "NAME": "Touch Pass",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel a #yClone, draw #b",
+                        " card.",
+                        " cards."
                 ]
         },
         "nineTailed:OutnumberPower": {
@@ -99,6 +131,14 @@
                         " more."
                 ]
         },
+        "nineTailed:OutnumberPower2": {
+                "NAME": "Outnumber",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, #yChannel #b",
+                        " #yClone.",
+                        " #yClones."
+                ]
+        },
         "nineTailed:AsuraFormPower": {
                 "NAME": "Asura Form",
                 "DESCRIPTIONS": [
@@ -106,10 +146,11 @@
                         " times as many."
                 ]
         },
-        "nineTailed:AsuraFormPower": {
+        "nineTailed:AsuraFormPower2": {
                 "NAME": "Asura Form",
                 "DESCRIPTIONS": [
                         "At the start of your turn, gain #b",
+                        " #yOrb slot.",
                         " #yOrb slots."
                 ]
         },

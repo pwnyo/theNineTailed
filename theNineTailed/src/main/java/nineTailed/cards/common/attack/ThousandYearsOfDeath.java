@@ -12,14 +12,14 @@ import static nineTailed.NarutoMod.makeID;
 
 public class ThousandYearsOfDeath extends AbstractDynamicCard {
     public final static String ID = makeID(ThousandYearsOfDeath.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("1000YearsOfDeath.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public ThousandYearsOfDeath() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -7,5 +7,6 @@ public interface IOrbListener {
     void onEvoke(AbstractOrb o);
     void onGainOrbSlot();
     void onLoseOrbSlot();
+    void onRemoveOrb();
 }
 

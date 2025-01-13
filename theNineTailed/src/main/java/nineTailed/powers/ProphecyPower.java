@@ -3,6 +3,7 @@ package nineTailed.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,6 +13,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
+import com.megacrit.cardcrawl.stances.AbstractStance;
+import com.megacrit.cardcrawl.stances.DivinityStance;
 import nineTailed.NarutoMod;
 import nineTailed.util.TextureLoader;
 
@@ -46,13 +49,20 @@ public class ProphecyPower extends AbstractPower {
     }
 
     @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new MantraPower(p, amount)));
+    public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
+        if (!oldStance.ID.equals(newStance.ID) && newStance.ID.equals(DivinityStance.STANCE_ID)) {
+            flash();
+            addToBot(new DrawCardAction(amount));
+        }
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        }
+        else {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
     }
 }

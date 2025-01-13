@@ -2,6 +2,7 @@ package nineTailed.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -32,7 +33,7 @@ public class StrainPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -42,20 +43,13 @@ public class StrainPower extends AbstractPower {
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        if (this.amount >= COUNT) {// 41
-            addToTop(new EvokeOrbAction(1));
-            this.amount -= COUNT;// 43
-            if (this.amount <= 0) {// 44
-                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));// 45
-            }
-        }
-
+    public void atStartOfTurn() {
+        flash();
+        addToBot(new LoseHPAction(owner, owner, amount));
     }
 
     @Override
     public void updateDescription() {
-        this.description = powerStrings.DESCRIPTIONS[0] + COUNT + powerStrings.DESCRIPTIONS[1];
+        this.description = powerStrings.DESCRIPTIONS[0] + amount + powerStrings.DESCRIPTIONS[1];
     }
 }

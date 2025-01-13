@@ -3,49 +3,41 @@ package nineTailed.cards.uncommon.skill;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
+import nineTailed.powers.NinshuPower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
 public class SummonToaduo extends AbstractDynamicCard {
     public final static String ID = makeID(SummonToaduo.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SummonToaduo.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public SummonToaduo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int roll = AbstractDungeon.cardRandomRng.random(99);
-        CardRarity cardRarity;
-        if (roll < 85) {
-            cardRarity = CardRarity.UNCOMMON;
-        } else {
-            cardRarity = CardRarity.RARE;
-        }
-        AbstractCard one = CardLibrary.getAnyColorCard(CardType.POWER, cardRarity);
-        AbstractCard two = CardLibrary.getAnyColorCard(CardType.POWER, cardRarity);
-        addToBot(new MakeTempCardInHandAction(one, true));
-        addToBot(new MakeTempCardInHandAction(two, true));
+        AbstractCard one = NinshuPower.getAnyColorPower();
+        AbstractCard two = NinshuPower.getAnyColorPower();
+        addToBot(new MakeTempCardInHandAction(one, false));
+        addToBot(new MakeTempCardInHandAction(two, false));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

@@ -10,7 +10,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Rasengan extends AbstractRasengan {
     public final static String ID = makeID(Rasengan.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Rasengan.png");
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -32,8 +32,7 @@ public class Rasengan extends AbstractRasengan {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.requirement = -1;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;;
+            upgradeBaseCost(2);
             initializeDescription();
         }
     }

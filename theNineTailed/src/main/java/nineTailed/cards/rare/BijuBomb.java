@@ -17,7 +17,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class BijuBomb extends AbstractDynamicCard {
     public final static String ID = makeID(BijuBomb.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("BijuBomb.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -28,7 +28,7 @@ public class BijuBomb extends AbstractDynamicCard {
 
     public BijuBomb() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 20;
+        baseDamage = damage = 24;
         isMultiDamage = true;
     }
 

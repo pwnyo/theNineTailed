@@ -9,13 +9,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import nineTailed.orbs.Clone;
 
 public class UzumakiBarrageAction extends AbstractGameAction {
-    private DamageInfo info = null;
+    private DamageInfo info;
     private AbstractCreature target;
 
     public UzumakiBarrageAction(AbstractCreature m, DamageInfo info) {
-        this.info = info;// 15
-        this.target = m;// 16
-    }// 17
+        this.info = info;
+        this.target = m;
+    }
 
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;

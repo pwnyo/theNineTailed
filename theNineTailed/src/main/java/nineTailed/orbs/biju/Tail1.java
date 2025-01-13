@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 public class Tail1 extends BijuTail {
     public Tail1() {
-        super("OneTail", "tail-1", 1, 1);
+        super(2,"Tail1", "tail-1");
     }
 
     @Override

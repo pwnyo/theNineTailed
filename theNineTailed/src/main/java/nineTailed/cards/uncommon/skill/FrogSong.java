@@ -1,5 +1,6 @@
 package nineTailed.cards.uncommon.skill;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.actions.FrogSongAction;
@@ -11,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class FrogSong extends AbstractDynamicCard {
     public final static String ID = makeID(FrogSong.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("FrogSong.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL;

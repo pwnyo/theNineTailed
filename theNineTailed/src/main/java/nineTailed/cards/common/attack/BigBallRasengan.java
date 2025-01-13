@@ -11,7 +11,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class BigBallRasengan extends AbstractRasengan {
     public final static String ID = makeID(BigBallRasengan.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("BigBallRasengan.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -22,7 +22,7 @@ public class BigBallRasengan extends AbstractRasengan {
 
     public BigBallRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 20;
+        baseDamage = damage = 18;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -33,7 +33,7 @@ public class BigBallRasengan extends AbstractRasengan {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(6);
             initializeDescription();
         }
     }

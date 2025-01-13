@@ -46,11 +46,11 @@ public class LoseEnergyOnStanceChangePower extends AbstractPower {
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
         if (oldStance != newStance)
         {
-            if (oldStance.ID == CalmStance.STANCE_ID)
+            if (oldStance.ID.equals(CalmStance.STANCE_ID))
             {
                 addToBot(new LoseEnergyAction(2));
             }
-            else if (oldStance.ID == DivinityStance.STANCE_ID)
+            else if (oldStance.ID.equals(DivinityStance.STANCE_ID))
             {
                 addToBot(new LoseEnergyAction(3));
             }

@@ -42,6 +42,7 @@ public class AmphibiousModePower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
+        flash();
         addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
     }
 

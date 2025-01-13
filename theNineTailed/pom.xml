@@ -6,7 +6,7 @@
     <groupId>nineTailed</groupId>
     <artifactId>TheNineTailed</artifactId>
     <name>The Nine-Tailed</name>
-    <version>0.0.2</version>
+    <version>0.0.4</version>
     <description>Adds Naruto.</description>
 
     <properties>

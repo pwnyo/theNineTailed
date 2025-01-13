@@ -44,11 +44,12 @@ public class ChakraPower extends AbstractPower {
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        if (this.amount >= COUNT) {// 41
+        if (this.amount >= COUNT) {
+            flash();
             addToTop(new GainEnergyAction(1));
-            this.amount -= COUNT;// 43
-            if (this.amount <= 0) {// 44
-                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));// 45
+            this.amount -= COUNT;
+            if (this.amount <= 0) {
+                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
         }
 

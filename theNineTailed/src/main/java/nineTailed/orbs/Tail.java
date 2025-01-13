@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
@@ -27,7 +28,7 @@ public class Tail extends AbstractOrb {
 
     public static final String ORB_ID = NarutoMod.makeID("Tail");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
-    public static final String[] DESC = orbString.DESCRIPTION;
+    private static final String[] DESC = orbString.DESCRIPTION;
 
     private static final Texture IMG = TextureLoader.getTexture(makeOrbPath("tail-2.png"));
 
@@ -36,22 +37,22 @@ public class Tail extends AbstractOrb {
     private float vfxIntervalMax = 0.4f;
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
-    private AbstractPlayer p;
+    protected AbstractPlayer p;
 
-    public Tail(String orbId, String imgPath, int passive, int evoke) {
-        this();
-        ID =  NarutoMod.makeID(orbId);
-        img = TextureLoader.getTexture(makeOrbPath(imgPath));
-        basePassiveAmount = passiveAmount = passive;
-        baseEvokeAmount = evokeAmount = evoke;
-    }
     public Tail() {
+        this(1, 1);
         ID = ORB_ID;
         name = orbString.NAME;
         img = IMG;
-        evokeAmount = baseEvokeAmount = 1;
-        passiveAmount = basePassiveAmount = 1;
         updateDescription();
+    }
+    public Tail(int passiveAmount) {
+        this(passiveAmount, 1);
+    }
+    public Tail(int passiveAmount, int evokeAmount) {
+        this.evokeAmount = baseEvokeAmount = evokeAmount;
+        this.passiveAmount = basePassiveAmount = passiveAmount;
+
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
 
@@ -100,7 +101,7 @@ public class Tail extends AbstractOrb {
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, 1.0f));
         sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f, 96.0f, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, 0, 0, 0, 108, 108, false, false);
         //sb.setColor(new Color(1.0f, 1.0f, 1.0f, this.c.a / 2.0f));
-       // sb.setBlendFunction(770, 1);
+        //sb.setBlendFunction(770, 1);
         //sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f, 96.0f, scale, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, -angle, 0, 0, 96, 96, false, false);
         //sb.setBlendFunction(770, 771);
         renderText(sb);

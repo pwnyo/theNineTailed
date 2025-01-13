@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.WrathStance;
 import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
@@ -35,6 +36,13 @@ public class Unleash extends AbstractDynamicCard {
         addToBot(new VFXAction(new ClawEffect(m.hb.cX, m.hb.cY, Color.ORANGE, Color.RED), 0.1F));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         addToBot(new PreviousCardStanceChangeAction(CardType.ATTACK, new WrathStance()));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        boolean check = (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() &&
+            (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.ATTACK);
+        glow(check);
     }
 
     @Override

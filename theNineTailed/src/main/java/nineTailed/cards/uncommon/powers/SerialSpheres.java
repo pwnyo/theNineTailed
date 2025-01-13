@@ -12,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class SerialSpheres extends AbstractDynamicCard {
     public final static String ID = makeID(SerialSpheres.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SerialSpheres.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -27,14 +27,15 @@ public class SerialSpheres extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SerialSpheresPower(p, p,1)));
+        addToBot(new ApplyPowerAction(p, p, new SerialSpheresPower(p, p, magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

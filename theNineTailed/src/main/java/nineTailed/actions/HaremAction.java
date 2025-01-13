@@ -12,6 +12,7 @@ import nineTailed.orbs.Clone;
 
 public class HaremAction extends AbstractGameAction {
     public HaremAction() {
+        this.actionType = ActionType.DEBUFF;
     }
 
     public void update() {

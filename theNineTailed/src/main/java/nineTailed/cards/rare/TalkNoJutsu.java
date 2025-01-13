@@ -19,7 +19,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class TalkNoJutsu extends AbstractDynamicCard {
     public final static String ID = makeID(TalkNoJutsu.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("TalkNoJutsu.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -32,14 +32,14 @@ public class TalkNoJutsu extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = 9;
         if (AbstractDungeon.player != null) {
-            magicNumber += AbstractDungeon.player.damagedThisCombat * 3;
+            baseMagicNumber += AbstractDungeon.player.damagedThisCombat * 3;
         }
     }
 
     @Override
     public void tookDamage() {
         magicNumber += 3;
-        isMagicNumberModified = magicNumber != baseMagicNumber;
+        isMagicNumberModified = magicNumber != 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

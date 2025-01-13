@@ -14,7 +14,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class SexyJutsu extends AbstractDynamicCard {
     public final static String ID = makeID(SexyJutsu.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SexyJutsu.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

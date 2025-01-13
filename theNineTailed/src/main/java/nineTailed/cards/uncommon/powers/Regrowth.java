@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
+import nineTailed.powers.StrainPower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
@@ -28,8 +29,8 @@ public class Regrowth extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseHPAction(p, p, 6));
         addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StrainPower(p, 1)));
     }
 
     @Override

@@ -14,7 +14,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class LavaRasenshuriken extends AbstractDynamicCard {
     public final static String ID = makeID(LavaRasenshuriken.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("LavaRasenshuriken.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;

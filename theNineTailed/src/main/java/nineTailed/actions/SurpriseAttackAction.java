@@ -8,17 +8,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class SurpriseAttackAction extends AbstractGameAction {
-    private int magicNumber;
     AbstractPlayer p;
 
     public SurpriseAttackAction(int amount) {
-        this.magicNumber = amount;
+        this.amount = amount;
         p = AbstractDungeon.player;
     }
 
     public void update() {
         if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 2 &&
-                ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2)).type == AbstractCard.CardType.SKILL) {
+                (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2)).type == AbstractCard.CardType.SKILL) {
             this.addToTop(new ApplyPowerAction(p, p, new VigorPower(p, amount)));
         }
 

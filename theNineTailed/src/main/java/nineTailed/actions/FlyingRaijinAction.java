@@ -1,5 +1,6 @@
 package nineTailed.actions;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -33,7 +34,6 @@ public class FlyingRaijinAction extends AbstractGameAction {
     }
     void getCard(CardGroup group)
     {
-        group.addToHand(cardTarget);
         p.hand.addToTop(cardTarget);
         p.hand.refreshHandLayout();
         p.hand.applyPowers();

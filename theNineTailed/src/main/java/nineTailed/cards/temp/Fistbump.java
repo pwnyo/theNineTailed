@@ -11,7 +11,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Fistbump extends AbstractDynamicCard {
     public final static String ID = makeID(Fistbump.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Fistbump.png");
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;

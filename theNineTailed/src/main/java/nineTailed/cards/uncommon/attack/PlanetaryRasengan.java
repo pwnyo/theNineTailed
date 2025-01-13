@@ -6,13 +6,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.actions.PlanetaryRasenganAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
+import nineTailed.patches.CustomTags;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
 public class PlanetaryRasengan extends AbstractDynamicCard {
     public final static String ID = makeID(PlanetaryRasengan.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("PlanetaryRasengan.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -24,6 +25,7 @@ public class PlanetaryRasengan extends AbstractDynamicCard {
     public PlanetaryRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 15;
+        tags.add(CustomTags.RASEN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

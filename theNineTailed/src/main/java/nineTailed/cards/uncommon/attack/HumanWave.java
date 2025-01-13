@@ -11,7 +11,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class HumanWave extends AbstractDynamicCard {
     public final static String ID = makeID(HumanWave.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("HumanWave.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

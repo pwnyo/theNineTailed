@@ -4,8 +4,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.CalmStance;
+import nineTailed.actions.SerenityAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.powers.NextTurnExitPower;
@@ -15,7 +17,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Serenity extends AbstractDynamicCard {
     public final static String ID = makeID(Serenity.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Serenity.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -31,17 +33,20 @@ public class Serenity extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ChangeStanceAction(CalmStance.STANCE_ID));
-        addToBot(new ApplyPowerAction(p, p, new NextTurnExitPower(p)));
-        if (!upgraded) {
-            addToBot(new PressEndTurnButtonAction());
-        }
+        addToBot(new SerenityAction(magicNumber));
+    }
+
+    public void triggerOnGlowCheck() {
+        boolean check = (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() &&
+                (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.SKILL);
+        glow(check);
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

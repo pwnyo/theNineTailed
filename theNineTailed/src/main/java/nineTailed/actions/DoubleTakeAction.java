@@ -3,8 +3,10 @@ package nineTailed.actions;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.purple.Pray;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -14,18 +16,18 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 public class DoubleTakeAction extends AbstractGameAction {
     AbstractPlayer p;
     boolean upgraded;
-    private static final float DURATION = Settings.ACTION_DUR_XFAST;
     private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");
     private static String[] TEXT = uiStrings.TEXT;
 
-    public DoubleTakeAction(boolean upgraded) {
+    public DoubleTakeAction(int amount) {
         this.actionType = AbstractGameAction.ActionType.DRAW;
         p = AbstractDungeon.player;
-        this.upgraded = upgraded;
+        this.duration = Settings.ACTION_DUR_XFAST;
+        this.amount = amount;
     }
 
     public void update() {
-        if (this.duration == DURATION) {
+        if (this.duration == Settings.ACTION_DUR_XFAST) {
             if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 this.isDone = true;
                 return;
@@ -67,7 +69,6 @@ public class DoubleTakeAction extends AbstractGameAction {
 
         GameActionManager.incrementDiscard(false);
 
-        int copies = !upgraded ? 1 : BaseMod.MAX_HAND_SIZE;
-        addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), copies));
+        addToTop(new MakeTempCardInDrawPileAction(c.makeStatEquivalentCopy(), amount, true, true));
     }
 }

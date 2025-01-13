@@ -33,27 +33,13 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
                 count++;
             }
         }
-        //if requirement is -1, we're discounting for EACH clone
-        if (requirement == -1) {
-            if (count > 0 && !isDiscounted) {
-                isDiscounted = true;
-                setCostForTurn(cost - (count * discount));
-            }
-            else if (count == 0 && isDiscounted) {
-                isDiscounted = false;
-                setCostForTurn(cost);
-            }
+        if (count >= requirement && !isDiscounted) {
+            isDiscounted = true;
+            setCostForTurn(cost - discount);
         }
-        //otherwise, we get a fixed discount if the requirement is met
-        else {
-            if (count >= requirement && !isDiscounted) {
-                isDiscounted = true;
-                setCostForTurn(cost - discount);
-            }
-            else if (count < requirement && isDiscounted) {
-                isDiscounted = false;
-                setCostForTurn(cost);
-            }
+        else if (count < requirement && isDiscounted) {
+            isDiscounted = false;
+            setCostForTurn(cost);
         }
     }
     @Override
@@ -73,6 +59,9 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
 
     @Override
     public void onGainOrbSlot() { }
+
+    @Override
+    public void onRemoveOrb() { countOrbs(); }
 
     public void triggerWhenAddedToHand() {
         isDiscounted = false;

@@ -28,11 +28,11 @@ public class BodyDouble extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         block();
-        addToBot(new BodyDoubleAction());
+        addToBot(new BodyDoubleAction(1));
     }
 
     public void triggerOnGlowCheck() {
-        glow(AbstractDungeon.player.hand.size() == 5);
+        glow(!AbstractDungeon.player.hasEmptyOrb());
     }
 
     @Override

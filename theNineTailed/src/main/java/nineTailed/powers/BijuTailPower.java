@@ -2,11 +2,15 @@ package nineTailed.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.defect.TriggerPassiveAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.CorruptionPower;
 import nineTailed.NarutoMod;
+import nineTailed.orbs.Tail;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makePowerPath;
@@ -22,17 +26,17 @@ public class BijuTailPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public BijuTailPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public BijuTailPower(final AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
-        this.source = source;
+        if (amount < 1) {
+            amount = 1;
+        }
 
         type = PowerType.BUFF;
         isTurnBased = false;
-
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -41,11 +45,19 @@ public class BijuTailPower extends AbstractPower {
     }
 
     @Override
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+    public void onChannel(AbstractOrb orb) {
+        if (orb.ID.equals(Tail.ORB_ID)) {
+            flash();
+            addToBot(new TriggerPassiveAction(orb));
+            amount++;
+            if (amount % 10 == 0) {
+                amount = 1;
+            }
         }
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 }

@@ -14,7 +14,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Blessing extends AbstractDynamicCard {
     public final static String ID = makeID(Blessing.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Blessing.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

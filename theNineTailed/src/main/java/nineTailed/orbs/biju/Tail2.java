@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.powers.FlameBarrierPower;
 
 public class Tail2 extends BijuTail {
     public Tail2() {
-        super("TwoTail", "tail-2",2,1);
+        super(2,"Tail2", "tail-2");
     }
 
     @Override

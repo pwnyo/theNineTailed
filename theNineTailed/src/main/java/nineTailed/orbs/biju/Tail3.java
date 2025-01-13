@@ -7,12 +7,9 @@ import com.megacrit.cardcrawl.powers.JuggernautPower;
 
 public class Tail3 extends BijuTail {
     public Tail3() {
-        super("ThreeTail", "tail-2",3,1);
+        super(2,"Tail3", "tail-2");
     }
 
     @Override
-    public void onStartOfTurn() {
-        AbstractPlayer p = AbstractDungeon.player;
-        gainPower(p, new JuggernautPower(p, passiveAmount));
-    }
+    public void onStartOfTurn() { gainPower(p, new JuggernautPower(p, passiveAmount)); }
 }

@@ -23,7 +23,7 @@ public class BeatUp extends AbstractDynamicCard {
 
     public BeatUp() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 2;
+        baseDamage = damage = 3;
         baseMagicNumber = magicNumber = 3;
     }
 

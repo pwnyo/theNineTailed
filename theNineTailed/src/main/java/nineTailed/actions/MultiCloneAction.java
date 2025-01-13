@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class MultiCloneAction extends AbstractGameAction {
     private boolean freeToPlayOnce = false;
-    private DamageInfo.DamageType damageType;
     private int energyOnUse = -1;
 
     public MultiCloneAction(boolean freeToPlayOnce, int energyOnUse) {

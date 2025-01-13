@@ -31,7 +31,7 @@ public class UltraRasenshurikenAction extends AbstractGameAction {
                     case ALL_ENEMY:
                     case NONE:
                     default:
-                        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(c, (AbstractMonster) null));
+                        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(c, null));
                 }
 
             }

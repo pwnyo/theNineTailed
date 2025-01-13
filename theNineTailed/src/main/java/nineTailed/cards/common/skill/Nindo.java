@@ -2,6 +2,9 @@ package nineTailed.cards.common.skill;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.defect.RemoveAllOrbsAction;
+import com.megacrit.cardcrawl.actions.defect.RemoveNextOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.FreeAttackPower;
@@ -20,16 +23,16 @@ public class Nindo extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Nindo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new LoseHPAction(p, p, 1));
         addToBot(new DrawCardAction(magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new FreeAttackPower(p, 1)));
     }
 
     @Override

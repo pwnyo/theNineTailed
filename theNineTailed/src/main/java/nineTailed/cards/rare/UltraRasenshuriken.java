@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class UltraRasenshuriken extends AbstractDynamicCard {
     public final static String ID = makeID(UltraRasenshuriken.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("UltraRasenshuriken.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -37,7 +37,7 @@ public class UltraRasenshuriken extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(8);
+            upgradeDamage(6);
             initializeDescription();
         }
     }

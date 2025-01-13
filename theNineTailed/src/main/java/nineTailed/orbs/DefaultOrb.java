@@ -138,4 +138,9 @@ public class DefaultOrb extends AbstractOrb implements IOrbListener {
     public void onLoseOrbSlot() {
 
     }
+
+    @Override
+    public void onRemoveOrb() {
+
+    }
 }

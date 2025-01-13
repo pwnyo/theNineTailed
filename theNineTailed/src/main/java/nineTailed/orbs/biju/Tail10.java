@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.powers.MayhemPower;
 
 public class Tail10 extends BijuTail {
     public Tail10() {
-        super("TenTail", "tail-10",1,1);
+        super("Tail10", "tail-10");
     }
 
     @Override

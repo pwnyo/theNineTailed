@@ -1,11 +1,13 @@
 package nineTailed.relics.rarer;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -14,8 +16,8 @@ import nineTailed.NarutoMod;
 import nineTailed.orbs.Clone;
 import nineTailed.util.TextureLoader;
 
-import static nineTailed.NarutoMod.makeRelicOutlinePath;
-import static nineTailed.NarutoMod.makeRelicPath;
+import static nineTailed.NarutoMod.*;
+import static nineTailed.NarutoMod.makeID;
 
 public class ExplicitBook extends CustomRelic {
     // ID, images, text.

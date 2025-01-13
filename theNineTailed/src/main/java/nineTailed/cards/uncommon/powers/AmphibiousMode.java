@@ -12,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class AmphibiousMode extends AbstractDynamicCard {
     public final static String ID = makeID(AmphibiousMode.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("AmphibiousMode.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

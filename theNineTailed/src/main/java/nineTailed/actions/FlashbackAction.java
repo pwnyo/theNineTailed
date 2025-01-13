@@ -1,6 +1,7 @@
 package nineTailed.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,12 +11,12 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import nineTailed.NarutoMod;
 
 public class FlashbackAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(NarutoMod.makeUIPath("FlashbackAction"));
-    //public final String[] TEXT = uiStrings.TEXT;
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(NarutoMod.makeID("FlashbackAction"));
     AbstractPlayer p;
 
     public FlashbackAction() {
         p = AbstractDungeon.player;
+        duration = Settings.ACTION_DUR_FASTER;
     }
 
     public void update() {

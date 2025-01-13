@@ -22,11 +22,12 @@ public class Crowdsource extends AbstractDynamicCard {
 
     public Crowdsource() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 12;
+        baseBlock = block = 5;
         baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        block();
         block();
         addToBot(new DrawCardAction(magicNumber));
     }
@@ -35,7 +36,7 @@ public class Crowdsource extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(4);
+            upgradeBlock(2);
             initializeDescription();
         }
     }

@@ -21,25 +21,27 @@ public class FakeOut extends AbstractDynamicCard {
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
     private static final int COST = 1;
-    private DamageUpMod damageUpMod;
 
     public FakeOut() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 6;
-
-        damageUpMod = new DamageUpMod(0);
-        CardModifierManager.addModifier(this, damageUpMod);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-        damageUpMod.amount = 0;
+        baseDamage = damage = 9;
     }
 
     @Override
     public void triggerOnManualDiscard() {
-        damageUpMod.amount += magicNumber;
+        baseDamage += magicNumber;
+        isDamageModified = baseDamage != 9;
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        glow(baseDamage != 9);
     }
 
     @Override

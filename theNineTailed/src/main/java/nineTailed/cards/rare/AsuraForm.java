@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class AsuraForm extends AbstractDynamicCard {
     public final static String ID = makeID(AsuraForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("AsuraForm.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -24,6 +24,7 @@ public class AsuraForm extends AbstractDynamicCard {
 
     public AsuraForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = magicNumber = 3;
         isEthereal = true;
     }
 

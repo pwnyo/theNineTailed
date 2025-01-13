@@ -23,11 +23,11 @@ public class TailWhip extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public TailWhip() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 6;
+        baseDamage = damage = 9;
         baseMagicNumber = magicNumber = 3;
         isMultiDamage = true;
     }
@@ -43,7 +43,7 @@ public class TailWhip extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
@@ -65,7 +65,7 @@ public class TailWhip extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }
