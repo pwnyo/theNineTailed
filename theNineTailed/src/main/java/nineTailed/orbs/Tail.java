@@ -8,20 +8,23 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Dark;
-import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
-import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
+import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
+import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 import nineTailed.NarutoMod;
+import nineTailed.powers.AsuraFormPower3;
 import nineTailed.powers.ChakraPower;
 import nineTailed.util.TextureLoader;
 
+import static nineTailed.NarutoMod.makeID;
 import static nineTailed.NarutoMod.makeOrbPath;
 
 public class Tail extends AbstractOrb {
@@ -30,7 +33,7 @@ public class Tail extends AbstractOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     private static final String[] DESC = orbString.DESCRIPTION;
 
-    private static final Texture IMG = TextureLoader.getTexture(makeOrbPath("tail-2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeOrbPath("tail9.png"));
 
     private float vfxTimer = 1.0f;
     private float vfxIntervalMin = 0.1f;
@@ -38,6 +41,7 @@ public class Tail extends AbstractOrb {
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
     protected AbstractPlayer p;
+    public boolean isBijuable;
 
     public Tail() {
         this(1, 1);
@@ -45,18 +49,17 @@ public class Tail extends AbstractOrb {
         name = orbString.NAME;
         img = IMG;
         updateDescription();
-    }
-    public Tail(int passiveAmount) {
-        this(passiveAmount, 1);
+
+        isBijuable = true;
     }
     public Tail(int passiveAmount, int evokeAmount) {
+        p = AbstractDungeon.player;
+
         this.evokeAmount = baseEvokeAmount = evokeAmount;
         this.passiveAmount = basePassiveAmount = passiveAmount;
 
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
-
-        p = AbstractDungeon.player;
     }
 
     @Override
@@ -67,10 +70,17 @@ public class Tail extends AbstractOrb {
 
     @Override
     public void applyFocus() {
+        AbstractPower power = AbstractDungeon.player.getPower(AsuraFormPower3.POWER_ID);
+        if (power != null) {
+            this.passiveAmount = Math.max(0, this.basePassiveAmount + power.amount);
+        } else {
+            this.passiveAmount = this.basePassiveAmount;
+        }
     }
 
     @Override
     public void onEvoke() {
+        AbstractDungeon.actionManager.addToBottom(new SFXAction(makeID("TAIL_EVOKE")));
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(evokeAmount));
     }
 
@@ -86,12 +96,11 @@ public class Tail extends AbstractOrb {
 
     @Override
     public void updateAnimation() {
-
         super.updateAnimation();
         //angle += Gdx.graphics.getDeltaTime() * 45.0f;
         vfxTimer -= Gdx.graphics.getDeltaTime();
         if (vfxTimer < 0.0f) {
-            AbstractDungeon.effectList.add(new DarkOrbPassiveEffect(cX, cY));
+            AbstractDungeon.effectList.add(new PlasmaOrbPassiveEffect(cX, cY));
             vfxTimer = MathUtils.random(vfxIntervalMin, vfxIntervalMax);
         }
     }
@@ -110,12 +119,13 @@ public class Tail extends AbstractOrb {
 
     @Override
     public void triggerEvokeAnimation() {
-        AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
+        CardCrawlGame.sound.play(makeID("TAIL_EVOKE"), 0.1f);
+        AbstractDungeon.effectsQueue.add(new PlasmaOrbActivateEffect(cX, cY));
     }
 
     @Override
     public void playChannelSFX() {
-        CardCrawlGame.sound.play("ATTACK_FIRE", 0.1f);
+        CardCrawlGame.sound.play(makeID("TAIL_CHANNEL"), 0.1f);
     }
 
     @Override

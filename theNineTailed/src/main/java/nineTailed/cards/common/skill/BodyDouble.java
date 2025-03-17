@@ -12,21 +12,22 @@ import static nineTailed.NarutoMod.makeID;
 
 public class BodyDouble extends AbstractDynamicCard {
     public final static String ID = makeID(BodyDouble.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("BodyDouble.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public BodyDouble() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 5;
+        baseBlock = block = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        block();
         block();
         addToBot(new BodyDoubleAction(1));
     }
@@ -39,7 +40,7 @@ public class BodyDouble extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(1);
             initializeDescription();
         }
     }

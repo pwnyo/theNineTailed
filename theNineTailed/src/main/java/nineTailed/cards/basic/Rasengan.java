@@ -1,6 +1,7 @@
 package nineTailed.cards.basic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.characters.NineTailed;
@@ -25,6 +26,7 @@ public class Rasengan extends AbstractRasengan {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction(makeID("RASEN"), 0.1F));
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 

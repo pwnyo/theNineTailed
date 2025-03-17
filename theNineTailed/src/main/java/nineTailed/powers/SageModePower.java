@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.stances.CalmStance;
 import nineTailed.NarutoMod;
+import nineTailed.characters.NineTailed;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makePowerPath;
@@ -27,8 +27,8 @@ public class SageModePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("sage84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("sage32.png"));
 
     public SageModePower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -53,6 +53,20 @@ public class SageModePower extends AbstractPower {
             AbstractPlayer p = AbstractDungeon.player;
             addToTop(new ApplyPowerAction(p, p, new MantraPower(p, amount)));
             addToTop(new ScryAction(amount));
+        }
+    }
+
+    @Override
+    public void onInitialApplication() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).checkAnimation();
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).checkAnimation();
         }
     }
 

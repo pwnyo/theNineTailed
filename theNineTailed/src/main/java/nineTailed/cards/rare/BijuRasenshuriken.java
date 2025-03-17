@@ -2,6 +2,7 @@ package nineTailed.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,14 +14,14 @@ import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Tail;
 import nineTailed.patches.CustomTags;
-import nineTailed.patches.IOrbListener;
+import nineTailed.patches.IOrbListenerCard;
 
 import java.util.ArrayList;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
-public class BijuRasenshuriken extends AbstractDynamicCard implements IOrbListener {
+public class BijuRasenshuriken extends AbstractDynamicCard implements IOrbListenerCard {
     public final static String ID = makeID(BijuRasenshuriken.class.getSimpleName());
     public static final String IMG = makeCardPath("BijuRasenshuriken.png");
 
@@ -55,6 +56,7 @@ public class BijuRasenshuriken extends AbstractDynamicCard implements IOrbListen
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractGameAction.AttackEffect> effects = getBijuAttackEffects();
+        addToBot(new SFXAction(makeID("RASENSHURIKEN"), 0.1F));
         for (int i = 0; i < magicNumber; i++) {
             addToBot(new DamageRandomEnemyAction(new DamageInfo(p, damage), effects.get(i)));
         }
@@ -77,11 +79,6 @@ public class BijuRasenshuriken extends AbstractDynamicCard implements IOrbListen
     }
 
     @Override
-    public void onEvoke(AbstractOrb o) {
-
-    }
-
-    @Override
     public void onGainOrbSlot() {
 
     }
@@ -92,7 +89,7 @@ public class BijuRasenshuriken extends AbstractDynamicCard implements IOrbListen
     }
 
     @Override
-    public void onRemoveOrb() {
+    public void onEvokeAndLoseOrRemove() {
 
     }
     public ArrayList<AbstractGameAction.AttackEffect> getBijuAttackEffects() {

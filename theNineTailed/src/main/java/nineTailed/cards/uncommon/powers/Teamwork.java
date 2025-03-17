@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Teamwork extends AbstractDynamicCard {
     public final static String ID = makeID(Teamwork.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Teamwork.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

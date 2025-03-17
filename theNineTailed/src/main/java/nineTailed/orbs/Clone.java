@@ -26,6 +26,7 @@ import nineTailed.NarutoMod;
 import nineTailed.patches.IOrbListenerOrb;
 import nineTailed.util.TextureLoader;
 
+import static nineTailed.NarutoMod.makeID;
 import static nineTailed.NarutoMod.makeOrbPath;
 
 public class Clone extends AbstractOrb implements IOrbListenerOrb {
@@ -91,15 +92,15 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
     @Override
     public void onEvoke() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -passiveAmount)));
         if (evokeAmount > 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VigorPower(p, evokeAmount)));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, evokeAmount));
         }
     }
+
     @Override
     public void triggerEvokeAnimation() {
+        CardCrawlGame.sound.play(makeID("CLONE_EVOKE"), 0.1f);
         AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
     }
 
@@ -119,10 +120,6 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
     public void render(SpriteBatch sb) {
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, 1.0f));
         sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 108.0f, 108.0f, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, 0, 0, 0, 108, 108, false, false);
-        //sb.setColor(new Color(1.0f, 1.0f, 1.0f, this.c.a / 2.0f));
-        //sb.setBlendFunction(770, 1);
-        //sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f, 96.0f, scale, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, -angle, 0, 0, 96, 96, false, false);
-        //sb.setBlendFunction(770, 771);
         renderText(sb);
         hb.render(sb);
     }
@@ -133,7 +130,7 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
 
     @Override
     public void playChannelSFX() {
-        CardCrawlGame.sound.play("ATTACK_MAGIC_FAST_1", 0.1f);
+        CardCrawlGame.sound.play(makeID("CLONE_CHANNEL"), 0.1f);
     }
 
     @Override
@@ -142,9 +139,13 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
     }
 
     @Override
-    public void onRemoveOrb() {
+    public void onEvokeAndLoseOrRemove() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -passiveAmount)));
+    }
+    @Override
+    public void onLoseOrbSlot() {
+
     }
 }

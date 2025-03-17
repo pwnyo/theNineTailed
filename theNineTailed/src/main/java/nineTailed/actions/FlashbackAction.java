@@ -1,7 +1,7 @@
 package nineTailed.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,32 +24,28 @@ public class FlashbackAction extends AbstractGameAction {
             this.isDone = true;
         } else {
             if (this.duration == Settings.ACTION_DUR_FASTER) {
-                if (this.p.discardPile.isEmpty()) {
+                if (this.p.discardPile.size() <= 1) {
+                    if (this.p.discardPile.size() == 1) {
+                        AbstractCard tmp = this.p.discardPile.getTopCard();
+                        addToTop(new MakeTempCardInDrawPileAction(tmp.makeStatEquivalentCopy(), 1, true, true));
+                    }
                     this.isDone = true;
-                    return;
                 }
-
-                if (this.p.discardPile.size() == 1) {
-                    AbstractCard tmp = this.p.discardPile.getTopCard();
-                    this.p.discardPile.moveToDeck(tmp.makeStatEquivalentCopy(), false);
-                }
-
-                if (this.p.discardPile.group.size() > this.amount) {
+                else {
                     AbstractDungeon.gridSelectScreen.open(this.p.discardPile, 1, uiStrings.TEXT[0], false, false, false, false);
                     this.tickDuration();
-                    return;
                 }
+                return;
             }
 
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                    this.p.discardPile.moveToDeck(c.makeStatEquivalentCopy(), true);
+                    addToTop(new MakeTempCardInDrawPileAction(c.makeStatEquivalentCopy(), 1, true, true));
                 }
 
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 AbstractDungeon.player.hand.refreshHandLayout();
             }
-
             this.tickDuration();
         }
     }

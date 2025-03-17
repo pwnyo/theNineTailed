@@ -1,6 +1,5 @@
 package nineTailed.relics.rarer;
 
-import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
@@ -9,21 +8,20 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.NarutoMod;
 import nineTailed.powers.UnderstandingPower;
 import nineTailed.util.TextureLoader;
 
-import static nineTailed.NarutoMod.*;
+import static nineTailed.NarutoMod.makeRelicOutlinePath;
+import static nineTailed.NarutoMod.makeRelicPath;
 
 public class BrokenMask extends CustomRelic implements BetterOnLoseHpRelic {
     // ID, images, text.
     public static final String ID = NarutoMod.makeID(BrokenMask.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("shattered_mask.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("shattered_mask.png"));
     private static final int AMT = 2;
 
     public BrokenMask() {

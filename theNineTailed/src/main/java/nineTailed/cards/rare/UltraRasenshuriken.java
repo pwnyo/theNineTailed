@@ -1,9 +1,10 @@
 package nineTailed.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nineTailed.actions.UltraRasenshurikenAction;
+import nineTailed.actions.AutoplayRasenAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.patches.CustomTags;
@@ -29,8 +30,9 @@ public class UltraRasenshuriken extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction(makeID("RASENSHURIKEN"), 0.1F));
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HEAVY);
-        addToBot(new UltraRasenshurikenAction());
+        addToBot(new AutoplayRasenAction(true));
     }
 
     @Override

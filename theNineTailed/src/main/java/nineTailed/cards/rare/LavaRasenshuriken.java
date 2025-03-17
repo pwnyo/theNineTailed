@@ -2,6 +2,7 @@ package nineTailed.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
@@ -32,6 +33,7 @@ public class LavaRasenshuriken extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        addToBot(new SFXAction(makeID("RASENSHURIKEN"), 0.1F));
         addToBot(new ChannelAction(BijuTail.getRandomBijuTail()));
         if (upgraded) {
             addToBot(new ChannelAction(BijuTail.getRandomBijuTail()));

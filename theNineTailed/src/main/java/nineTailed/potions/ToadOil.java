@@ -1,5 +1,6 @@
 package nineTailed.potions;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,9 +21,10 @@ public class ToadOil extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public ToadOil() {
-        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.SNECKO, PotionColor.POISON);
+        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.EYE, PotionColor.POISON);
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
+        labOutlineColor = Color.ORANGE;
         isThrown = false;
     }
 

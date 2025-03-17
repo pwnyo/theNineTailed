@@ -14,8 +14,8 @@ public class Habanero extends CustomRelic {
     // ID, images, text.
     public static final String ID = NarutoMod.makeID(Habanero.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("habanero.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("habanero.png"));
 
     public Habanero() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);

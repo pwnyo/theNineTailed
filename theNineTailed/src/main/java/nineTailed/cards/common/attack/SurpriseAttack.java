@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class SurpriseAttack extends AbstractDynamicCard {
     public final static String ID = makeID(SurpriseAttack.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("SurpriseAttack.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

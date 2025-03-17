@@ -11,7 +11,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Stampede extends AbstractDynamicCard {
     public final static String ID = makeID(Stampede.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Stampede.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

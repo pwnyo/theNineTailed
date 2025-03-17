@@ -7,9 +7,11 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nineTailed.NarutoMod;
+import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Tail;
 import nineTailed.util.TextureLoader;
 
@@ -23,8 +25,8 @@ public class KuramaModePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("kurama84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("kurama32.png"));
 
     public KuramaModePower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -54,6 +56,20 @@ public class KuramaModePower extends AbstractPower {
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+    }
+
+    @Override
+    public void onInitialApplication() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).checkAnimation();
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).checkAnimation();
+        }
     }
 
     public void updateDescription() {

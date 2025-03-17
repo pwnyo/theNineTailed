@@ -1,7 +1,6 @@
 package nineTailed.patches;
 
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-
 public interface IOrbListenerOrb {
-    void onRemoveOrb();
+    void onLoseOrbSlot();
+    void onEvokeAndLoseOrRemove();
 }

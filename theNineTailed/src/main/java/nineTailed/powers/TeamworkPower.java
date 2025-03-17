@@ -17,13 +17,13 @@ import static nineTailed.NarutoMod.makePowerPath;
 public class TeamworkPower extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = NarutoMod.makeID("TeamworkPowerPower");
+    public static final String POWER_ID = NarutoMod.makeID("TeamworkPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("teamwork84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("teamwork32.png"));
 
     public TeamworkPower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -53,9 +53,9 @@ public class TeamworkPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0];
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
     }
 }

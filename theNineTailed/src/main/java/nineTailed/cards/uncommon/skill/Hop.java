@@ -11,7 +11,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Hop extends AbstractDynamicCard {
     public final static String ID = makeID(Hop.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Hop.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

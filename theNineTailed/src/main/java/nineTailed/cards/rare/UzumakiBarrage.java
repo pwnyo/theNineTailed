@@ -1,10 +1,8 @@
 package nineTailed.cards.rare;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.ThunderStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,7 +27,7 @@ public class UzumakiBarrage extends AbstractDynamicCard {
 
     public UzumakiBarrage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 4;
+        baseDamage = damage = 5;
         baseMagicNumber = magicNumber = 0;
         isMultiDamage = true;
         exhaust = true;

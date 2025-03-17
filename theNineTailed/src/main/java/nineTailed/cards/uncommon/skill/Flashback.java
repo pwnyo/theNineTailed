@@ -12,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Flashback extends AbstractDynamicCard {
     public final static String ID = makeID(Flashback.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Flashback2.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

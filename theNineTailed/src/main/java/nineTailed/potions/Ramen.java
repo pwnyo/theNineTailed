@@ -1,5 +1,6 @@
 package nineTailed.potions;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,9 +21,10 @@ public class Ramen extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public Ramen() {
-        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.HEART, PotionColor.FIRE);
+        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.FRUIT);
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        labOutlineColor = Color.ORANGE;
         isThrown = false;
         tips.add(new PowerTip(name, description));
     }

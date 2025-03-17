@@ -1,0 +1,170 @@
+{
+        "nineTailed:ChakraPower": {
+                "NAME": "Chakra",
+                "DESCRIPTIONS": [
+                        "Whenever you obtain #b",
+                        " #yChakra, gain #b1 #yEnergy."
+                ]
+        },
+        "nineTailed:BijuTailPower": {
+                "NAME": "Gathering",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel a #yTail, #yChannel a #b",
+                        " #yTail instead."
+                ]
+        },
+        "nineTailed:AmphibiousModePower": {
+                "NAME": "Amphibious Mode",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, enter #yCalm."
+                ]
+        },
+        "nineTailed:GatheringPower": {
+                "NAME": "Gathering",
+                "DESCRIPTIONS": [
+                        "At the end of your turn, gain #b",
+                        " #yBlock for each #yChanneled #yTail."
+                ]
+        },
+        "nineTailed:NinshuPower": {
+                "NAME": "Ninshu",
+                "DESCRIPTIONS": [
+                        "At the end of your turn, lose #b",
+                        " HP and shuffle #b",
+                        " random #yPower into your draw pile.",
+                        " random #yPowers into your draw pile."
+                ]
+        },
+        "nineTailed:NextTurnMantraPower": {
+                "NAME": "Next Turn Mantra",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b",
+                        " #yMantra."
+                ]
+        },
+        "nineTailed:NextTurnExitPower": {
+                "NAME": "Next Turn Exit",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, exit your #yStance."
+                ]
+        },
+        "nineTailed:StrainPower": {
+                "NAME": "Strain",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, lose #b",
+                        " HP."
+                ]
+        },
+        "nineTailed:ProphecyPower": {
+                "NAME": "Prophecy",
+                "DESCRIPTIONS": [
+                        "Whenever you enter #yDivinity, draw #b",
+                        " card.",
+                        " cards."
+                ]
+        },
+        "nineTailed:SerialSpheresPower": {
+                "NAME": "Serial Spheres",
+                "DESCRIPTIONS": [
+                        "Whenever you draw a card containing \"Rasen\", draw #b",
+                        " card.",
+                        " cards."
+                ]
+        },
+        "nineTailed:SageModePower": {
+                "NAME": "Sage Mode",
+                "DESCRIPTIONS": [
+                        "Whenever you enter #yCalm, Scry #b",
+                        " and gain #b",
+                        " #yMantra."
+                ]
+        },
+        "nineTailed:KuramaModePower": {
+                "NAME": "Kurama Mode",
+                "DESCRIPTIONS": [
+                        "Whenever you play a #yPower, #yChannel #b",
+                        " #yTail.",
+                        " #yTails."
+                ]
+        },
+        "nineTailed:TeamworkPower": {
+                "NAME": "Teamwork",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, add #yFistbump into your hand.",
+                        "At the start of your turn, add #b",
+                        " copies of #yFistbump into your hand."
+                ]
+        },
+        "nineTailed:UnderstandingPower": {
+                "NAME": "Understanding",
+                "DESCRIPTIONS": [
+                        "At the start of its turn, forfeits the battle if HP is at or below #b",
+                        "."
+                ]
+        },
+        "nineTailed:UnpredictablePower": {
+                "NAME": "Unpredictable",
+                "DESCRIPTIONS": [
+                        "Whenever you discard a card from your hand, gain #b",
+                        " #yVigor and #yBlock."
+                ]
+        },
+        "nineTailed:BoilingStrengthPower": {
+                "NAME": "Boiling Strength",
+                "DESCRIPTIONS": [
+                        "Whenever you play a #yPower, gain #b",
+                        " #yStrength."
+                ]
+        },
+        "nineTailed:TouchPassPower": {
+                "NAME": "Touch Pass",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel a #yClone, draw #b",
+                        " card.",
+                        " cards."
+                ]
+        },
+        "nineTailed:OutnumberPower": {
+                "NAME": "Outnumber",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel #yClones, #yChannel #b",
+                        " more."
+                ]
+        },
+        "nineTailed:OutnumberPower2": {
+                "NAME": "Outnumber",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, #yChannel #b",
+                        " #yClone.",
+                        " #yClones."
+                ]
+        },
+        "nineTailed:AsuraFormPower": {
+                "NAME": "Asura Form",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel #yTails, #yChannel #b",
+                        " times as many."
+                ]
+        },
+        "nineTailed:AsuraFormPower2": {
+                "NAME": "Asura Form",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b",
+                        " #yOrb slot.",
+                        " #yOrb slots."
+                ]
+        },
+        "nineTailed:AsuraFormPower3": {
+                "NAME": "Asura Form",
+                "DESCRIPTIONS": [
+                        "#yTails gain #b",
+                        " more from their passive abilities."
+                ]
+        },
+        "nineTailed:NoEnergyOnStanceChangePower": {
+                "NAME": "Blessing",
+                "DESCRIPTIONS": [
+                        "You can't gain [E] from #yCalm or #yDivinity this turn."
+                ]
+        }
+}

@@ -26,7 +26,9 @@ public class AmphibiousMode extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AmphibiousModePower(p)));
+        if (!p.hasPower(AmphibiousModePower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(p, p, new AmphibiousModePower(p)));
+        }
     }
 
     @Override

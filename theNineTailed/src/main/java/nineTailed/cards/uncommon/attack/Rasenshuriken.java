@@ -32,13 +32,12 @@ public class Rasenshuriken extends AbstractRasengan {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        this.addToBot(new SFXAction("ATTACK_WHIRLWIND"));
-        this.addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
+        addToBot(new SFXAction(makeID("RASENSHURIKEN"), 0.1F));
+        addToBot(new VFXAction(new WhirlwindEffect(), 0.0F));
 
         for (int i = 0; i < magicNumber; i++) {
             dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-            this.addToBot(new SFXAction("ATTACK_HEAVY"));
+            addToBot(new SFXAction("ATTACK_HEAVY"));
         }
     }
 

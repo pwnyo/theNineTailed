@@ -1,12 +1,13 @@
 package nineTailed.potions;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.SkillPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nineTailed.NarutoMod;
 import nineTailed.orbs.Truthseeker;
@@ -21,6 +22,9 @@ public class YangVessel extends AbstractPotion {
 
     public YangVessel() {
         super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.SPHERE, PotionColor.WHITE);
+        potency = getPotency();
+        description = DESCRIPTIONS[0];
+        labOutlineColor = Color.ORANGE;
         isThrown = false;
     }
 
@@ -33,6 +37,8 @@ public class YangVessel extends AbstractPotion {
         else {
             this.description = potionStrings.DESCRIPTIONS[1] + potency + potionStrings.DESCRIPTIONS[2];
         }
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
     }
 
     @Override

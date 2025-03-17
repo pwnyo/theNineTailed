@@ -1,7 +1,6 @@
 package nineTailed.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,11 +12,12 @@ import nineTailed.powers.BijuTailPower;
 @SpirePatch(clz = AbstractPlayer.class, method = "channelOrb")
 public class BijuTailPatch {
     @SpirePrefixPatch
-    public static void replaceOrb(AbstractPlayer __player, @ByRef AbstractOrb orb[]) {
-        if (__player.hasPower(BijuTailPower.POWER_ID)) {
+    public static void replaceOrb(AbstractPlayer __player, @ByRef AbstractOrb[] orb) {
+        AbstractOrb o = orb[0];
+        if (__player.hasPower(BijuTailPower.POWER_ID) &&
+                o != null && o.ID.equals(Tail.ORB_ID) && ((Tail) o).isBijuable) {
             int nextTail = __player.getPower(BijuTailPower.POWER_ID).amount;
-            int nextSlot = Math.min(__player.filledOrbCount() + 1, __player.maxOrbs);
-            switch (nextSlot) {
+            switch (nextTail) {
                 case 1:
                     orb[0] = new Tail1(); break;
                 case 2:
@@ -37,6 +37,7 @@ public class BijuTailPatch {
                 case 9:
                     orb[0] = new Tail(); break;
             }
+            ((Tail)orb[0]).isBijuable = true;
         }
     }
 }

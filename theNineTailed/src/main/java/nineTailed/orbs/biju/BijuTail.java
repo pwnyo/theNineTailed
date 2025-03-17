@@ -1,10 +1,7 @@
 package nineTailed.orbs.biju;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.defect.LightningOrbEvokeAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,7 +9,6 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nineTailed.NarutoMod;
 import nineTailed.orbs.Tail;
-import nineTailed.powers.ChakraPower;
 import nineTailed.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -21,15 +17,16 @@ import static nineTailed.NarutoMod.makeOrbPath;
 
 public abstract class BijuTail extends Tail {
     private final OrbStrings orbString;
-    private final String[] DESC;
+    protected final String[] DESC;
 
-    public BijuTail(String orbId, String imgPath) {
-        this(1, orbId, imgPath);
-    }
     public BijuTail(int passiveAmount, String orbId, String imgPath) {
-        super(passiveAmount);
+        this(passiveAmount, 1, orbId, imgPath);
+    }
+
+    public BijuTail(int passiveAmount, int evokeAmount, String orbId, String imgPath) {
+        super(passiveAmount, evokeAmount);
         ID =  NarutoMod.makeID(orbId);
-        img = TextureLoader.getTexture(makeOrbPath(imgPath));
+        img = TextureLoader.getTexture(makeOrbPath(imgPath + ".png"));
 
         orbString = CardCrawlGame.languagePack.getOrbString(ID);
         DESC = orbString.DESCRIPTION;

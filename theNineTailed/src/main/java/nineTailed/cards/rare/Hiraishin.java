@@ -1,9 +1,8 @@
 package nineTailed.cards.rare;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nineTailed.actions.HiraishinAction;
+import nineTailed.actions.HiraishinMarkAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.cards.temp.FlyingRaijin;
 import nineTailed.characters.NineTailed;
@@ -29,7 +28,7 @@ public class Hiraishin extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new HiraishinAction());
+        addToBot(new HiraishinMarkAction());
     }
 
     @Override

@@ -7,27 +7,25 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nineTailed.cards.AbstractDynamicCard;
-import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Tail;
-import nineTailed.patches.IOrbListener;
-
-import java.awt.*;
+import nineTailed.patches.IOrbListenerCard;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
-public class MajesticAttire extends AbstractDynamicCard implements IOrbListener {
+public class MajesticAttire extends AbstractDynamicCard implements IOrbListenerCard {
     public final static String ID = makeID(MajesticAttire.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("MajesticAttire.png");
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 4;
+    private static final int COST = 5;
 
     public MajesticAttire() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -49,6 +47,7 @@ public class MajesticAttire extends AbstractDynamicCard implements IOrbListener 
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1)));
         addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber)));
     }
 
@@ -69,11 +68,6 @@ public class MajesticAttire extends AbstractDynamicCard implements IOrbListener 
     }
 
     @Override
-    public void onEvoke(AbstractOrb o) {
-
-    }
-
-    @Override
     public void onGainOrbSlot() {
 
     }
@@ -84,7 +78,7 @@ public class MajesticAttire extends AbstractDynamicCard implements IOrbListener 
     }
 
     @Override
-    public void onRemoveOrb() {
+    public void onEvokeAndLoseOrRemove() {
 
     }
 }

@@ -13,7 +13,6 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -67,15 +66,11 @@ public class NarutoMod implements
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = true;
     
-    private static final String MODNAME = "Naruto";
+    private static final String MODNAME = "The Nine-Tailed";
     private static final String AUTHOR = "Pwnyo";
-    private static final String DESCRIPTION = "Naruto, from the eponymous series.";
+    private static final String DESCRIPTION = "Adds Naruto to the game. Features ~80 new cards, 11 new relics, and 3 new potions.";
     
-    public static final Color ORANGE = CardHelper.getColor(80.0f, 16.0f, 16.0f);
-    
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f);
-    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f);
-    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f);
+    public static final Color ORANGE = CardHelper.getColor(235.0f, 127.0f, 20.0f);
     
     private static final String ATTACK_NARUTO_ORANGE = "nineTailedResources/images/512/bg_attack_naruto.png";
     private static final String SKILL_NARUTO_ORANGE = "nineTailedResources/images/512/bg_skill_naruto.png";
@@ -89,16 +84,17 @@ public class NarutoMod implements
     private static final String POWER_NARUTO_ORANGE_PORTRAIT = "nineTailedResources/images/1024/bg_power_naruto.png";
     private static final String ENERGY_ORB_NARUTO_ORANGE_PORTRAIT = "nineTailedResources/images/1024/card_naruto_energy.png";
     
-    private static final String THE_DEFAULT_BUTTON = "nineTailedResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "nineTailedResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "nineTailedResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "nineTailedResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "nineTailedResources/images/char/defaultCharacter/corpse.png";
+    private static final String NARUTO_BUTTON = "nineTailedResources/images/charSelect/naruto_button.png";
+    private static final String NARUTO_PORTRAIT = "nineTailedResources/images/charSelect/naruto_big.png";
+    public static final String NARUTO_NORMAL = "nineTailedResources/images/char/naruto/naruto_normal.png";
+    public static final String NARUTO_SHOULDER_1 = "nineTailedResources/images/char/naruto/shoulder.png";
+    public static final String NARUTO_SHOULDER_2 = "nineTailedResources/images/char/naruto/shoulder.png";
+    public static final String NARUTO_CORPSE = "nineTailedResources/images/char/naruto/naruto_corpse.png";
     
     public static final String BADGE_IMAGE = "nineTailedResources/images/Badge.png";
     
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "nineTailedResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "nineTailedResources/images/char/defaultCharacter/skeleton.json";
+    public static final String NARUTO_ATLAS = "nineTailedResources/images/char/naruto/DragonBones/naruto.atlas";
+    public static final String NARUTO_JSON = "nineTailedResources/images/char/naruto/DragonBones/naruto.json";
 
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
@@ -213,7 +209,7 @@ public class NarutoMod implements
         logger.info("Beginning to edit characters. " + "Add " + NineTailed.Enums.NARUTO.toString());
         
         BaseMod.addCharacter(new NineTailed("the Default", NineTailed.Enums.NARUTO),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, NineTailed.Enums.NARUTO);
+                NARUTO_BUTTON, NARUTO_PORTRAIT, NineTailed.Enums.NARUTO);
         
         receiveEditPotions();
         logger.info("Added " + NineTailed.Enums.NARUTO.toString());
@@ -264,7 +260,7 @@ public class NarutoMod implements
         logger.info("Beginning to edit potions");
 
         BaseMod.addPotion(Ramen.class, Color.ORANGE, Color.YELLOW, Color.YELLOW, Ramen.POTION_ID, NineTailed.Enums.NARUTO);
-        BaseMod.addPotion(ToadOil.class, Color.GREEN, null, Color.CHARTREUSE, ToadOil.POTION_ID, NineTailed.Enums.NARUTO);
+        BaseMod.addPotion(ToadOil.class, Color.GREEN, Color.CHARTREUSE, null, ToadOil.POTION_ID, NineTailed.Enums.NARUTO);
         BaseMod.addPotion(YangVessel.class, Color.WHITE, Color.WHITE, null, YangVessel.POTION_ID, NineTailed.Enums.NARUTO);
         
         logger.info("Done editing potions");
@@ -330,35 +326,35 @@ public class NarutoMod implements
         
         
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Card-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Card-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Power-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Relic-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Event-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Potion-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Character-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-Orb-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-UI-Strings.json");
+                getModID() + "Resources/localization/eng/NarutoMod-UI-Strings.json");
 
         
         logger.info("Done edittting strings");
@@ -367,7 +363,7 @@ public class NarutoMod implements
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/NarutoMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {
@@ -376,25 +372,25 @@ public class NarutoMod implements
             }
         }
     }
-    
-    public static String makeID(String idText) {
-        return getModID() + ":" + idText;
-    }
-
-    public static String colorToString(AbstractCard.CardColor color) {
-        if (color == NineTailed.Enums.NARUTO_ORANGE) {
-            return "black";
-        }
-        String temp = color.toString().toLowerCase();
-        logger.info(temp);
-        return temp;
-    }
 
     @Override
     public void receiveAddAudio() {
-
+        addAudio("SUMMON", "summon");
+        addAudio("CLONE_CHANNEL", "clone_channel");
+        addAudio("CLONE_EVOKE", "clone_evoke");
+        addAudio("RAIJIN", "raijin");
+        addAudio("RASEN", "rasen");
+        addAudio("RASENSHURIKEN", "rasenshuriken");
+        addAudio("SUBSTITUTE", "substitute");
+        addAudio("TAIL_CHANNEL", "tail_channel");
+        addAudio("TAIL_EVOKE", "tail_evoke");
     }
     void addAudio(String audioKey, String fileName) {
-        BaseMod.addAudio(makeID(audioKey), "Resources/audio" + fileName + ".ogg");
+        logger.info("adding nineTailedResources/audio/" + fileName + ".ogg");
+        BaseMod.addAudio(makeID(audioKey), "nineTailedResources/audio/" + fileName + ".ogg");
     }
+
+    public static String makeID(String idText) {
+            return getModID() + ":" + idText;
+        }
 }

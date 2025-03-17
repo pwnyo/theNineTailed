@@ -1,6 +1,7 @@
 package nineTailed.cards.common.skill;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Substitution extends AbstractDynamicCard {
     public final static String ID = makeID(Substitution.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Substitution.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -27,11 +28,13 @@ public class Substitution extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction(makeID("SUBSTITUTE")));
         block();
     }
 
     @Override
     public void triggerOnManualDiscard() {
+        addToBot(new SFXAction(makeID("SUBSTITUTE")));
         addToBot(new GainBlockAction(AbstractDungeon.player, block));
     }
 

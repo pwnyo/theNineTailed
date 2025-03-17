@@ -11,7 +11,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Crowdsource extends AbstractDynamicCard {
     public final static String ID = makeID(Crowdsource.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Crowdsource.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -22,11 +22,12 @@ public class Crowdsource extends AbstractDynamicCard {
 
     public Crowdsource() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 5;
+        baseBlock = block = 3;
         baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        block();
         block();
         block();
         addToBot(new DrawCardAction(magicNumber));
@@ -36,7 +37,7 @@ public class Crowdsource extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(2);
+            upgradeBlock(1);
             initializeDescription();
         }
     }

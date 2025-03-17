@@ -1,12 +1,12 @@
 package nineTailed.orbs.biju;
 
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
-import com.megacrit.cardcrawl.powers.watcher.WaveOfTheHandPower;
 
 
 public class Tail8 extends BijuTail {
     public Tail8() {
-        super("Tail8", "tail-8");
+        super(1,"Tail8", "tail8");
     }
 
     @Override
@@ -16,5 +16,26 @@ public class Tail8 extends BijuTail {
     @Override
     public void onEndOfTurn() {
         gainPower(p, new DrawCardNextTurnPower(p, passiveAmount));
+    }
+
+    @Override
+    public void applyFocus() {
+        super.applyFocus();
+        updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        if (passiveAmount == 1) {
+            description = DESC[0];
+        }
+        else {
+            description = DESC[1] + passiveAmount + DESC[2];
+        }
+    }
+
+    @Override
+    public AbstractOrb makeCopy() {
+        return new Tail8();
     }
 }

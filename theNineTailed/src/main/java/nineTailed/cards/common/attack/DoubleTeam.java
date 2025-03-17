@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class DoubleTeam extends AbstractDynamicCard {
     public final static String ID = makeID(DoubleTeam.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("DoubleTeam.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

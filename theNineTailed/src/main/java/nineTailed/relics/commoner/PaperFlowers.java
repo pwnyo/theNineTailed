@@ -12,8 +12,8 @@ public class PaperFlowers extends CustomRelic {
     // ID, images, text.
     public static final String ID = NarutoMod.makeID(PaperFlowers.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("paper_flowers.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("paper_flowers.png"));
     private static final int AMOUNT = 8;
 
     public PaperFlowers() {

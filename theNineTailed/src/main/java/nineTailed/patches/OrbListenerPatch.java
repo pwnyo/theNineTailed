@@ -18,44 +18,30 @@ public class OrbListenerPatch {
         @SpireInsertPatch(loc=2904)
         public static void Insert(AbstractPlayer __p, AbstractOrb orb) {
             for (AbstractCard c : __p.hand.group) {
-                if (c instanceof IOrbListener) {
-                    ((IOrbListener) c).onChannel(orb);
+                if (c instanceof IOrbListenerCard) {
+                    ((IOrbListenerCard) c).onChannel(orb);
                 }
             }
             for (AbstractCard c : __p.discardPile.group) {
-                if (c instanceof IOrbListener) {
-                    ((IOrbListener) c).onChannel(orb);
+                if (c instanceof IOrbListenerCard) {
+                    ((IOrbListenerCard) c).onChannel(orb);
                 }
             }
             for (AbstractCard c : __p.drawPile.group) {
-                if (c instanceof IOrbListener) {
-                    ((IOrbListener) c).onChannel(orb);
+                if (c instanceof IOrbListenerCard) {
+                    ((IOrbListenerCard) c).onChannel(orb);
                 }
             }
         }
     }
 
-    @SpirePatch(clz = AbstractPower.class, method = "onEvokeOrb")
-    public static class OnEvoke {
-        @SpirePostfixPatch
-        public static void Postfix(AbstractPower __power, AbstractOrb orb) {
-            AbstractPlayer p = AbstractDungeon.player;
-
-            for (AbstractCard c : p.hand.group) {
-                if (c instanceof IOrbListener) {
-                    IOrbListener listener = (IOrbListener) c;
-                    listener.onEvoke(orb);
-                }
-            }
-        }
-    }
     @SpirePatch(clz = AbstractPlayer.class, method = "increaseMaxOrbSlots")
     public static class OnGainOrbSlot {
         @SpirePostfixPatch
         public static void Postfix(AbstractPlayer __player, int amount) {
             for (AbstractCard c : __player.hand.group) {
-                if (c instanceof IOrbListener) {
-                    IOrbListener listener = (IOrbListener) c;
+                if (c instanceof IOrbListenerCard) {
+                    IOrbListenerCard listener = (IOrbListenerCard) c;
                     listener.onGainOrbSlot();
                 }
             }
@@ -63,24 +49,43 @@ public class OrbListenerPatch {
     }
     @SpirePatch(clz = AbstractPlayer.class, method = "decreaseMaxOrbSlots")
     public static class OnLoseOrbSlot {
+        @SpirePrefixPatch
+        public static void Prefix(AbstractPlayer __player, int amount) {
+            if (amount > 0) {
+                int size = Math.min(__player.orbs.size(), amount);
+                for (int i = size - 1; i > amount; i--) {
+                    if (__player.orbs.get(i) instanceof IOrbListenerOrb) {
+                        IOrbListenerOrb listener = (IOrbListenerOrb)__player.orbs.get(0);
+                        listener.onEvokeAndLoseOrRemove();
+                    }
+                }
+            }
+        }
         @SpirePostfixPatch
         public static void Postfix(AbstractPlayer __player, int amount) {
             for (AbstractCard c : __player.hand.group) {
-                if (c instanceof IOrbListener) {
-                    IOrbListener listener = (IOrbListener) c;
+                if (c instanceof IOrbListenerCard) {
+                    IOrbListenerCard listener = (IOrbListenerCard) c;
                     listener.onLoseOrbSlot();
                 }
             }
         }
     }
+    @SpirePatch(clz = AbstractPlayer.class, method = "evokeOrb")
     @SpirePatch(clz = AbstractPlayer.class, method = "removeNextOrb")
-    public static class OnRemoveNextOrb {
+    public static class OnEvokeAndLoseOrRemove {
         @SpirePrefixPatch
         public static void Prefix(AbstractPlayer __player) {
             if (!__player.orbs.isEmpty() && !(__player.orbs.get(0) instanceof EmptyOrbSlot)) {
                 if (__player.orbs.get(0) instanceof IOrbListenerOrb) {
                     IOrbListenerOrb listener = (IOrbListenerOrb)__player.orbs.get(0);
-                    listener.onRemoveOrb();
+                    listener.onEvokeAndLoseOrRemove();
+                }
+            }
+            for (AbstractCard c : __player.hand.group) {
+                if (c instanceof IOrbListenerCard) {
+                    IOrbListenerCard listener = (IOrbListenerCard) c;
+                    listener.onEvokeAndLoseOrRemove();
                 }
             }
         }

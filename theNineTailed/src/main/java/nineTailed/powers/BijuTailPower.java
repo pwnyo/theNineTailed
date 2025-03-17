@@ -2,13 +2,11 @@ package nineTailed.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.actions.defect.TriggerPassiveAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.CorruptionPower;
 import nineTailed.NarutoMod;
 import nineTailed.orbs.Tail;
 import nineTailed.util.TextureLoader;
@@ -23,8 +21,8 @@ public class BijuTailPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("gathering84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("gathering32.png"));
 
     public BijuTailPower(final AbstractCreature owner) {
         name = NAME;
@@ -45,14 +43,23 @@ public class BijuTailPower extends AbstractPower {
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+    }
+
+    @Override
     public void onChannel(AbstractOrb orb) {
-        if (orb.ID.equals(Tail.ORB_ID)) {
+        if (!(orb instanceof Tail)) {
+            return;
+        }
+        Tail tail = (Tail)orb;
+        if (tail.isBijuable) {
             flash();
-            addToBot(new TriggerPassiveAction(orb));
             amount++;
-            if (amount % 10 == 0) {
+            if (amount >= 10) {
                 amount = 1;
             }
+            tail.isBijuable = false;
+            updateDescription();
         }
     }
 

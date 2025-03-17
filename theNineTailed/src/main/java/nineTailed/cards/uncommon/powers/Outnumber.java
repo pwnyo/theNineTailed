@@ -12,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class Outnumber extends AbstractDynamicCard {
     public final static String ID = makeID(Outnumber.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Outnumber.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

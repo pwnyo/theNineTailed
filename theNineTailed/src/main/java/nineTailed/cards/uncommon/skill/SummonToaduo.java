@@ -1,6 +1,7 @@
 package nineTailed.cards.uncommon.skill;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,6 +28,8 @@ public class SummonToaduo extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction(makeID("SUMMON")));
+        addToBot(new SFXAction(makeID("SUMMON")));
         AbstractCard one = NinshuPower.getAnyColorPower();
         AbstractCard two = NinshuPower.getAnyColorPower();
         addToBot(new MakeTempCardInHandAction(one, false));

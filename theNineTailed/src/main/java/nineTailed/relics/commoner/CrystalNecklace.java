@@ -1,27 +1,25 @@
 package nineTailed.relics.commoner;
 
-import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnChannelRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nineTailed.NarutoMod;
 import nineTailed.orbs.Tail;
 import nineTailed.util.TextureLoader;
 
-import static nineTailed.NarutoMod.*;
-import static nineTailed.NarutoMod.makeID;
+import static nineTailed.NarutoMod.makeRelicOutlinePath;
+import static nineTailed.NarutoMod.makeRelicPath;
 
 public class CrystalNecklace extends CustomRelic implements OnChannelRelic {
     // ID, images, text.
     public static final String ID = NarutoMod.makeID(CrystalNecklace.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("crystal_necklace.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("crystal_necklace.png"));
     private static final int AMT = 6;
 
     public CrystalNecklace() {

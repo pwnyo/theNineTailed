@@ -13,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 @AutoAdd.Ignore
 public class Tail3Choice extends AbstractDynamicCard {
     public final static String ID = makeID(Tail3Choice.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Tail3Choice.png");
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -37,9 +37,5 @@ public class Tail3Choice extends AbstractDynamicCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            initializeDescription();
-        }
     }
 }

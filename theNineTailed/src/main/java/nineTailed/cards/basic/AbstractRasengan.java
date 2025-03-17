@@ -8,10 +8,10 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.orbs.Clone;
 import nineTailed.patches.CustomTags;
-import nineTailed.patches.IOrbListener;
+import nineTailed.patches.IOrbListenerCard;
 
 @AutoAdd.Ignore
-public abstract class AbstractRasengan extends AbstractDynamicCard implements IOrbListener {
+public abstract class AbstractRasengan extends AbstractDynamicCard implements IOrbListenerCard {
 
     protected boolean isDiscounted = false;
     protected int discount = 1;
@@ -44,11 +44,9 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
     }
     @Override
     public void onChannel(AbstractOrb o) {
-        countOrbs();
-    }
-
-    @Override
-    public void onEvoke(AbstractOrb o) {
+        if (!(o instanceof Clone)) {
+            return;
+        }
         countOrbs();
     }
 
@@ -61,7 +59,7 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
     public void onGainOrbSlot() { }
 
     @Override
-    public void onRemoveOrb() { countOrbs(); }
+    public void onEvokeAndLoseOrRemove() { countOrbs(); }
 
     public void triggerWhenAddedToHand() {
         isDiscounted = false;

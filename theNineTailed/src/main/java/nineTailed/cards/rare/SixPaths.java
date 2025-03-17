@@ -12,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class SixPaths extends AbstractDynamicCard {
     public final static String ID = makeID(SixPaths.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SixPaths.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

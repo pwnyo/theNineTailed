@@ -4,7 +4,6 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import nineTailed.NarutoMod;
 import nineTailed.cards.temp.sasukeCollab.JetBlackGale;
 import nineTailed.cards.temp.sasukeCollab.MagnetRasengan;
@@ -20,8 +19,8 @@ public class RightHand extends CustomRelic {
     // ID, images, text.
     public static final String ID = NarutoMod.makeID(RightHand.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("right_hand.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("right_hand.png"));
 
     public RightHand() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);

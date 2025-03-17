@@ -1,0 +1,12 @@
+{
+  "nineTailed:FlashbackAction": {
+    "TEXT": [
+      "Choose a Card to Shuffle a Copy into Your Draw Pile."
+    ]
+  },
+  "nineTailed:HiraishinMarkAction": {
+    "TEXT": [
+      "Mark."
+    ]
+  }
+}

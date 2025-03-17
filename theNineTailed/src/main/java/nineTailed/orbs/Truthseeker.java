@@ -7,9 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.green.PiercingWail;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -23,17 +22,19 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import nineTailed.NarutoMod;
+import nineTailed.characters.NineTailed;
+import nineTailed.patches.IOrbListenerOrb;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makeOrbPath;
 
-public class Truthseeker extends AbstractOrb {
+public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
 
     public static final String ORB_ID = NarutoMod.makeID("Truthseeker");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
-    private static final Texture IMG = TextureLoader.getTexture(makeOrbPath("default_orb.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeOrbPath("truthseeker.png"));
 
     private float vfxTimer = 1.0f;
     private float vfxIntervalMin = 0.1f;
@@ -50,6 +51,8 @@ public class Truthseeker extends AbstractOrb {
         updateDescription();
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
+
+        checkPlayerAnimation();
     }
 
     @Override
@@ -68,6 +71,16 @@ public class Truthseeker extends AbstractOrb {
     public void onEvoke() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, evokeAmount)));
+    }
+
+    @Override
+    public void onLoseOrbSlot() {
+        checkPlayerAnimation();
+    }
+
+    @Override
+    public void onEvokeAndLoseOrRemove() {
+        checkPlayerAnimation();
     }
 
     @Override
@@ -125,5 +138,11 @@ public class Truthseeker extends AbstractOrb {
     @Override
     public AbstractOrb makeCopy() {
         return new Tail();
+    }
+
+    void checkPlayerAnimation() {
+        if (AbstractDungeon.player != null && AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).checkAnimation();
+        }
     }
 }

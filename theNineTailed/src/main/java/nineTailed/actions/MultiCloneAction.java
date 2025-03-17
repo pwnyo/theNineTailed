@@ -1,7 +1,7 @@
 package nineTailed.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -35,9 +35,15 @@ public class MultiCloneAction extends AbstractGameAction {
 
         if (effect > 0) {
             if (!AbstractDungeon.player.orbs.isEmpty()) {
-                AbstractOrb orb = AbstractDungeon.player.orbs.get(0);
-                if (!(orb instanceof EmptyOrbSlot)) {
-                    addToTop(new ChannelMultipleAction(orb));
+                AbstractOrb originalOrb = AbstractDungeon.player.orbs.get(0);
+                if (!(originalOrb instanceof EmptyOrbSlot)) {
+                    for (int i = 0; i < effect; i++) {
+                        AbstractOrb copy = originalOrb.makeCopy();
+                        copy.passiveAmount = originalOrb.passiveAmount;
+                        copy.evokeAmount = originalOrb.evokeAmount;
+                        copy.updateDescription();
+                        addToTop(new ChannelAction(copy));
+                    }
                 }
             }
 

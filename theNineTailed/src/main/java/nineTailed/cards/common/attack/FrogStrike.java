@@ -14,7 +14,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class FrogStrike extends AbstractDynamicCard {
     public final static String ID = makeID(FrogStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("FrogStrike.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

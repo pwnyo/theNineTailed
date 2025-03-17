@@ -1,6 +1,5 @@
 package nineTailed.cards.rare;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -38,6 +37,8 @@ public class Gathering extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            isInnate = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;;
             initializeDescription();
         }
     }

@@ -17,8 +17,8 @@ public class BullHorn extends CustomRelic {
     public static final String ID = NarutoMod.makeID(BullHorn.class.getSimpleName());
     private static final int BLOCK = 6;
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("bull_horn.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("bull_horn.png"));
 
     public BullHorn() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);

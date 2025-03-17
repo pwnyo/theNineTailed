@@ -12,7 +12,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class BeatUp extends AbstractDynamicCard {
     public final static String ID = makeID(BeatUp.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("BeatUp.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -1,12 +1,6 @@
 package nineTailed.cards.rare;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.blue.Blizzard;
-import com.megacrit.cardcrawl.cards.blue.ThunderStrike;
-import com.megacrit.cardcrawl.cards.green.Eviscerate;
-import com.megacrit.cardcrawl.cards.purple.Brilliance;
-import com.megacrit.cardcrawl.cards.purple.SpiritShield;
-import com.megacrit.cardcrawl.cards.red.BloodForBlood;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,12 +27,15 @@ public class TalkNoJutsu extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = 9;
         if (AbstractDungeon.player != null) {
             baseMagicNumber += AbstractDungeon.player.damagedThisCombat * 3;
+            magicNumber = baseMagicNumber;
+            isMagicNumberModified = magicNumber != 9;
         }
     }
 
     @Override
     public void tookDamage() {
-        magicNumber += 3;
+        baseMagicNumber += 3;
+        magicNumber = baseMagicNumber;
         isMagicNumberModified = magicNumber != 9;
     }
 

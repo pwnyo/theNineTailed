@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.DivinityStance;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
-import nineTailed.powers.LoseEnergyOnStanceChangePower;
+import nineTailed.powers.NoEnergyOnStanceChangePower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
@@ -28,7 +28,9 @@ public class Blessing extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new LoseEnergyOnStanceChangePower(p)));
+        if (!p.hasPower(NoEnergyOnStanceChangePower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(p, p, new NoEnergyOnStanceChangePower(p)));
+        }
         addToBot(new ChangeStanceAction(DivinityStance.STANCE_ID));
     }
 

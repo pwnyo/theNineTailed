@@ -21,15 +21,14 @@ public class AmphibiousModePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("amphibious84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("amphibious32.png"));
 
     public AmphibiousModePower(final AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-
         type = PowerType.BUFF;
         isTurnBased = false;
         amount = -1;

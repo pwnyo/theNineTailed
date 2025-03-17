@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import com.megacrit.cardcrawl.stances.CalmStance;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import nineTailed.NarutoMod;
 import nineTailed.util.TextureLoader;
@@ -19,8 +18,8 @@ public class RedScarf extends CustomRelic {
     // ID, images, text.
     public static final String ID = NarutoMod.makeID(RedScarf.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("red_scarf.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("red_scarf.png"));
 
     public RedScarf() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);

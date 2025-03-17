@@ -2,9 +2,8 @@ package nineTailed.cards.uncommon.skill;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
-import com.megacrit.cardcrawl.cards.purple.FearNoEvil;
-import com.megacrit.cardcrawl.cards.red.SpotWeakness;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
@@ -14,7 +13,7 @@ import static nineTailed.NarutoMod.makeID;
 
 public class SenseNegativity extends AbstractDynamicCard {
     public final static String ID = makeID(SenseNegativity.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SenseNegativity.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -33,6 +32,15 @@ public class SenseNegativity extends AbstractDynamicCard {
             addToBot(new ScryAction(2));
             addToBot(new DrawCardAction(magicNumber));
         }
+    }
+    public void triggerOnGlowCheck() {
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0) {
+                glow(true);
+                return;
+            }
+        }
+        glow(false);
     }
 
     @Override

@@ -1,9 +1,10 @@
 package nineTailed.cards.uncommon.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nineTailed.actions.PlanetaryRasenganAction;
+import nineTailed.actions.AutoplayRasenAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
 import nineTailed.patches.CustomTags;
@@ -29,8 +30,9 @@ public class PlanetaryRasengan extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction(makeID("RASEN"), 0.1F));
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
-        addToBot(new PlanetaryRasenganAction());
+        addToBot(new AutoplayRasenAction(false));
     }
 
     @Override

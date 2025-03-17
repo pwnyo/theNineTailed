@@ -22,9 +22,9 @@ public class FrogStrikeAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.stance.ID.equals(CalmStance.STANCE_ID)) {
+            addToTop(new ChangeStanceAction(NeutralStance.STANCE_ID));
+            addToTop(new NotStanceCheckAction(NeutralStance.STANCE_ID, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
             addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, amount, false)));
-            addToBot(new NotStanceCheckAction(NeutralStance.STANCE_ID, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
-            addToBot(new ChangeStanceAction(NeutralStance.STANCE_ID));
         } else {
             addToTop(new ChangeStanceAction(CalmStance.STANCE_ID));
         }

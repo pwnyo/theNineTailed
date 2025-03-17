@@ -1,7 +1,7 @@
 package nineTailed.characters;
 
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
+import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -13,17 +13,25 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 import nineTailed.NarutoMod;
 import nineTailed.cards.basic.Defend;
 import nineTailed.cards.basic.Rasengan;
 import nineTailed.cards.basic.ShadowClones;
 import nineTailed.cards.basic.Strike;
+import nineTailed.orbs.Truthseeker;
+import nineTailed.powers.KuramaModePower;
+import nineTailed.powers.SageModePower;
+import nineTailed.relics.boss.SpiralScroll;
 import nineTailed.relics.commoner.SealedScroll;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -59,40 +67,39 @@ public class NineTailed extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
 
     public static final String[] orbTextures = {
-            "nineTailedResources/images/char/defaultCharacter/orb/layer1.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer2.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer3.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer4.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer5.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer6.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer1d.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer2d.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer3d.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer4d.png",
-            "nineTailedResources/images/char/defaultCharacter/orb/layer5d.png",};
+            "nineTailedResources/images/char/naruto/orb/layer1.png",
+            "nineTailedResources/images/char/naruto/orb/layer2.png",
+            "nineTailedResources/images/char/naruto/orb/layer3.png",
+            "nineTailedResources/images/char/naruto/orb/layer4.png",
+            "nineTailedResources/images/char/naruto/orb/layer5.png",
+            "nineTailedResources/images/char/naruto/orb/layer6.png",
+            "nineTailedResources/images/char/naruto/orb/layer1d.png",
+            "nineTailedResources/images/char/naruto/orb/layer2d.png",
+            "nineTailedResources/images/char/naruto/orb/layer3d.png",
+            "nineTailedResources/images/char/naruto/orb/layer4d.png",
+            "nineTailedResources/images/char/naruto/orb/layer5d.png",};
+
+    private NarutoAnimState currentAnimState = NarutoAnimState.STANDARD;
     
     public NineTailed(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
-                "nineTailedResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "nineTailedResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                "nineTailedResources/images/char/naruto/orb/vfx.png", null,
+                new SpineAnimation(NARUTO_ATLAS, NARUTO_JSON, 1f));
         
         
-        initializeClass(null,
-                
-                THE_DEFAULT_SHOULDER_1,
-                THE_DEFAULT_SHOULDER_2,
-                THE_DEFAULT_CORPSE,
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
-        
-        
+        initializeClass(NARUTO_NORMAL,
+
+                NARUTO_SHOULDER_1,
+                NARUTO_SHOULDER_2,
+                NARUTO_CORPSE,
+                getLoadout(), 0.0F, 0.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
+
         loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
-                1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+                NARUTO_ATLAS,
+                NARUTO_JSON,
+                1.2F);
+        AnimationState.TrackEntry e = state.setAnimation(0, "standard", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-        
         
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
@@ -137,14 +144,13 @@ public class NineTailed extends CustomPlayer {
     
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("GHOST_ORB_IGNITE_1", 1.25f);
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
-                false);
+        CardCrawlGame.sound.playA(makeID("CLONE_CHANNEL"), MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT,true);
     }
     
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "POWER_FOCUS";
+        return makeID("CLONE_CHANNEL");
     }
     
     @Override
@@ -215,5 +221,95 @@ public class NineTailed extends CustomPlayer {
     @Override
     public String getVampireText() {
         return TEXT[2];
+    }
+
+    @Override
+    public void applyStartOfCombatPreDrawLogic() {
+        super.applyStartOfCombatPreDrawLogic();
+
+        //Chakra Mode
+        if (hasRelic(SpiralScroll.ID)) {
+            updateAnimation(NarutoAnimState.CHAKRA);
+        }
+        //Normal
+        else {
+            updateAnimation(NarutoAnimState.STANDARD);
+        }
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        //Chakra Mode
+        if (hasRelic(SpiralScroll.ID)) {
+            updateAnimation(NarutoAnimState.CHAKRA);
+        }
+        //Normal
+        else {
+            updateAnimation(NarutoAnimState.STANDARD);
+        }
+    }
+
+    public void updateAnimation(NarutoAnimState animState) {
+        if (currentAnimState != animState) {
+            String animName;
+            switch (animState) {
+                case SAGE: animName = "sage"; break;
+                case CHAKRA: animName = "chakra"; break;
+                case KURAMA: animName = "kurama"; break;
+                case SIXPATHS: animName = "sixpaths"; break;
+                default: animName = "standard";
+            }
+            if (animState == NarutoAnimState.SAGE) {
+                AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SKY, true));
+            }
+            else if (animState != NarutoAnimState.STANDARD) {
+                AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SCARLET, true));// 76
+                AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, "Wrath"));
+            }
+            state.clearTrack(0);
+            state.setAnimation(0, animName, true);
+        }
+    }
+
+    public void checkAnimation() {
+        //Six Paths
+        if (!orbs.isEmpty()) {
+            for (AbstractOrb o : orbs) {
+                if (o instanceof Truthseeker) {
+                    updateAnimation(NarutoAnimState.SIXPATHS);
+                    return;
+                }
+            }
+        }
+
+        //Six Paths
+        boolean hasKurama = hasPower(KuramaModePower.POWER_ID);
+        boolean hasSage = hasPower(SageModePower.POWER_ID);
+        if (hasKurama && hasSage) {
+            updateAnimation(NarutoAnimState.SIXPATHS);
+        }
+        //Kurama Mode
+        else if (hasKurama) {
+            updateAnimation(NarutoAnimState.KURAMA);
+        }
+        //Sage Mode
+        else if (hasSage) {
+            updateAnimation(NarutoAnimState.SAGE);
+        }
+        //Chakra Mode
+        else if (hasRelic(SpiralScroll.ID)) {
+            updateAnimation(NarutoAnimState.CHAKRA);
+        }
+        else {
+            updateAnimation(NarutoAnimState.STANDARD);
+        }
+    }
+    public enum NarutoAnimState {
+        STANDARD,
+        SAGE,
+        CHAKRA,
+        KURAMA,
+        SIXPATHS,
     }
 }

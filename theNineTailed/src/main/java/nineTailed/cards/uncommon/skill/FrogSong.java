@@ -1,8 +1,9 @@
 package nineTailed.cards.uncommon.skill;
 
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.CalmStance;
 import nineTailed.actions.FrogSongAction;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
@@ -28,6 +29,11 @@ public class FrogSong extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new FrogSongAction(magicNumber));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        glow(AbstractDungeon.player.stance.ID.equals(CalmStance.STANCE_ID));
     }
 
     @Override
