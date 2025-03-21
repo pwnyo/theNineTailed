@@ -6,8 +6,22 @@
     <groupId>nineTailed</groupId>
     <artifactId>TheNineTailed</artifactId>
     <name>The Nine-Tailed</name>
-    <version>0.1.0</version>
-    <description>Adds Naruto.</description>
+    <version>1.0.0</version>
+    <description>Initial release!
+        \n
+        Check out the Discord server to follow other projects or help with this one: https://discord.gg/5yHdGUhrct
+        \n
+        Adds Naruto into the game. Features 80+ new cards, 11 relics, and 3 potions!
+        The number one hyperactive, knuckle-head ninja.\n
+        Major themes:
+        - Clones
+        - Tails
+        - Powers
+        - Discard
+        - Rasen
+        - Understanding
+        - Calm and Divinity
+    </description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

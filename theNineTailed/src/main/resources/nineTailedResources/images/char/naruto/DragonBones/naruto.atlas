@@ -1,0 +1,146 @@
+
+naruto.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+naruto03
+  rotate: false
+  xy: 275, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto12
+  rotate: false
+  xy: 1, 645
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto16
+  rotate: false
+  xy: 823, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto06
+  rotate: false
+  xy: 823, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto11
+  rotate: false
+  xy: 549, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto14
+  rotate: false
+  xy: 1371, 645
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto02
+  rotate: false
+  xy: 1645, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto17
+  rotate: false
+  xy: 1, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto19
+  rotate: false
+  xy: 1097, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto01
+  rotate: false
+  xy: 1097, 645
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto15
+  rotate: false
+  xy: 1371, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto18
+  rotate: false
+  xy: 1645, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto08
+  rotate: false
+  xy: 549, 645
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto10
+  rotate: false
+  xy: 1, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto05
+  rotate: false
+  xy: 823, 645
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto13
+  rotate: false
+  xy: 549, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto04
+  rotate: false
+  xy: 275, 645
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto09
+  rotate: false
+  xy: 275, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto20
+  rotate: false
+  xy: 1097, 323
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
+naruto07
+  rotate: false
+  xy: 1371, 1
+  size: 272, 320
+  orig: 272, 320
+  offset: 0, 0
+  index: -1
