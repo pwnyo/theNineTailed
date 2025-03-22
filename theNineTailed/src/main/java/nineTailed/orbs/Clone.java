@@ -144,6 +144,7 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -passiveAmount)));
     }
+
     @Override
     public void onLoseOrbSlot() {
 

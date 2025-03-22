@@ -20,17 +20,19 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.stances.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.EmptyStanceEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 import nineTailed.NarutoMod;
 import nineTailed.cards.basic.Defend;
 import nineTailed.cards.basic.Rasengan;
 import nineTailed.cards.basic.ShadowClones;
 import nineTailed.cards.basic.Strike;
+import nineTailed.orbs.Tail;
 import nineTailed.orbs.Truthseeker;
-import nineTailed.powers.KuramaModePower;
-import nineTailed.powers.SageModePower;
+import nineTailed.powers.*;
 import nineTailed.relics.boss.SpiralScroll;
 import nineTailed.relics.commoner.SealedScroll;
 import org.apache.logging.log4j.LogManager;
@@ -79,7 +81,8 @@ public class NineTailed extends CustomPlayer {
             "nineTailedResources/images/char/naruto/orb/layer4d.png",
             "nineTailedResources/images/char/naruto/orb/layer5d.png",};
 
-    private NarutoAnimState currentAnimState = NarutoAnimState.STANDARD;
+    private NarutoAnimState currentAnimState = NarutoAnimState.NORMAL;
+    private AbstractStance prevStance;
     
     public NineTailed(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
@@ -103,6 +106,8 @@ public class NineTailed extends CustomPlayer {
         
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
+
+        prevStance = new NeutralStance();
     }
     
     @Override
@@ -224,92 +229,127 @@ public class NineTailed extends CustomPlayer {
     }
 
     @Override
+    public void channelOrb(AbstractOrb orbToSet) {
+        super.channelOrb(orbToSet);
+        if (orbToSet instanceof Truthseeker) {
+            trySetAnimation(NarutoAnimState.SIXPATHS);
+        }
+        else if (orbToSet instanceof Tail && hasRelic(SpiralScroll.ID)
+                && (currentAnimState == NarutoAnimState.SAGE || currentAnimState == NarutoAnimState.NORMAL))
+        {
+            trySetAnimation(NarutoAnimState.CHAKRA);
+        }
+    }
+
+    @Override
+    public void onStanceChange(String id) {
+        if (id.equals(DivinityStance.STANCE_ID)) {
+            trySetAnimation(NarutoAnimState.SIXPATHS);
+            return;
+        }
+        if (id.equals(WrathStance.STANCE_ID)
+                && (currentAnimState == NarutoAnimState.SAGE || currentAnimState == NarutoAnimState.NORMAL))
+        {
+            trySetAnimation(NarutoAnimState.CHAKRA);
+        }
+        else if (prevStance.ID.equals(CalmStance.STANCE_ID)
+                && (currentAnimState == NarutoAnimState.CHAKRA || currentAnimState == NarutoAnimState.NORMAL))
+        {
+            trySetAnimation(NarutoAnimState.SAGE);
+        }
+        else {
+            recheckAnimation();
+        }
+    }
+    @Override
     public void applyStartOfCombatPreDrawLogic() {
         super.applyStartOfCombatPreDrawLogic();
 
-        //Chakra Mode
-        if (hasRelic(SpiralScroll.ID)) {
-            updateAnimation(NarutoAnimState.CHAKRA);
-        }
-        //Normal
-        else {
-            updateAnimation(NarutoAnimState.STANDARD);
-        }
+        trySetAnimation(getBaseAnim());
     }
 
     @Override
     public void onVictory() {
         super.onVictory();
-        //Chakra Mode
-        if (hasRelic(SpiralScroll.ID)) {
-            updateAnimation(NarutoAnimState.CHAKRA);
-        }
-        //Normal
-        else {
-            updateAnimation(NarutoAnimState.STANDARD);
-        }
+        trySetAnimation(NarutoAnimState.NORMAL);
     }
-
-    public void updateAnimation(NarutoAnimState animState) {
-        if (currentAnimState != animState) {
+    public void trySetAnimation(NarutoAnimState newAnimState) {
+        if (currentAnimState != newAnimState) {
             String animName;
-            switch (animState) {
+            switch (newAnimState) {
                 case SAGE: animName = "sage"; break;
                 case CHAKRA: animName = "chakra"; break;
                 case KURAMA: animName = "kurama"; break;
                 case SIXPATHS: animName = "sixpaths"; break;
                 default: animName = "standard";
             }
-            if (animState == NarutoAnimState.SAGE) {
+            if (newAnimState == NarutoAnimState.NORMAL) {
+                AbstractDungeon.effectsQueue.add(new EmptyStanceEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY));
+            }
+            else if (newAnimState == NarutoAnimState.SAGE) {
+                CardCrawlGame.sound.play("STANCE_ENTER_CALM");
                 AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SKY, true));
             }
-            else if (animState != NarutoAnimState.STANDARD) {
-                AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SCARLET, true));// 76
+            else {
+                CardCrawlGame.sound.play("STANCE_ENTER_WRATH");
+                AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SCARLET, true));
                 AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, "Wrath"));
             }
+            currentAnimState = newAnimState;
             state.clearTrack(0);
             state.setAnimation(0, animName, true);
         }
     }
 
-    public void checkAnimation() {
-        //Six Paths
+    public void recheckAnimation() {
+        if (isSixPaths()) {
+            trySetAnimation(NarutoAnimState.SIXPATHS);
+        }
+        else if (isKurama()) {
+            trySetAnimation(NarutoAnimState.KURAMA);
+        }
+        else if (hasPower(SageModePower.POWER_ID)) {
+            trySetAnimation(NarutoAnimState.SAGE);
+        }
+        else if (hasRelic(SpiralScroll.ID) || stance.ID.equals(WrathStance.STANCE_ID)) {
+            trySetAnimation(NarutoAnimState.CHAKRA);
+        }
+        else {
+            trySetAnimation(NarutoAnimState.NORMAL);
+        }
+    }
+    NarutoAnimState getBaseAnim() {
+        if (hasRelic(SpiralScroll.ID)) {
+            return NarutoAnimState.CHAKRA;
+        }
+        else {
+            return NarutoAnimState.NORMAL;
+        }
+    }
+    boolean isSixPaths() {
+        if (stance.ID.equals(DivinityStance.STANCE_ID)) {
+            return true;
+        }
         if (!orbs.isEmpty()) {
             for (AbstractOrb o : orbs) {
                 if (o instanceof Truthseeker) {
-                    updateAnimation(NarutoAnimState.SIXPATHS);
-                    return;
+                    trySetAnimation(NarutoAnimState.SIXPATHS);
+                    return true;
                 }
             }
         }
-
-        //Six Paths
-        boolean hasKurama = hasPower(KuramaModePower.POWER_ID);
         boolean hasSage = hasPower(SageModePower.POWER_ID);
-        if (hasKurama && hasSage) {
-            updateAnimation(NarutoAnimState.SIXPATHS);
-        }
-        //Kurama Mode
-        else if (hasKurama) {
-            updateAnimation(NarutoAnimState.KURAMA);
-        }
-        //Sage Mode
-        else if (hasSage) {
-            updateAnimation(NarutoAnimState.SAGE);
-        }
-        //Chakra Mode
-        else if (hasRelic(SpiralScroll.ID)) {
-            updateAnimation(NarutoAnimState.CHAKRA);
-        }
-        else {
-            updateAnimation(NarutoAnimState.STANDARD);
-        }
+        return hasSage && isKurama();
+    }
+    boolean isKurama() {
+        return hasPower(KuramaModePower.POWER_ID) || hasPower(TeamworkPower.POWER_ID) || hasPower(BijuTailPower.POWER_ID);
     }
     public enum NarutoAnimState {
-        STANDARD,
-        SAGE,
-        CHAKRA,
-        KURAMA,
-        SIXPATHS,
+        NORMAL, //default when no other condition is met
+        SAGE, //1) Sage Mode power or 2) after you exit Calm
+        CHAKRA, //1) Spiral Scroll relic default or 2) after you enter Wrath
+        //these next two modes take priority
+        KURAMA, //1) Kurama Mode power, 2) Teamwork power, 3) Gathering power
+        SIXPATHS, //1) After you Channel a Truthseeker, 2) you gain Sage Mode AND Kurama Mode, 3) after you enter Divinity
     }
 }

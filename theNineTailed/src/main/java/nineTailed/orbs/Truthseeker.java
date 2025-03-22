@@ -51,8 +51,6 @@ public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
         updateDescription();
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
-
-        checkPlayerAnimation();
     }
 
     @Override
@@ -71,16 +69,6 @@ public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
     public void onEvoke() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, evokeAmount)));
-    }
-
-    @Override
-    public void onLoseOrbSlot() {
-        checkPlayerAnimation();
-    }
-
-    @Override
-    public void onEvokeAndLoseOrRemove() {
-        checkPlayerAnimation();
     }
 
     @Override
@@ -140,9 +128,19 @@ public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
         return new Tail();
     }
 
+    @Override
+    public void onLoseOrbSlot() {
+        checkPlayerAnimation();
+    }
+
+    @Override
+    public void onEvokeAndLoseOrRemove() {
+        checkPlayerAnimation();
+    }
+
     void checkPlayerAnimation() {
-        if (AbstractDungeon.player != null && AbstractDungeon.player instanceof NineTailed) {
-            ((NineTailed) AbstractDungeon.player).checkAnimation();
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
         }
     }
 }

@@ -2,7 +2,6 @@ package nineTailed.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -12,10 +11,10 @@ import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makePowerPath;
 
-public class AsuraFormPower2 extends AbstractPower {
+public class AsuraFormPowerOld extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = NarutoMod.makeID("AsuraFormPower2");
+    public static final String POWER_ID = NarutoMod.makeID("AsuraFormPowerOld");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -23,13 +22,12 @@ public class AsuraFormPower2 extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public AsuraFormPower2(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public AsuraFormPowerOld(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -42,17 +40,15 @@ public class AsuraFormPower2 extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurn() {
-        flash();
-        addToBot(new IncreaseMaxOrbAction(amount));
+    public void stackPower(int stackAmount) {
+        if (stackAmount > 1) {
+            stackAmount--;
+        }
+        super.stackPower(stackAmount);
     }
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 }

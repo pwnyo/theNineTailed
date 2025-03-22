@@ -16,7 +16,7 @@
   },
   "nineTailed:PaperFlowers": {
     "NAME": "Paper Flowers",
-    "FLAVOR": "A blossom of hope that never wilts.",
+    "FLAVOR": "Never wilts.",
     "DESCRIPTIONS": [
       "Enter Divinity when you obtain #b",
       " #yMantra rather than #b10."
@@ -24,7 +24,7 @@
   },
   "nineTailed:CrystalNecklace": {
     "NAME": "Crystal Necklace",
-    "FLAVOR": "TBA",
+    "FLAVOR": "The legendary loser's lost bet.",
     "DESCRIPTIONS": [
       "Every time you Channel #b",
       " #yninetailed:Tails, gain #b1 #yOrb slot."
@@ -47,7 +47,7 @@
   },
   "nineTailed:BullHorn": {
     "NAME": "Bull Horn",
-    "FLAVOR": "TBA",
+    "FLAVOR": "Float like a butterfly, sting like a bee. Stick like an octopus, that's you and me.",
     "DESCRIPTIONS": [
       "Whenever you play a #yPower, gain #b",
       " #yBlock."
@@ -55,7 +55,7 @@
   },
   "nineTailed:ExplicitBook": {
     "NAME": "Explicit Book",
-    "FLAVOR": "TBA",
+    "FLAVOR": "Totally boring.",
     "DESCRIPTIONS": [
       "The first #b",
       " times you #yEvoke a #yninetailed:Clone each combat, apply #b",
@@ -64,14 +64,14 @@
   },
   "nineTailed:SpiralScroll": {
     "NAME": "Spiral Scroll",
-    "FLAVOR": "TBA",
+    "FLAVOR": "Two citizens of the Hidden Leaf as one.",
     "DESCRIPTIONS": [
       "At the start of your turn, #yChannel #b1 #yninetailed:Tail."
     ]
   },
   "nineTailed:RightHand": {
     "NAME": "Right Hand",
-    "FLAVOR": "TBA",
+    "FLAVOR": "A wooden hand held together by an unbroken bond.",
     "DESCRIPTIONS": [
       "Upon pickup, choose 1 of 3 unique #ySasuke cards to add to your deck.",
       "Choose a Card"
@@ -79,7 +79,7 @@
   },
   "nineTailed:Habanero": {
     "NAME": "Habanero",
-    "FLAVOR": "TBA",
+    "FLAVOR": "Red-hot.",
     "DESCRIPTIONS": [
       "Upon pickup, raise your Max HP by #b"
     ]

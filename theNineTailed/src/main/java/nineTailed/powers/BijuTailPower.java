@@ -4,10 +4,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nineTailed.NarutoMod;
+import nineTailed.characters.NineTailed;
 import nineTailed.orbs.Tail;
 import nineTailed.util.TextureLoader;
 
@@ -60,6 +62,20 @@ public class BijuTailPower extends AbstractPower {
             }
             tail.isBijuable = false;
             updateDescription();
+        }
+    }
+
+    @Override
+    public void onInitialApplication() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
         }
     }
 

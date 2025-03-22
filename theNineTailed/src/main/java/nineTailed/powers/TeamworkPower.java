@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nineTailed.NarutoMod;
 import nineTailed.cards.temp.Fistbump;
+import nineTailed.characters.NineTailed;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makePowerPath;
@@ -47,6 +48,20 @@ public class TeamworkPower extends AbstractPower {
         flash();
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             addToBot(new MakeTempCardInHandAction(new Fistbump(), amount));
+        }
+    }
+
+    @Override
+    public void onInitialApplication() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        if (AbstractDungeon.player instanceof NineTailed) {
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
         }
     }
 

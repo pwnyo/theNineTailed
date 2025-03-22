@@ -5,13 +5,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
-import nineTailed.powers.AsuraFormPower3;
+import nineTailed.powers.AsuraFormPower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
 public class AsuraForm extends AbstractDynamicCard {
-    public final static String ID = makeID(AsuraForm.class.getSimpleName() + "2");
+    public final static String ID = makeID(AsuraForm.class.getSimpleName());
     public static final String IMG = makeCardPath("AsuraForm.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -28,7 +28,7 @@ public class AsuraForm extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AsuraFormPower3(p, p,1)));
+        addToBot(new ApplyPowerAction(p, p, new AsuraFormPower(p, p,1)));
     }
 
     @Override

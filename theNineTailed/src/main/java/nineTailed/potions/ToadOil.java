@@ -21,7 +21,7 @@ public class ToadOil extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public ToadOil() {
-        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.EYE, PotionColor.POISON);
+        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.FAIRY, PotionColor.POISON);
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
         labOutlineColor = Color.ORANGE;

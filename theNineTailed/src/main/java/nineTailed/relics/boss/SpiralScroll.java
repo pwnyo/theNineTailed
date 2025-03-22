@@ -45,9 +45,6 @@ public class SpiralScroll extends CustomRelic {
         } else {
             super.obtain();
         }
-        if (AbstractDungeon.player instanceof NineTailed) {
-            ((NineTailed) AbstractDungeon.player).checkAnimation();
-        }
     }
 
     @Override

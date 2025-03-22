@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
 import nineTailed.characters.NineTailed;
-import nineTailed.powers.OutnumberPower2;
+import nineTailed.powers.OutnumberPower;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
@@ -27,7 +27,7 @@ public class Outnumber extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new OutnumberPower2(p, p,magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new OutnumberPower(p, p,magicNumber)));
     }
 
     @Override

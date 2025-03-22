@@ -59,14 +59,14 @@ public class SageModePower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         if (AbstractDungeon.player instanceof NineTailed) {
-            ((NineTailed) AbstractDungeon.player).checkAnimation();
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
         }
     }
 
     @Override
     public void onRemove() {
         if (AbstractDungeon.player instanceof NineTailed) {
-            ((NineTailed) AbstractDungeon.player).checkAnimation();
+            ((NineTailed) AbstractDungeon.player).recheckAnimation();
         }
     }
 

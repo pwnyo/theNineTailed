@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 import nineTailed.NarutoMod;
-import nineTailed.powers.AsuraFormPower3;
+import nineTailed.powers.AsuraFormPower;
 import nineTailed.powers.ChakraPower;
 import nineTailed.util.TextureLoader;
 
@@ -70,7 +70,7 @@ public class Tail extends AbstractOrb {
 
     @Override
     public void applyFocus() {
-        AbstractPower power = AbstractDungeon.player.getPower(AsuraFormPower3.POWER_ID);
+        AbstractPower power = AbstractDungeon.player.getPower(AsuraFormPower.POWER_ID);
         if (power != null) {
             this.passiveAmount = Math.max(0, this.basePassiveAmount + power.amount);
         } else {

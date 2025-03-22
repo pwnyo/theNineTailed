@@ -5,11 +5,6 @@
   },
   "nineTailed:AsuraForm": {
     "NAME": "Asura Form",
-    "DESCRIPTION": "Ethereal. NL At the start of your turn, gain !M! Orb slots.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, gain !M! Orb slots."
-  },
-  "nineTailed:AsuraForm2": {
-    "NAME": "Asura Form",
     "DESCRIPTION": "Ethereal. NL ninetailed:Tails now gain 1 more from their passive abilities.",
     "UPGRADE_DESCRIPTION": "ninetailed:Tails now gain 1 more from their passive abilities."
   },

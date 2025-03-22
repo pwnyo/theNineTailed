@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nineTailed.orbs.Clone;
 import nineTailed.orbs.Tail;
-import nineTailed.powers.AsuraFormPower;
-import nineTailed.powers.OutnumberPower;
+import nineTailed.powers.AsuraFormPowerOld;
+import nineTailed.powers.OutnumberPowerOld;
 
 public class ChannelMultipleAction extends AbstractGameAction {
     private AbstractOrb orbType;
@@ -28,11 +28,11 @@ public class ChannelMultipleAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (orbType.ID.equals(Clone.ORB_ID) && p.hasPower(OutnumberPower.POWER_ID)) {
-            count += p.getPower(OutnumberPower.POWER_ID).amount;
+        if (orbType.ID.equals(Clone.ORB_ID) && p.hasPower(OutnumberPowerOld.POWER_ID)) {
+            count += p.getPower(OutnumberPowerOld.POWER_ID).amount;
         }
-        else if (orbType.ID.equals(Tail.ORB_ID) && p.hasPower(AsuraFormPower.POWER_ID)) {
-            count *= (p.getPower(AsuraFormPower.POWER_ID).amount + 1);
+        else if (orbType.ID.equals(Tail.ORB_ID) && p.hasPower(AsuraFormPowerOld.POWER_ID)) {
+            count *= (p.getPower(AsuraFormPowerOld.POWER_ID).amount + 1);
         }
 
         for (int i = 0; i < count; i++) {
