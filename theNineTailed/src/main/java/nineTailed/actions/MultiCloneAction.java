@@ -12,12 +12,14 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 public class MultiCloneAction extends AbstractGameAction {
     private boolean freeToPlayOnce = false;
     private int energyOnUse = -1;
+    int bonus;
 
-    public MultiCloneAction(boolean freeToPlayOnce, int energyOnUse) {
+    public MultiCloneAction(boolean freeToPlayOnce, int energyOnUse, int bonus) {
         this.freeToPlayOnce = freeToPlayOnce;
         this.duration = Settings.ACTION_DUR_XFAST;
         this.actionType = ActionType.SPECIAL;
         this.energyOnUse = energyOnUse;
+        this.bonus = bonus;
     }
 
     public void update() {
@@ -32,6 +34,7 @@ public class MultiCloneAction extends AbstractGameAction {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
+        effect += bonus;
 
         if (effect > 0) {
             if (!AbstractDungeon.player.orbs.isEmpty()) {

@@ -32,7 +32,7 @@ public class FrogSongAction extends AbstractGameAction {
 
             for (AbstractMonster m :  AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.hasPower(ArtifactPower.POWER_ID)) {
-                    addToTop(new ApplyPowerAction(m, p, new GainStrengthPower(m, -amount), -amount, true, AttackEffect.NONE));
+                    addToTop(new ApplyPowerAction(m, p, new GainStrengthPower(m, amount), amount, true, AttackEffect.NONE));
                 }
             }
 

@@ -25,7 +25,7 @@ public class MultiClones extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MultiCloneAction(freeToPlayOnce, energyOnUse));
+        addToBot(new MultiCloneAction(freeToPlayOnce, energyOnUse, upgraded ? 1 : 0));
     }
 
     @Override

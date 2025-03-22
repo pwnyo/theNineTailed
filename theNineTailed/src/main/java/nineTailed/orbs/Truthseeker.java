@@ -126,7 +126,7 @@ public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Tail();
+        return new Truthseeker();
     }
 
     @Override
