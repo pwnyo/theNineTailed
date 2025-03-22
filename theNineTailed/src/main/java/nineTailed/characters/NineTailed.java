@@ -82,7 +82,7 @@ public class NineTailed extends CustomPlayer {
             "nineTailedResources/images/char/naruto/orb/layer5d.png",};
 
     private NarutoAnimState currentAnimState = NarutoAnimState.NORMAL;
-    private AbstractStance prevStance;
+    private String prevStanceID;
     
     public NineTailed(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
@@ -107,7 +107,7 @@ public class NineTailed extends CustomPlayer {
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
 
-        prevStance = new NeutralStance();
+        prevStanceID = NeutralStance.STANCE_ID;
     }
     
     @Override
@@ -149,7 +149,7 @@ public class NineTailed extends CustomPlayer {
     
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA(makeID("CLONE_CHANNEL"), MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA(makeID("SUMMON"), MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT,true);
     }
     
@@ -252,14 +252,12 @@ public class NineTailed extends CustomPlayer {
         {
             trySetAnimation(NarutoAnimState.CHAKRA);
         }
-        else if (prevStance.ID.equals(CalmStance.STANCE_ID)
+        else if (prevStanceID.equals(CalmStance.STANCE_ID)
                 && (currentAnimState == NarutoAnimState.CHAKRA || currentAnimState == NarutoAnimState.NORMAL))
         {
             trySetAnimation(NarutoAnimState.SAGE);
         }
-        else {
-            recheckAnimation();
-        }
+        prevStanceID = id;
     }
     @Override
     public void applyStartOfCombatPreDrawLogic() {

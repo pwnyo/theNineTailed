@@ -17,11 +17,13 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import nineTailed.NarutoMod;
+import nineTailed.actions.RecheckAnimationAction;
 import nineTailed.characters.NineTailed;
 import nineTailed.patches.IOrbListenerOrb;
 import nineTailed.util.TextureLoader;
@@ -115,12 +117,13 @@ public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
 
     @Override
     public void triggerEvokeAnimation() {
+        CardCrawlGame.sound.play("ORB_DARK_EVOKE", 0.1F);
         AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
     }
 
     @Override
     public void playChannelSFX() {
-        CardCrawlGame.sound.play("ATTACK_FIRE", 0.1f);
+        CardCrawlGame.sound.play("ORB_DARK_CHANNEL", 0.1f);
     }
 
     @Override
@@ -129,18 +132,7 @@ public class Truthseeker extends AbstractOrb implements IOrbListenerOrb {
     }
 
     @Override
-    public void onLoseOrbSlot() {
-        checkPlayerAnimation();
-    }
-
-    @Override
     public void onEvokeAndLoseOrRemove() {
-        checkPlayerAnimation();
-    }
-
-    void checkPlayerAnimation() {
-        if (AbstractDungeon.player instanceof NineTailed) {
-            ((NineTailed) AbstractDungeon.player).recheckAnimation();
-        }
+        AbstractDungeon.actionManager.addToBottom(new RecheckAnimationAction());
     }
 }

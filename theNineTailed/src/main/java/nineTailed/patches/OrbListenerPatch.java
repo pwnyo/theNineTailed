@@ -51,11 +51,12 @@ public class OrbListenerPatch {
     public static class OnLoseOrbSlot {
         @SpirePrefixPatch
         public static void Prefix(AbstractPlayer __player, int amount) {
-            if (amount > 0) {
-                int size = Math.min(__player.orbs.size(), amount);
-                for (int i = size - 1; i > amount; i--) {
+            int size = __player.orbs.size();
+            if (size > 0 && amount > 0) {
+                amount = Math.max(0, size - amount);
+                for (int i = size - 1; i >= amount; i--) {
                     if (__player.orbs.get(i) instanceof IOrbListenerOrb) {
-                        IOrbListenerOrb listener = (IOrbListenerOrb)__player.orbs.get(0);
+                        IOrbListenerOrb listener = (IOrbListenerOrb)__player.orbs.get(i);
                         listener.onEvokeAndLoseOrRemove();
                     }
                 }
@@ -77,8 +78,9 @@ public class OrbListenerPatch {
         @SpirePrefixPatch
         public static void Prefix(AbstractPlayer __player) {
             if (!__player.orbs.isEmpty() && !(__player.orbs.get(0) instanceof EmptyOrbSlot)) {
-                if (__player.orbs.get(0) instanceof IOrbListenerOrb) {
-                    IOrbListenerOrb listener = (IOrbListenerOrb)__player.orbs.get(0);
+                AbstractOrb orb = __player.orbs.get(0);
+                if (orb instanceof IOrbListenerOrb) {
+                    IOrbListenerOrb listener = (IOrbListenerOrb)orb;
                     listener.onEvokeAndLoseOrRemove();
                 }
             }

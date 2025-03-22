@@ -106,7 +106,6 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
 
     @Override
     public void updateAnimation() {
-
         super.updateAnimation();
         //angle += Gdx.graphics.getDeltaTime() * 45.0f;
         vfxTimer -= Gdx.graphics.getDeltaTime();
@@ -143,10 +142,5 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -passiveAmount)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -passiveAmount)));
-    }
-
-    @Override
-    public void onLoseOrbSlot() {
-
     }
 }
