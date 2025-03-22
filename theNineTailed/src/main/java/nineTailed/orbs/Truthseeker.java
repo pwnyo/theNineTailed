@@ -17,14 +17,12 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import nineTailed.NarutoMod;
 import nineTailed.actions.RecheckAnimationAction;
-import nineTailed.characters.NineTailed;
 import nineTailed.patches.IOrbListenerOrb;
 import nineTailed.util.TextureLoader;
 
