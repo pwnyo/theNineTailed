@@ -1,10 +1,18 @@
 [
   {
-    "PROPER_NAME": "Understanding",
+    "PROPER_NAME": "Chakra",
     "NAMES": [
-      "understanding"
+      "chakra"
     ],
-    "DESCRIPTION": "Enemy forfeits if HP is at or below its #yUnderstanding."
+    "DESCRIPTION": "Gain [E] when you obtain #b2 #yChakra."
+  },
+  {
+    "PROPER_NAME": "Clone",
+    "NAMES": [
+      "clone",
+      "clones"
+    ],
+    "DESCRIPTION": "Orb: Gains #yStrength and #yVigor."
   },
   {
     "PROPER_NAME": "Marked",
@@ -21,6 +29,13 @@
       "truthseekers"
     ],
     "DESCRIPTION": "Orb: Makes ALL enemies lose HP and gains #yBuffer."
+  },
+  {
+    "PROPER_NAME": "Understanding",
+    "NAMES": [
+      "understanding"
+    ],
+    "DESCRIPTION": "Enemy forfeits if HP is at or below its #yUnderstanding."
   },
   {
     "PROPER_NAME": "Tail",
@@ -40,21 +55,6 @@
       "biju_tails"
     ],
     "DESCRIPTION": "Orb: Gains a unique #yPower and #yEnergy."
-  },
-  {
-    "PROPER_NAME": "Clone",
-    "NAMES": [
-      "clone",
-      "clones"
-    ],
-    "DESCRIPTION": "Orb: Gains #yStrength and #yVigor."
-  },
-  {
-    "PROPER_NAME": "Chakra",
-    "NAMES": [
-      "chakra"
-    ],
-    "DESCRIPTION": "Gain [E] when you obtain #b2 #yChakra."
   },
   {
     "PROPER_NAME": "One Tail",

@@ -1,8 +1,4 @@
 {
-        "nineTailed:PlaceholderPotion": {
-                "NAME": "Placeholder Potion",
-                "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
-        },
         "nineTailed:Ramen": {
                 "NAME": "Ramen",
                 "DESCRIPTIONS": ["Gain ", " Vigor."]

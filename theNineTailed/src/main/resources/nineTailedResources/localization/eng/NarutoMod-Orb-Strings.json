@@ -1,20 +1,4 @@
 {
-  "nineTailed:DefaultOrb": {
-    "NAME": "Default Orb",
-    "DESCRIPTION": [
-      "#yPassive: At the start of turn, draw #b",
-      " card.",
-      " cards.",
-      "NL #yEvoke: Deal #b damage to all enemies."
-    ]
-  },
-  "nineTailed:Tail": {
-    "NAME": "Tail",
-    "DESCRIPTION": [
-      "#yPassive: At the start of turn, gain #b",
-      " #yChakra. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
-    ]
-  },
   "nineTailed:Clone": {
     "NAME": "Clone",
     "DESCRIPTION": [
@@ -30,6 +14,13 @@
       "#yPassive: At the end of turn, ALL enemies lose #b",
       " HP. NL #yEvoke: Gain #b",
       " #yBuffer."
+    ]
+  },
+  "nineTailed:Tail": {
+    "NAME": "Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yChakra. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail1": {

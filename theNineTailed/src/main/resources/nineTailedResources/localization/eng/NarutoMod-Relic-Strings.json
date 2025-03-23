@@ -1,33 +1,10 @@
 {
-  "nineTailed:SealedScroll": {
-    "NAME": "Sealed Scroll",
-    "FLAVOR": "Contained by the power of the Eight Trigrams Seal.",
-    "DESCRIPTIONS": [
-      "At the start of each combat, #yChannel #b1 #yninetailed:Tail."
-    ]
-  },
   "nineTailed:Bells": {
     "NAME": "Bells",
     "FLAVOR": "Two for the price of three.",
     "DESCRIPTIONS": [
       "Every time you discard #b",
       " cards, draw #b1 card."
-    ]
-  },
-  "nineTailed:PaperFlowers": {
-    "NAME": "Paper Flowers",
-    "FLAVOR": "Never wilts.",
-    "DESCRIPTIONS": [
-      "Enter Divinity when you obtain #b",
-      " #yMantra rather than #b10."
-    ]
-  },
-  "nineTailed:CrystalNecklace": {
-    "NAME": "Crystal Necklace",
-    "FLAVOR": "The legendary loser's lost bet.",
-    "DESCRIPTIONS": [
-      "Every time you Channel #b",
-      " #yninetailed:Tails, gain #b1 #yOrb slot."
     ]
   },
   "nineTailed:BrokenMask": {
@@ -38,19 +15,20 @@
       " #yninetailed:Understanding back."
     ]
   },
-  "nineTailed:RedScarf": {
-    "NAME": "Red Scarf",
-    "FLAVOR": "Soft, warm, and hand-knitted.",
-    "DESCRIPTIONS": [
-      "Whenever you enter #yNeutral, #yScry #b2 and draw #b1 card."
-    ]
-  },
   "nineTailed:BullHorn": {
     "NAME": "Bull Horn",
     "FLAVOR": "Float like a butterfly, sting like a bee. Stick like an octopus, that's you and me.",
     "DESCRIPTIONS": [
       "Whenever you play a #yPower, gain #b",
       " #yBlock."
+    ]
+  },
+  "nineTailed:CrystalNecklace": {
+    "NAME": "Crystal Necklace",
+    "FLAVOR": "The legendary loser's lost bet.",
+    "DESCRIPTIONS": [
+      "Every time you Channel #b",
+      " #yninetailed:Tails, gain #b1 #yOrb slot."
     ]
   },
   "nineTailed:ExplicitBook": {
@@ -62,11 +40,26 @@
       " #yVulnerable and #yWeak to ALL enemies."
     ]
   },
-  "nineTailed:SpiralScroll": {
-    "NAME": "Spiral Scroll",
-    "FLAVOR": "Two citizens of the Hidden Leaf as one.",
+  "nineTailed:Habanero": {
+    "NAME": "Habanero",
+    "FLAVOR": "Red-hot.",
     "DESCRIPTIONS": [
-      "At the start of your turn, #yChannel #b1 #yninetailed:Tail."
+      "Upon pickup, raise your Max HP by #b"
+    ]
+  },
+  "nineTailed:PaperFlowers": {
+    "NAME": "Paper Flowers",
+    "FLAVOR": "Never wilts.",
+    "DESCRIPTIONS": [
+      "Enter Divinity when you obtain #b",
+      " #yMantra rather than #b10."
+    ]
+  },
+  "nineTailed:RedScarf": {
+    "NAME": "Red Scarf",
+    "FLAVOR": "Soft, warm, and hand-knitted.",
+    "DESCRIPTIONS": [
+      "Whenever you enter #yNeutral, #yScry #b2 and draw #b1 card."
     ]
   },
   "nineTailed:RightHand": {
@@ -77,11 +70,18 @@
       "Choose a Card"
     ]
   },
-  "nineTailed:Habanero": {
-    "NAME": "Habanero",
-    "FLAVOR": "Red-hot.",
+  "nineTailed:SealedScroll": {
+    "NAME": "Sealed Scroll",
+    "FLAVOR": "Contained by the power of the Eight Trigrams Seal.",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by #b"
+      "At the start of each combat, #yChannel #b1 #yninetailed:Tail."
+    ]
+  },
+  "nineTailed:SpiralScroll": {
+    "NAME": "Spiral Scroll",
+    "FLAVOR": "Two citizens of the Hidden Leaf as one.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yChannel #b1 #yninetailed:Tail."
     ]
   }
 }

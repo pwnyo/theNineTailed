@@ -24,6 +24,10 @@
     "NAME": "Super Biju Rasenshuriken",
     "DESCRIPTION": "Costs 1 less [E] for each ninetailed:Tail Channeled this combat. NL Deal !D! damage to a random enemy !M! times."
   },
+  "nineTailed:Blessing": {
+    "NAME": "Blessing",
+    "DESCRIPTION": "You cannot gain [E] from Stances this turn. NL Enter Divinity."
+  },
   "nineTailed:BodyDouble": {
     "NAME": "Body Double",
     "DESCRIPTION": "Gain !B! Block twice. NL If you have no empty Orb slots, gain 1 Orb slot."
@@ -31,10 +35,6 @@
   "nineTailed:BoilingStrength": {
     "NAME": "Boiling Strength",
     "DESCRIPTION": "Whenever you play a Power, gain 1 Strength."
-  },
-  "nineTailed:Blessing": {
-    "NAME": "Blessing",
-    "DESCRIPTION": "You cannot gain [E] from Stances this turn. NL Enter Divinity."
   },
   "nineTailed:CartCrusher": {
     "NAME": "Cart Crusher",
@@ -80,6 +80,10 @@
     "NAME": "Fistbump",
     "DESCRIPTION": "Ethereal. NL Gain !M! ninetailed:Chakra."
   },
+  "nineTailed:Flashback": {
+    "NAME": "Flashback",
+    "DESCRIPTION": "Lose !M! HP. NL Shuffle a copy of a card from your discard pile into your draw pile."
+  },
   "nineTailed:FlyingRaijin": {
     "NAME": "Flying Raijin",
     "DESCRIPTION": "Deal !D! damage. NL Choose a ninetailed:Marked card to put into your hand."
@@ -96,6 +100,11 @@
   "nineTailed:FrogStrike": {
     "NAME": "Frog Strike",
     "DESCRIPTION": "Deal !D! damage. NL If you are in Calm, apply !M! Weak and exit your Stance. NL Otherwise, enter Calm."
+  },
+  "nineTailed:Gathering": {
+    "NAME": "Gathering",
+    "DESCRIPTION": "Whenever you Channel a ninetailed:Tail, Channel the next ninetailed:Biju_Tail instead. NL Channel 1 ninetailed:Tail.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Channel a ninetailed:Tail, Channel the next ninetailed:Biju_Tail instead. NL Channel 1 ninetailed:Tail."
   },
   "nineTailed:HandSeals": {
     "NAME": "Hand Seals",
@@ -119,29 +128,20 @@
     "NAME": "Human Wave",
     "DESCRIPTION": "Deal !D! damage to ALL enemies X times. NL Gain !B! Block X times."
   },
+  "nineTailed:JetBlackGale": {
+    "NAME": "Jet-Black Nimbus Zero",
+    "DESCRIPTION": "Channel 1 Dark. NL Gain !M! Vigor. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Dark. NL Gain !M! Vigor."
+  },
   "nineTailed:KuramaMode": {
     "NAME": "Kurama Mode",
     "DESCRIPTION": "Whenever you play a Power, Channel 1 ninetailed:Tail.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a Power, Channel 1 ninetailed:Tail."
   },
-  "nineTailed:Flashback": {
-    "NAME": "Flashback",
-    "DESCRIPTION":  "Lose !M! HP. NL Shuffle a copy of a card from your discard pile into your draw pile."
-  },
-  "nineTailed:Gathering": {
-    "NAME": "Gathering",
-    "DESCRIPTION":  "Whenever you Channel a ninetailed:Tail, Channel the next ninetailed:Biju_Tail instead. NL Channel 1 ninetailed:Tail.",
-    "UPGRADE_DESCRIPTION":  "Innate. NL Whenever you Channel a ninetailed:Tail, Channel the next ninetailed:Biju_Tail instead. NL Channel 1 ninetailed:Tail."
-  },
   "nineTailed:LavaRasenshuriken": {
     "NAME": "Lava Rasenshuriken",
     "DESCRIPTION": "Deal !D! damage. NL Channel 1 random ninetailed:Biju_Tail.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Channel !M! random ninetailed:Biju_Tails."
-  },
-  "nineTailed:JetBlackGale": {
-    "NAME": "Jet-Black Nimbus Zero",
-    "DESCRIPTION": "Channel 1 Dark. NL Gain !M! Vigor. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Channel 1 Dark. NL Gain !M! Vigor."
   },
   "nineTailed:MagnetRasengan": {
     "NAME": "Magnet Rasengan",
@@ -241,15 +241,6 @@
     "NAME": "Sage Strike",
     "DESCRIPTION": "Deal !D! damage twice. NL Whenever you change Stances, return this from your discard pile to your hand."
   },
-  "nineTailed:Serenity": {
-    "NAME": "Serenity",
-    "DESCRIPTION": "Enter Calm. NL If the last card played this combat was a Skill, gain !M! Mantra."
-  },
-  "nineTailed:SerialSpheres": {
-    "NAME": "Serial Spheres",
-    "DESCRIPTION": "Whenever you draw a card containing \"Rasen\", draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a card containing \"Rasen\", draw !M! cards."
-  },
   "nineTailed:Senjutsu": {
     "NAME": "Senjutsu",
     "DESCRIPTION": "Enter Calm. NL Next turn, exit your Stance. NL End your turn.",
@@ -259,9 +250,23 @@
     "NAME": "Sense Negativity",
     "DESCRIPTION": "If the enemy intends to Attack, Scry 2 and draw !M! cards."
   },
+  "nineTailed:Serenity": {
+    "NAME": "Serenity",
+    "DESCRIPTION": "Enter Calm. NL If the last card played this combat was a Skill, gain !M! Mantra."
+  },
+  "nineTailed:SerialSpheres": {
+    "NAME": "Serial Spheres",
+    "DESCRIPTION": "Whenever you draw a card containing \"Rasen\", draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Whenever you draw a card containing \"Rasen\", draw !M! cards."
+  },
   "nineTailed:SexyJutsu": {
     "NAME": "Sexy Jutsu",
     "DESCRIPTION": "Apply !M! Vulnerable. NL If the last card played this combat was an Attack, gain !nineTailed:m2! Vigor. NL Exhaust."
+  },
+  "nineTailed:ShadowClones": {
+    "NAME": "Shadow Clones",
+    "DESCRIPTION": "Discard 1 card. NL Channel 1 ninetailed:Clone.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Discard 1 card. NL Channel 1 ninetailed:Clone."
   },
   "nineTailed:SixPaths": {
     "NAME": "Six Paths",
@@ -271,11 +276,6 @@
   "nineTailed:Stampede": {
     "NAME": "Stampede",
     "DESCRIPTION": "Discard !M! cards. NL Channel 1 ninetailed:Clone for each card discarded."
-  },
-  "nineTailed:ShadowClones": {
-    "NAME": "Shadow Clones",
-    "DESCRIPTION": "Discard 1 card. NL Channel 1 ninetailed:Clone.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Discard 1 card. NL Channel 1 ninetailed:Clone."
   },
   "nineTailed:Stillness": {
     "NAME": "Stillness",
@@ -289,10 +289,6 @@
     "NAME": "Substitution",
     "DESCRIPTION": "Gain !B! Block. NL If this card is discarded from your hand, gain !B! Block."
   },
-  "nineTailed:SurpriseAttack": {
-    "NAME": "Surprise Attack",
-    "DESCRIPTION": "Deal !D! damage. NL If the last card played this combat was a Skill, gain !M! Vigor."
-  },
   "nineTailed:SummonGamabunta": {
     "NAME": "Summon: Gamabunta",
     "DESCRIPTION": "Costs 1 less [E] for each Power played this combat. NL Deal !D! damage 3 times."
@@ -301,13 +297,53 @@
     "NAME": "Summon: Toaduo",
     "DESCRIPTION": "Add 2 random Powers from any color to your hand. NL Exhaust."
   },
-  "nineTailed:TailWhip": {
-    "NAME": "Tail Whip",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deals !M! additional damage for each Channeled ninetailed:Tail."
+  "nineTailed:SurpriseAttack": {
+    "NAME": "Surprise Attack",
+    "DESCRIPTION": "Deal !D! damage. NL If the last card played this combat was a Skill, gain !M! Vigor."
   },
   "nineTailed:TagIn": {
     "NAME": "Tag In",
     "DESCRIPTION": "Choose 1 of 3 random ninetailed:Biju_Tails to Channel."
+  },
+  "nineTailed:Tail1Choice": {
+    "NAME": "Shukaku",
+    "DESCRIPTION": "Channel 1 ninetailed:One_Tail."
+  },
+  "nineTailed:Tail2Choice": {
+    "NAME": "Matatabi",
+    "DESCRIPTION": "Channel 1 ninetailed:Two_Tail."
+  },
+  "nineTailed:Tail3Choice": {
+    "NAME": "Isobu",
+    "DESCRIPTION": "Channel 1 ninetailed:Three_Tail."
+  },
+  "nineTailed:Tail4Choice": {
+    "NAME": "Son Goku",
+    "DESCRIPTION": "Channel 1 ninetailed:Four_Tail."
+  },
+  "nineTailed:Tail5Choice": {
+    "NAME": "Kokuo",
+    "DESCRIPTION": "Channel 1 ninetailed:Five_Tail."
+  },
+  "nineTailed:Tail6Choice": {
+    "NAME": "Saiken",
+    "DESCRIPTION": "Channel 1 ninetailed:Six_Tail."
+  },
+  "nineTailed:Tail7Choice": {
+    "NAME": "Chomei",
+    "DESCRIPTION": "Channel 1 ninetailed:Seven_Tail."
+  },
+  "nineTailed:Tail8Choice": {
+    "NAME": "Gyuki",
+    "DESCRIPTION": "Channel 1 ninetailed:Eight_Tail."
+  },
+  "nineTailed:Tail9Choice": {
+    "NAME": "Kurama",
+    "DESCRIPTION": "Channel 1 ninetailed:Nine_Tail."
+  },
+  "nineTailed:TailWhip": {
+    "NAME": "Tail Whip",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deals !M! additional damage for each Channeled ninetailed:Tail."
   },
   "nineTailed:TalkNoJutsu": {
     "NAME": "Talk no Jutsu",
@@ -348,6 +384,11 @@
     "DESCRIPTION": "Deal !D! damage. NL If the last card you played this combat was an Attack, enter Wrath. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the last card you played this combat was an Attack, enter Wrath."
   },
+  "nineTailed:Unpredictable": {
+    "NAME": "Unpredictable",
+    "DESCRIPTION": "Whenever you discard a card from your hand, gain !M! Vigor and Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you discard a card from your hand, gain !M! Vigor and Block."
+  },
   "nineTailed:Unwind": {
     "NAME": "Unwind",
     "DESCRIPTION": "Unplayable. NL If this card is discarded from your hand, NL draw 1 card and exit your Stance.",
@@ -355,11 +396,6 @@
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
-  },
-  "nineTailed:Unpredictable": {
-    "NAME": "Unpredictable",
-    "DESCRIPTION": "Whenever you discard a card from your hand, gain !M! Vigor and Block.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you discard a card from your hand, gain !M! Vigor and Block."
   },
   "nineTailed:UzumakiBarrage": {
     "NAME": "Uzumaki Barrage",
@@ -372,41 +408,5 @@
   "nineTailed:WildSwipe": {
     "NAME": "Wild Swipe",
     "DESCRIPTION": "Deal !D! damage to a random enemy. NL Discard a random card. NL Channel 1 ninetailed:Tail."
-  },
-  "nineTailed:Tail1Choice": {
-    "NAME": "Shukaku",
-    "DESCRIPTION": "Channel 1 ninetailed:One_Tail."
-  },
-  "nineTailed:Tail2Choice": {
-    "NAME": "Matatabi",
-    "DESCRIPTION": "Channel 1 ninetailed:Two_Tail."
-  },
-  "nineTailed:Tail3Choice": {
-    "NAME": "Isobu",
-    "DESCRIPTION": "Channel 1 ninetailed:Three_Tail."
-  },
-  "nineTailed:Tail4Choice": {
-    "NAME": "Son Goku",
-    "DESCRIPTION": "Channel 1 ninetailed:Four_Tail."
-  },
-  "nineTailed:Tail5Choice": {
-    "NAME": "Kokuo",
-    "DESCRIPTION": "Channel 1 ninetailed:Five_Tail."
-  },
-  "nineTailed:Tail6Choice": {
-    "NAME": "Saiken",
-    "DESCRIPTION": "Channel 1 ninetailed:Six_Tail."
-  },
-  "nineTailed:Tail7Choice": {
-    "NAME": "Chomei",
-    "DESCRIPTION": "Channel 1 ninetailed:Seven_Tail."
-  },
-  "nineTailed:Tail8Choice": {
-    "NAME": "Gyuki",
-    "DESCRIPTION": "Channel 1 ninetailed:Eight_Tail."
-  },
-  "nineTailed:Tail9Choice": {
-    "NAME": "Kurama",
-    "DESCRIPTION": "Channel 1 ninetailed:Nine_Tail."
   }
 }
