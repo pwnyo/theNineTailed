@@ -6,7 +6,7 @@
     <groupId>nineTailed</groupId>
     <artifactId>TheNineTailed</artifactId>
     <name>The Nine-Tailed</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <description>Initial release!
 \n
 Check out the Discord server to follow other projects or help with this one: https://discord.gg/5yHdGUhrct
@@ -26,7 +26,7 @@ Major themes:
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
+        <SlayTheSpire.version>12-18-2022</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>C:\Program Files (x86)\Steam\steamapps</Steam.path>

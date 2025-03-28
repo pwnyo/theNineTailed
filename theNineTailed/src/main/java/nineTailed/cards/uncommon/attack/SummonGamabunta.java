@@ -30,6 +30,7 @@ public class SummonGamabunta extends AbstractDynamicCard {
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
             this.configureCostsOnNewCard();
         }
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -25,6 +25,7 @@ public class SummonToaduo extends AbstractDynamicCard {
 
     public SummonToaduo() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
