@@ -39,7 +39,7 @@ public class UltraRasenshuriken extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(6);
+            upgradeDamage(8);
             initializeDescription();
         }
     }

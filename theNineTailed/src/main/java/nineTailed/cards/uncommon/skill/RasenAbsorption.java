@@ -51,6 +51,7 @@ public class RasenAbsorption extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

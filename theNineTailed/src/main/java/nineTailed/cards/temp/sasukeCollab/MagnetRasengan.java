@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import nineTailed.cards.AbstractDynamicCard;
+import nineTailed.patches.CustomTags;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
@@ -29,6 +30,7 @@ public class MagnetRasengan extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 15;
         baseMagicNumber = magicNumber = 1;
+        tags.add(CustomTags.RASEN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
