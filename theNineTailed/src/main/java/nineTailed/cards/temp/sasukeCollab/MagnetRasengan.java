@@ -29,7 +29,7 @@ public class MagnetRasengan extends AbstractDynamicCard {
     public MagnetRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 15;
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
         tags.add(CustomTags.RASEN);
     }
 
@@ -37,15 +37,15 @@ public class MagnetRasengan extends AbstractDynamicCard {
         addToBot(new SFXAction(makeID("RASEN"), 0.1F));
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
         addToBot(new ChannelAction(new Lightning()));
-        addToBot(new ApplyPowerAction(p, p, new WeakPower(m, magicNumber, false)));
-        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(m, magicNumber, false)));
+        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
+        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
             initializeDescription();
         }
     }

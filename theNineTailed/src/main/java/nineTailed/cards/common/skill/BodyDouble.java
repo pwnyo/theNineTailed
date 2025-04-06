@@ -19,7 +19,7 @@ public class BodyDouble extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public BodyDouble() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -40,7 +40,7 @@ public class BodyDouble extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(1);
+            upgradeBlock(2);
             initializeDescription();
         }
     }
