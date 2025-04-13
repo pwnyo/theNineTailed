@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nineTailed.cards.AbstractDynamicCard;
-import nineTailed.orbs.Tail;
 import nineTailed.orbs.biju.Tail10;
-import nineTailed.orbs.biju.Tail8;
 
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;

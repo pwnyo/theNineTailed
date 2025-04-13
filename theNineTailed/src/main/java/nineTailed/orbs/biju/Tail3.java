@@ -1,7 +1,6 @@
 package nineTailed.orbs.biju;
 
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.JuggernautPower;
 import com.megacrit.cardcrawl.powers.RagePower;
 
 

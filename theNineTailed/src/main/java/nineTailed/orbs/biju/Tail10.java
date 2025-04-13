@@ -3,15 +3,9 @@ package nineTailed.orbs.biju;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
-import com.megacrit.cardcrawl.cards.red.Havoc;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Lightning;
-import com.megacrit.cardcrawl.powers.MayhemPower;
-import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 
 
 public class Tail10 extends BijuTail {
