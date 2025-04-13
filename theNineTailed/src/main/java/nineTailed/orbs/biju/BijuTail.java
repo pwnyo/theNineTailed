@@ -36,6 +36,11 @@ public abstract class BijuTail extends Tail {
     }
 
     @Override
+    public void onStartOfTurn() {
+        flash();
+    }
+
+    @Override
     public void onEvoke() {
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
     }

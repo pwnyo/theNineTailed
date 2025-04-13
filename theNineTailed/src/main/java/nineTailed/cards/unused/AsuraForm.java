@@ -1,5 +1,6 @@
-package nineTailed.cards.rare;
+package nineTailed.cards.unused;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,6 +11,7 @@ import nineTailed.powers.AsuraFormPower;
 import static nineTailed.NarutoMod.makeCardPath;
 import static nineTailed.NarutoMod.makeID;
 
+@AutoAdd.Ignore
 public class AsuraForm extends AbstractDynamicCard {
     public final static String ID = makeID(AsuraForm.class.getSimpleName());
     public static final String IMG = makeCardPath("AsuraForm.png");

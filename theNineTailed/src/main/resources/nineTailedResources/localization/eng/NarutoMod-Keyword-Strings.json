@@ -54,7 +54,7 @@
       "biju_tail",
       "biju_tails"
     ],
-    "DESCRIPTION": "Orb: Gains a unique #yPower and #yEnergy."
+    "DESCRIPTION": "Orb: Has a unique effect and gains #yEnergy."
   },
   {
     "PROPER_NAME": "One Tail",
@@ -82,7 +82,7 @@
       "three_tail",
       "three_tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yJuggernaut and #yEnergy."
+    "DESCRIPTION": "Orb: Gains #yRage and #yEnergy."
   },
   {
     "PROPER_NAME": "Four Tail",
@@ -91,7 +91,7 @@
       "four_tail",
       "four_tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yRage and #yEnergy."
+    "DESCRIPTION": "Orb: Gains #yVigor and #yEnergy."
   },
   {
     "PROPER_NAME": "Five Tail",
@@ -100,7 +100,7 @@
       "five_tail",
       "five_tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yVigor and #yEnergy."
+    "DESCRIPTION": "Orb: Applies #yVulnerable and gains #yEnergy."
   },
   {
     "PROPER_NAME": "Six Tail",
@@ -109,7 +109,7 @@
       "six_tail",
       "six_tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yNoxious #yFumes and #yEnergy."
+    "DESCRIPTION": "Orb: Applies #yPoison to ALL enemies and gains #yEnergy."
   },
   {
     "PROPER_NAME": "Seven Tail",
@@ -118,7 +118,7 @@
       "seven_tail",
       "seven_tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yForesight and #yEnergy."
+    "DESCRIPTION": "Orb: Applies #yWeak and gains #yEnergy."
   },
   {
     "PROPER_NAME": "Eight Tail",
@@ -136,6 +136,6 @@
       "ten_tail",
       "ten_tails"
     ],
-    "DESCRIPTION": "Orb: Gains #yMayhem and #yEnergy."
+    "DESCRIPTION": "Orb: Plays the top card of your draw pile and gains #yEnergy."
   }
 ]

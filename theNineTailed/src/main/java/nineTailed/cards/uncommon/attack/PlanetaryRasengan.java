@@ -21,7 +21,7 @@ public class PlanetaryRasengan extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public PlanetaryRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

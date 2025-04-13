@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 import nineTailed.NarutoMod;
+import nineTailed.powers.AsuraForm2Power;
 import nineTailed.powers.AsuraFormPower;
 import nineTailed.powers.ChakraPower;
 import nineTailed.util.TextureLoader;
@@ -38,10 +40,13 @@ public class Tail extends AbstractOrb {
     private float vfxTimer = 1.0f;
     private float vfxIntervalMin = 0.1f;
     private float vfxIntervalMax = 0.4f;
-    private static final float ORB_WAVY_DIST = 0.04f;
-    private static final float PI_4 = 12.566371f;
+    protected static final float ORB_WAVY_DIST = 0.04f;
+    protected static final float PI_4 = 12.566371f;
+    protected static final float PI_DIV_16 = 0.19634955F;
+    protected static final float ORB_BORDER_SCALE = 1.2F;
     protected AbstractPlayer p;
     public boolean isBijuable;
+    public boolean isBonus;
 
     public Tail() {
         this(1, 1);
@@ -86,12 +91,16 @@ public class Tail extends AbstractOrb {
 
     @Override
     public void onStartOfTurn() {
+        flash();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChakraPower(p, passiveAmount)));
+    }
+
+    protected void flash() {
         float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();
         if (Settings.FAST_MODE) {
             speedTime = 0.0F;
         }
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), speedTime));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChakraPower(p, passiveAmount)));
     }
 
     @Override

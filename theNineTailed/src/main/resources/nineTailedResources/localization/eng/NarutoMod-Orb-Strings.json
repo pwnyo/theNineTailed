@@ -41,50 +41,51 @@
     "NAME": "Three Tail",
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
-      " #yJuggernaut. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+      " #yRage. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail4": {
     "NAME": "Four Tail",
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
-      " #yRage. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+      " #yVigor. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail5": {
     "NAME": "Five Tail",
     "DESCRIPTION": [
-      "#yPassive: At the start of turn, gain #b",
-      " #yVigor. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+      "#yPassive: At the start of turn, apply #b",
+      " #yVulnerable to a random enemy. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail6": {
     "NAME": "Six Tail",
     "DESCRIPTION": [
-      "#yPassive: At the start of turn, gain #b",
-      " #yNoxious #yFumes. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+      "#yPassive: At the start of turn, apply #b",
+      " #yPoison to ALL enemies. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail7": {
     "NAME": "Seven Tail",
     "DESCRIPTION": [
       "#yPassive: At the start of turn, gain #b",
-      " #yForesight. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+      " #yWeak to a random enemy. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail8": {
     "NAME": "Eight Tail",
     "DESCRIPTION": [
-      "#yPassive: Next turn, draw #b1 additional card. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus.",
-      "#yPassive: Next turn, draw #b",
+      "#yPassive: At the start of turn, draw #b1 additional card. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus.",
+      "#yPassive: At the start of turn, draw #b",
       " additional cards. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
     ]
   },
   "nineTailed:Tail10": {
     "NAME": "Ten Tail",
     "DESCRIPTION": [
-      "#yPassive: At the start of turn, gain #b",
-      " #yMayhem. NL #yEvoke: Gain [E] [E]. NL Unaffected by #yFocus."
+      "#yPassive: At the start of turn, play the top card of your draw pile. NL #yEvoke: Gain [E] [E] . NL Unaffected by #yFocus.",
+      "#yPassive: At the start of turn, play the top #b.",
+      " cards of your draw pile. NL #yEvoke: Gain [E] [E] . NL Unaffected by #yFocus."
     ]
   }
 }

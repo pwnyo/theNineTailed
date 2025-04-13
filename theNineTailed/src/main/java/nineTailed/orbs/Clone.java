@@ -50,6 +50,10 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
         evokeAmount = baseEvokeAmount = 3;
         passiveAmount = basePassiveAmount = 1;
         updateDescription();
+
+        angle = MathUtils.random(360.0f);
+        channelAnimTimer = 0.5f;
+
         if (AbstractDungeon.player != null) {
             AbstractPlayer p = AbstractDungeon.player;
             float speedTime = 0.6F / (float)AbstractDungeon.player.orbs.size();
@@ -60,8 +64,6 @@ public class Clone extends AbstractOrb implements IOrbListenerOrb {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, passiveAmount)));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, passiveAmount)));
         }
-        angle = MathUtils.random(360.0f);
-        channelAnimTimer = 0.5f;
     }
 
     @Override

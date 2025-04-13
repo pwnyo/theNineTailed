@@ -24,8 +24,8 @@ public class DoubleTeam extends AbstractDynamicCard {
 
     public DoubleTeam() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 2;
-        baseMagicNumber = magicNumber = 2;
+        baseDamage = damage = 4;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -39,7 +39,9 @@ public class DoubleTeam extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(1);
+            upgradeMagicNumber(1);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

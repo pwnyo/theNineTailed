@@ -11,6 +11,7 @@ public class Tail1 extends BijuTail {
 
     @Override
     public void onStartOfTurn() {
+        super.onStartOfTurn();
         gainPower(p, new PlatedArmorPower(p, passiveAmount));
     }
 

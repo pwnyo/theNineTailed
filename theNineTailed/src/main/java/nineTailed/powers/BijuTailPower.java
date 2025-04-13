@@ -57,7 +57,7 @@ public class BijuTailPower extends AbstractPower {
         if (tail.isBijuable) {
             flash();
             amount++;
-            if (amount >= 10) {
+            if (amount > 10) {
                 amount = 1;
             }
             tail.isBijuable = false;

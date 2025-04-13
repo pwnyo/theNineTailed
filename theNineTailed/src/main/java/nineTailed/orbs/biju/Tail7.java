@@ -1,6 +1,13 @@
 package nineTailed.orbs.biju;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.defect.EvokeSpecificOrbAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.Lightning;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.watcher.ForesightPower;
 
 
@@ -11,7 +18,9 @@ public class Tail7 extends BijuTail {
 
     @Override
     public void onStartOfTurn() {
-        gainPower(p, new ForesightPower(p, passiveAmount));
+        super.onStartOfTurn();
+        AbstractCreature m = AbstractDungeon.getRandomMonster();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, passiveAmount, false)));
     }
 
     @Override

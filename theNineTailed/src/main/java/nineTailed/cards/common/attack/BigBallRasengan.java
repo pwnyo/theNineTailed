@@ -23,7 +23,8 @@ public class BigBallRasengan extends AbstractRasengan {
 
     public BigBallRasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 18;
+        baseDamage = damage = 15;
+        discount = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -35,7 +36,7 @@ public class BigBallRasengan extends AbstractRasengan {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(6);
+            upgradeDamage(5);
             initializeDescription();
         }
     }

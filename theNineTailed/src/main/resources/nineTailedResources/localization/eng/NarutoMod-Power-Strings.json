@@ -12,6 +12,13 @@
                         " more from their passive abilities."
                 ]
         },
+        "nineTailed:AsuraForm2Power": {
+                "NAME": "Asura Form",
+                "DESCRIPTIONS": [
+                        "Whenever you #yChannel #yTails, Channel #b",
+                        " times as many."
+                ]
+        },
         "nineTailed:BijuTailPower": {
                 "NAME": "Gathering",
                 "DESCRIPTIONS": [
@@ -66,8 +73,8 @@
                 "DESCRIPTIONS": [
                         "At the end of your turn, lose #b",
                         " HP and shuffle #b",
-                        " random #yPower into your draw pile.",
-                        " random #yPowers into your draw pile."
+                        " random #yPower from any color into your draw pile.",
+                        " random #yPowers from any color into your draw pile."
                 ]
         },
         "nineTailed:NoEnergyOnStanceChangePower": {

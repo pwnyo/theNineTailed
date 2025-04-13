@@ -18,11 +18,11 @@ public class Rasengan extends AbstractRasengan {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public Rasengan() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 15;
+        baseDamage = damage = 12;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -34,7 +34,7 @@ public class Rasengan extends AbstractRasengan {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(2);
+            upgradeDamage(3);
             initializeDescription();
         }
     }

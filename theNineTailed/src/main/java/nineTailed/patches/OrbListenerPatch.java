@@ -32,6 +32,11 @@ public class OrbListenerPatch {
                     ((IOrbListenerCard) c).onChannel(orb);
                 }
             }
+            for (AbstractPower pow : __p.powers) {
+                if (pow instanceof IOrbListenerPower) {
+                    ((IOrbListenerPower) pow).onChannelOrb(orb);
+                }
+            }
         }
     }
 

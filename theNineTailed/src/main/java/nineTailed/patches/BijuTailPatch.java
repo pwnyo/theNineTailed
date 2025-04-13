@@ -36,6 +36,8 @@ public class BijuTailPatch {
                     orb[0] = new Tail8(); break;
                 case 9:
                     orb[0] = new Tail(); break;
+                case 10:
+                    orb[0] = new Tail10(); break;
             }
             ((Tail)orb[0]).isBijuable = true;
         }

@@ -51,6 +51,12 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
     }
 
     @Override
+    public void atTurnStart() {
+        isDiscounted = false;
+        countOrbs();
+    }
+
+    @Override
     public void onLoseOrbSlot() {
         countOrbs();
     }

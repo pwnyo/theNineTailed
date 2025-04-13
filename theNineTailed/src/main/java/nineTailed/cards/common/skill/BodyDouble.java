@@ -23,7 +23,7 @@ public class BodyDouble extends AbstractDynamicCard {
 
     public BodyDouble() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 1;
+        baseBlock = block = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -40,7 +40,7 @@ public class BodyDouble extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(2);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

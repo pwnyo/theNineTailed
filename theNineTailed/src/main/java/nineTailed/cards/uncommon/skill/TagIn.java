@@ -41,6 +41,9 @@ public class TagIn extends AbstractDynamicCard {
         choices.add(new Tail7Choice());
         choices.add(new Tail8Choice());
         choices.add(new Tail9Choice());
+        if (p.maxOrbs >= 10) {
+            choices.add(new Tail10Choice());
+        }
         for (int i = 0; i < 6; i++) {
             choices.remove(AbstractDungeon.cardRandomRng.random(choices.size() - 1));
         }
@@ -51,7 +54,8 @@ public class TagIn extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            isEthereal = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

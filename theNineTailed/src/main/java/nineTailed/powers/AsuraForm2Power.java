@@ -2,27 +2,32 @@ package nineTailed.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import nineTailed.NarutoMod;
+import nineTailed.orbs.Tail;
 import nineTailed.util.TextureLoader;
 
 import static nineTailed.NarutoMod.makePowerPath;
 
-public class AsuraFormPowerOld extends AbstractPower {
+public class AsuraForm2Power extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = NarutoMod.makeID("AsuraFormPowerOld");
+    public static final String POWER_ID = NarutoMod.makeID("AsuraForm2Power");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("asuraform84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("asuraform32.png"));
 
-    public AsuraFormPowerOld(final AbstractCreature owner, final int amount) {
+    public AsuraForm2Power(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -40,11 +45,22 @@ public class AsuraFormPowerOld extends AbstractPower {
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-        if (stackAmount > 1) {
-            stackAmount--;
+    public void onInitialApplication() {
+        if (amount == 1) {
+            amount++;
         }
-        super.stackPower(stackAmount);
+        updateDescription();
+    }
+
+    @Override
+    public void onChannel(AbstractOrb orb) {
+        if (orb instanceof Tail && !((Tail) orb).isBonus) {
+            for (int i = 0; i < amount - 1; i++) {
+                Tail bonusTail = (Tail)orb.makeCopy();
+                bonusTail.isBonus = true;
+                AbstractDungeon.actionManager.addToBottom(new ChannelAction(bonusTail));
+            }
+        }
     }
 
     @Override
