@@ -12,7 +12,7 @@
       "clone",
       "clones"
     ],
-    "DESCRIPTION": "Orb: Gains #yStrength and #yVigor."
+    "DESCRIPTION": "Orb: Gains temporary #yStrength and #yDexterity, or #yVigor and #yBlock."
   },
   {
     "PROPER_NAME": "Marked",

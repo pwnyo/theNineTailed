@@ -44,7 +44,8 @@ public class TagIn extends AbstractDynamicCard {
         if (p.maxOrbs >= 10) {
             choices.add(new Tail10Choice());
         }
-        for (int i = 0; i < 6; i++) {
+        int choiceCount = choices.size() - 3;
+        for (int i = 0; i < choiceCount; i++) {
             choices.remove(AbstractDungeon.cardRandomRng.random(choices.size() - 1));
         }
         addToBot(new ChooseOneAction(choices));

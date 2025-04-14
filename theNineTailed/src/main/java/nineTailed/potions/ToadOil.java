@@ -22,18 +22,8 @@ public class ToadOil extends AbstractPotion {
 
     public ToadOil() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.FAIRY, PotionColor.POISON);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
         labOutlineColor = Color.ORANGE;
         isThrown = false;
-    }
-
-    @Override
-    public void use(AbstractCreature target) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            target = AbstractDungeon.player;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new FreeAttackPower(target, potency)));
-        }
     }
 
     @Override
@@ -47,6 +37,14 @@ public class ToadOil extends AbstractPotion {
 
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
+    }
+
+    @Override
+    public void use(AbstractCreature target) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            target = AbstractDungeon.player;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new FreeAttackPower(target, potency)));
+        }
     }
 
     @Override

@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -23,11 +25,22 @@ public class Ramen extends AbstractPotion {
 
     public Ramen() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.FRUIT);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         labOutlineColor = Color.ORANGE;
         isThrown = false;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        tips.clear();
         tips.add(new PowerTip(name, description));
+
+        String vigorName = GameDictionary.VIGOR.NAMES[0];
+        tips.add(new PowerTip(TipHelper.capitalize(vigorName), GameDictionary.keywords.get(vigorName)));
+
+        String blockName = GameDictionary.BLOCK.NAMES[0];
+        tips.add(new PowerTip(TipHelper.capitalize(blockName), GameDictionary.keywords.get(blockName)));
     }
 
     @Override

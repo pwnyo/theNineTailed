@@ -43,11 +43,11 @@ public class Tail10 extends BijuTail {
         this.shineColor.a = this.c.a / 2.0F;
         sb.setColor(this.shineColor);
         sb.setBlendFunction(770, 1);
-        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y, 48.0F, 48.0F, 96.0F, 96.0F, this.scale + MathUtils.sin(this.angle / PI_4) * 0.05F + PI_DIV_16, this.scale * 1.1F, this.angle, 0, 0, 108, 108, false, false);
-        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y, 48.0F, 48.0F, 96.0F, 96.0F, this.scale * 1.1F, this.scale + MathUtils.sin(this.angle / PI_4) * 0.05F + PI_DIV_16, -this.angle, 0, 0, 108, 108, false, false);
+        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y, 48.0F, 48.0F, 96.0F, 96.0F, this.scale + MathUtils.sin(this.angle / PI_4) * 0.05F + PI_DIV_16, this.scale * 1.05F, this.angle, 0, 0, 96, 96, false, false);
+        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y, 48.0F, 48.0F, 96.0F, 96.0F, this.scale * 1.05F, this.scale + MathUtils.sin(this.angle / PI_4) * 0.05F + PI_DIV_16, -this.angle, 0, 0, 96, 96, false, false);
         sb.setBlendFunction(770, 771);
         sb.setColor(this.c);
-        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y, 48.0F, 48.0F, 96.0F, 96.0F, this.scale, this.scale, this.angle / 12.0F, 0, 0, 108, 108, false, false);// 204
+        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y, 48.0F, 48.0F, 96.0F, 96.0F, this.scale, this.scale, this.angle / 12.0F, 0, 0, 96, 96, false, false);// 204
         renderText(sb);
         hb.render(sb);
     }

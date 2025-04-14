@@ -263,7 +263,7 @@
   "nineTailed:SerialSpheres": {
     "NAME": "Serial Spheres",
     "DESCRIPTION": "Whenever you draw a card containing \"Rasen\", draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a card containing \"Rasen\", draw !M! cards."
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw a card containing \"Rasen\", draw 1 card."
   },
   "nineTailed:SexyJutsu": {
     "NAME": "Sexy Jutsu",
