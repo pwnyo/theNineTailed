@@ -2,18 +2,18 @@ Hi, thanks for your interest in helping translate this mod! I really appreciate 
 
 The files that need to be translated are in this format: `localization/zhs`.
 
-###Punctuation
+### Punctuation
 To match the base game, Chinese translations use `。` instead of the periods used in English `.`.
 The base game also uses `，` in place of `,` in Chinese.
 
-###Keywords
+### Keywords
 On cards, keywords may need special handling. For example, in Chinese, we'll want a leading space before and afterthe keyword:
 
 "Ethereal." becomes " 虚无 。" (note the extra spaces)
 
 For custom keywords, please also keep the mod tag at the beginning: `ninetailed:Tail`.
 
-###Special Characters
+### Special Characters
 Some text uses special characters and keywords. The game expects it in certain formats depending on the language. For example:
 
 - **Energy**: Displayed like [E]. `Gain [R] [R].` becomes `获得 [R] [R] 。` (with an extra space at before the period)
@@ -30,7 +30,7 @@ In other text like powers, numbers or keywords may be highlighted differently. F
 
 `#y` is used right before a keyword we want to display. (If not tagged, it won't show up as a tooltip!)
 
-###Lines
+### Lines
 Generally, we're going to want to keep the same number of lines in the translated version as the English one. For example, NinshuPower here has 4 lines in the description. Ideally, the translated version would keep the same number of lines and order, so the numbers still go between:
 ```
 "nineTailed:NinshuPower": {
