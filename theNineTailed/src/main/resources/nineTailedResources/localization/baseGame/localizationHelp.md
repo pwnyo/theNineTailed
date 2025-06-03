@@ -1,6 +1,6 @@
 Hi, thanks for your interest in helping translate this mod! I really appreciate it.
 
-The files that need to be translated are in this format: `localization/zhs`.
+The files that need to be translated are in this folder: `localization/zhs`. You can also reference the base game text for help in this folder!
 
 ### Punctuation
 To match the base game, Chinese translations use `。` instead of the periods used in English `.`.
