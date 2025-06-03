@@ -1,0 +1,14 @@
+{
+        "nineTailed:Ramen": {
+                "NAME": "Ramen",
+                "DESCRIPTIONS": ["Gain ", " #yVigor and #yBlock."]
+        },
+        "nineTailed:ToadOil": {
+                "NAME": "Toad Oil",
+                "DESCRIPTIONS": ["The next #yAttack you play costs 0.", "The next ", " #yAttacks you play cost 0."]
+        },
+        "nineTailed:YangVessel": {
+                "NAME": "Yang Vessel",
+                "DESCRIPTIONS": ["Channel #b1 #yTruthseeker.", "Channel #b", " #yTruthseekers."]
+        }
+}

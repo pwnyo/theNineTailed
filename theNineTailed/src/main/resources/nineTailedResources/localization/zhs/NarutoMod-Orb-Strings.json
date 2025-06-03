@@ -1,0 +1,91 @@
+{
+  "nineTailed:Clone": {
+    "NAME": "Clone",
+    "DESCRIPTION": [
+      "#yPassive: You have #b",
+      " additional #yStrength and #yDexterity. At the end of turn, reduce this Orb's #yEvoke by #b",
+      " and Evoke at #b0. NL #yEvoke: Gain #b",
+      " #yVigor and #yBlock. NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Truthseeker": {
+    "NAME": "Truthseeker",
+    "DESCRIPTION": [
+      "#yPassive: At the end of turn, ALL enemies lose #b",
+      " HP. NL #yEvoke: Gain #b",
+      " #yBuffer."
+    ]
+  },
+  "nineTailed:Tail": {
+    "NAME": "Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yChakra. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail1": {
+    "NAME": "One Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yPlated #yArmor. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail2": {
+    "NAME": "Two Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yFlame #yBarrier. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail3": {
+    "NAME": "Three Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yRage. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail4": {
+    "NAME": "Four Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yVigor. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail5": {
+    "NAME": "Five Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, apply #b",
+      " #yVulnerable to a random enemy. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail6": {
+    "NAME": "Six Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, apply #b",
+      " #yPoison to ALL enemies. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail7": {
+    "NAME": "Seven Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, gain #b",
+      " #yWeak to a random enemy. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail8": {
+    "NAME": "Eight Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, draw #b1 additional card. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus.",
+      "#yPassive: At the start of turn, draw #b",
+      " additional cards. NL #yEvoke: Gain [E] . NL Unaffected by #yFocus."
+    ]
+  },
+  "nineTailed:Tail10": {
+    "NAME": "Ten Tail",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, play the top card of your draw pile. NL #yEvoke: Gain [E] [E] . NL Unaffected by #yFocus.",
+      "#yPassive: At the start of turn, play the top #b.",
+      " cards of your draw pile. NL #yEvoke: Gain [E] [E] . NL Unaffected by #yFocus."
+    ]
+  }
+}
