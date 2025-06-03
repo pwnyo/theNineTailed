@@ -1,7 +1,8 @@
 {
   "nineTailed:AmphibiousMode": {
     "NAME": "Amphibious Mode",
-    "DESCRIPTION": "At the start of your turn, enter Calm."
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, enter Calm.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, enter Calm."
   },
   "nineTailed:AsuraForm": {
     "NAME": "Asura Form",
@@ -43,7 +44,7 @@
   },
   "nineTailed:CartCrusher": {
     "NAME": "Cart Crusher",
-    "DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies. NL Add a random Power to your hand. Exhaust."
+    "DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies. NL Add a random Power to your hand."
   },
   "nineTailed:ChakraArms": {
     "NAME": "Chakra Arms",
@@ -272,7 +273,7 @@
   "nineTailed:ShadowClones": {
     "NAME": "Shadow Clones",
     "DESCRIPTION": "Discard 1 card. NL Channel 1 ninetailed:Clone.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Discard 1 card. NL Channel 1 ninetailed:Clone."
+    "UPGRADE_DESCRIPTION": "Discard 1 card. NL Channel 1 ninetailed:Clone. NL Exit your Stance."
   },
   "nineTailed:SixPaths": {
     "NAME": "Six Paths",

@@ -16,6 +16,7 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
     protected boolean isDiscounted = false;
     protected int discount = 1;
     protected int requirement = 1;
+    protected boolean discountForEach = false;
     public AbstractRasengan(String id, String img, int cst, CardType typ, CardColor col, CardRarity rar, CardTarget tgt) {
         super(id, img, cst, typ, col, rar, tgt);
         countOrbs();
@@ -33,9 +34,17 @@ public abstract class AbstractRasengan extends AbstractDynamicCard implements IO
                 count++;
             }
         }
-        if (count >= requirement && !isDiscounted) {
+        if (discountForEach) {
+            setCostForTurn(cost - count);
+        }
+        else if (count >= requirement && !isDiscounted) {
             isDiscounted = true;
-            setCostForTurn(cost - discount);
+            if (discountForEach) {
+                setCostForTurn(cost - count);
+            }
+            else {
+                setCostForTurn(cost - discount);
+            }
         }
         else if (count < requirement && isDiscounted) {
             isDiscounted = false;

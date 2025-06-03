@@ -1,4 +1,4 @@
-package nineTailed.cards.uncommon.skill;
+package nineTailed.cards.rare;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,7 +24,7 @@ public class Mischief extends AbstractDynamicCard {
 
     public Mischief() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 2;
+        baseBlock = block = 4;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

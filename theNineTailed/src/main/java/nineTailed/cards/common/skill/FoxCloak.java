@@ -23,7 +23,7 @@ public class FoxCloak extends AbstractDynamicCard {
 
     public FoxCloak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 9;
+        baseBlock = block = 12;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

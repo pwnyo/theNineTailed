@@ -30,7 +30,6 @@ public class CartCrusher extends AbstractDynamicCard {
         baseDamage = damage = 8;
         isInnate = true;
         isMultiDamage = true;
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

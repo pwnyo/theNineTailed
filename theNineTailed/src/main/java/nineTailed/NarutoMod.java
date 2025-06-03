@@ -326,35 +326,35 @@ public class NarutoMod implements
         
         
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Card-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Card-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Power-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Power-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Relic-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Relic-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Event-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Event-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Potion-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Potion-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Character-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Character-Strings.json");
         
         
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-Orb-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-Orb-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/NarutoMod-UI-Strings.json");
+                getModID() + "Resources/localization/localization.zhs/NarutoMod-UI-Strings.json");
 
         
         logger.info("Done edittting strings");
@@ -363,7 +363,7 @@ public class NarutoMod implements
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/NarutoMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/localization.zhs/NarutoMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {

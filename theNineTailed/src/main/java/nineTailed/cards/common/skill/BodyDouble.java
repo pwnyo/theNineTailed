@@ -19,11 +19,11 @@ public class BodyDouble extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public BodyDouble() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 4;
+        baseBlock = block = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -40,9 +40,9 @@ public class FrogSongAction extends AbstractGameAction {
                 addToTop(new ApplyPowerAction(m, p, new StrengthPower(m, -amount), -amount, true, AttackEffect.NONE));
             }
             if (Settings.FAST_MODE) {
-                this.addToTop(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));// 45
+                this.addToTop(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
             } else {
-                this.addToTop(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.5F));// 51
+                this.addToTop(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.5F));
             }
             addToTop(new SFXAction("ATTACK_PIERCING_WAIL"));
 

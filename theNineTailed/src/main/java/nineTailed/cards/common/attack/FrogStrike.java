@@ -26,7 +26,7 @@ public class FrogStrike extends AbstractDynamicCard {
     public FrogStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = 8;
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
         tags.add(CardTags.STRIKE);
     }
 
@@ -45,7 +45,6 @@ public class FrogStrike extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(4);
-            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

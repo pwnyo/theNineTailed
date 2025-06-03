@@ -34,8 +34,7 @@ public class Outnumber extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }
