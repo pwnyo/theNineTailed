@@ -19,10 +19,11 @@ public class AmphibiousMode extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = NineTailed.Enums.NARUTO_ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public AmphibiousMode() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -35,7 +36,8 @@ public class AmphibiousMode extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            isEthereal = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

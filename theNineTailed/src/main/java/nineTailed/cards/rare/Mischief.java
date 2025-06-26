@@ -24,7 +24,7 @@ public class Mischief extends AbstractDynamicCard {
 
     public Mischief() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = 4;
+        baseBlock = block = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
