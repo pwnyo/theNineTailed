@@ -1,0 +1,91 @@
+{
+  "nineTailed:Clone": {
+    "NAME": "影分身",
+    "DESCRIPTION": [
+      "#y被动：你获得 #b",
+      " 点额外 #y力量 和 #y敏捷 。回合结束时，此球 #y激发 值减少 #b",
+      " ，并在 #b0 时激发。 NL #y激发：获得 #b",
+      " 点 #y蓄势 和 #y格挡 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Truthseeker": {
+    "NAME": "求道玉",
+    "DESCRIPTION": [
+      "#y被动：回合结束时，所有敌人失去 #b",
+      " 点生命值。 NL #y激发：获得 #b",
+      " 层 #y缓冲 。"
+    ]
+  },
+  "nineTailed:Tail": {
+    "NAME": "九尾之力",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，获得 #b",
+      " 点 #y查克拉 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail1": {
+    "NAME": "一尾守鹤",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，获得 #b",
+      " 层 #y镀层护甲 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail2": {
+    "NAME": "二尾又旅",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，获得 #b",
+      " 层 #y火焰屏障 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail3": {
+    "NAME": "三尾矶抚",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，获得 #b",
+      " 点 #y狂怒 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail4": {
+    "NAME": "四尾孙悟空",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，获得 #b",
+      " 点 #y蓄势 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail5": {
+    "NAME": "五尾穆王",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，对随机敌人施加 #b",
+      " 层 #y易伤 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail6": {
+    "NAME": "六尾犀犬",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，对所有敌人施加 #b",
+      " 层 #y中毒 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail7": {
+    "NAME": "七尾重明",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，对随机敌人施加 #b",
+      " 层 #y虚弱 。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail8": {
+    "NAME": "八尾牛鬼",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，额外抽取 #b1 张牌。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。",
+      "#y被动：回合开始时，额外抽取 #b",
+      " 张牌。 NL #y激发：获得 [E] 。 NL 不受 #y集中 影响。"
+    ]
+  },
+  "nineTailed:Tail10": {
+    "NAME": "十尾神树",
+    "DESCRIPTION": [
+      "#y被动：回合开始时，打出抽牌堆顶端的牌。 NL #y激发：获得 [E] [E] 。 NL 不受 #y集中 影响。",
+      "#y被动：回合开始时，打出抽牌堆顶端 #b",
+      " 张牌。 NL #y激发：获得 [E] [E] 。 NL 不受 #y集中 影响。"
+    ]
+  }
+}

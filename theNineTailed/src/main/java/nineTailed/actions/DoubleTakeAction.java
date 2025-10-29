@@ -25,12 +25,13 @@ public class DoubleTakeAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
-            if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() ||
+                    this.p.hand.size() == 0) {
                 this.isDone = true;
                 return;
             }
 
-            if (this.p.hand.size() <= 1) {
+            if (this.p.hand.size() == 1) {
                 AbstractCard c = this.p.hand.getTopCard();
                 discardAndCopy(c);
 

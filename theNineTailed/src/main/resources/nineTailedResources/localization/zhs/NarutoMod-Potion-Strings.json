@@ -1,0 +1,14 @@
+{
+        "nineTailed:Ramen": {
+                "NAME": "拉面",
+                "DESCRIPTIONS": ["获得 ", " 点 #y蓄势 和 #y格挡 。"]
+        },
+        "nineTailed:ToadOil": {
+                "NAME": "蛤蟆油",
+                "DESCRIPTIONS": ["你打出的下一张 #y攻击牌 消耗为 0。", "你打出的下 ", " 张 #y攻击牌 消耗为 0。"]
+        },
+        "nineTailed:YangVessel": {
+                "NAME": "阳之力容器",
+                "DESCRIPTIONS": ["引导 #b1 个 #y求道玉 。", "引导 #b", " 个 #y求道玉 。"]
+        }
+}

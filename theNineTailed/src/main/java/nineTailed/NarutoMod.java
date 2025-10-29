@@ -378,6 +378,9 @@ public class NarutoMod implements
         String toReturn = "Resources/localization/";
         switch (Settings.language)
         {
+            case ZHS:
+                toReturn += "zhs/";
+                break;
             default:
                 toReturn += "eng/";
                 break;

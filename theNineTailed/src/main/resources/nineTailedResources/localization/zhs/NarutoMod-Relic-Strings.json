@@ -1,0 +1,87 @@
+{
+  "nineTailed:Bells": {
+    "NAME": "铃铛",
+    "FLAVOR": "三个铃铛只收两个的钱。",
+    "DESCRIPTIONS": [
+      "每当你弃置 #b",
+      " 张牌后，抽取 #b1 张牌。"
+    ]
+  },
+  "nineTailed:BrokenMask": {
+    "NAME": "破碎面具",
+    "FLAVOR": "来自梦境世界的撕裂面具。",
+    "DESCRIPTIONS": [
+      "每当你受到未格挡的攻击伤害时，施加 #b",
+      " 层 #y理解 状态反击。"
+    ]
+  },
+  "nineTailed:BullHorn": {
+    "NAME": "牛角",
+    "FLAVOR": "蝴蝶般轻盈，蜜蜂般犀利。章鱼般缠斗，你我一体。",
+    "DESCRIPTIONS": [
+      "每当你打出 #y能力牌 时，获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "nineTailed:CrystalNecklace": {
+    "NAME": "水晶项链",
+    "FLAVOR": "传奇败者的赌注。",
+    "DESCRIPTIONS": [
+      "每当你引导 #b",
+      " 个 #y尾兽之力 后，获得 #b1 个 #y充能球栏位 。"
+    ]
+  },
+  "nineTailed:ExplicitBook": {
+    "NAME": "亲热天堂",
+    "FLAVOR": "无聊透顶。",
+    "DESCRIPTIONS": [
+      "每场战斗中，前 #b",
+      " 次 #y激发 #y影分身 时，对所有敌人施加 #b",
+      " 层 #y易伤 和 #y虚弱 。"
+    ]
+  },
+  "nineTailed:Habanero": {
+    "NAME": "哈瓦那辣椒",
+    "FLAVOR": "炽热如火。",
+    "DESCRIPTIONS": [
+      "拾取时，最大生命值提高 #b"
+    ]
+  },
+  "nineTailed:PaperFlowers": {
+    "NAME": "纸花",
+    "FLAVOR": "永不凋零。",
+    "DESCRIPTIONS": [
+      "当获得 #b",
+      " 点 #y真言 时进入 #y神格 姿态（原需 #b10 点）。"
+    ]
+  },
+  "nineTailed:RedScarf": {
+    "NAME": "温暖围巾",
+    "FLAVOR": "柔软温暖，手工编织。",
+    "DESCRIPTIONS": [
+      "每当你进入 #y中立 姿态时，预见 #b2 张牌并抽取 #b1 张牌。"
+    ]
+  },
+  "nineTailed:RightHand": {
+    "NAME": "右手",
+    "FLAVOR": "由不解之缘连接的木制义手。",
+    "DESCRIPTIONS": [
+      "拾取时，从 3 张独特的 #y佐助 卡牌中选择 1 张加入牌组。",
+      "选择卡牌"
+    ]
+  },
+  "nineTailed:SealedScroll": {
+    "NAME": "封印卷轴",
+    "FLAVOR": "由八卦封印之力封存。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，引导 #b1 个 #y尾兽之力 。"
+    ]
+  },
+  "nineTailed:SpiralScroll": {
+    "NAME": "螺旋卷轴",
+    "FLAVOR": "木叶村两位子民合而为一。",
+    "DESCRIPTIONS": [
+      "回合开始时，引导 #b1 个 #y尾兽之力 。"
+    ]
+  }
+}

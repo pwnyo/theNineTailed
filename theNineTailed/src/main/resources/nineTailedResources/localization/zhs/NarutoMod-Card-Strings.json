@@ -1,0 +1,424 @@
+{
+  "nineTailed:AmphibiousMode": {
+    "NAME": "两栖艺术",
+    "DESCRIPTION": " 虚无 。在你的回合开始时进入 平静 。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时进入 平静 。"
+  },
+  "nineTailed:AsuraForm": {
+    "NAME": "阿修罗形态",
+    "DESCRIPTION": " 虚无 。九尾之力现在从其被动效果中获得额外 1 点加成。",
+    "UPGRADE_DESCRIPTION": "九尾之力现在从其被动效果中获得额外 1 点加成。"
+  },
+  "nineTailed:AsuraForm2": {
+    "NAME": "阿修罗形态",
+    "DESCRIPTION": " 虚无 。每当你引导九尾之力时，引导双倍数量。",
+    "UPGRADE_DESCRIPTION": "每当你引导九尾之力时，引导双倍数量。"
+  },
+  "nineTailed:BeatUp": {
+    "NAME": "围殴之术",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。抽 1 张牌。"
+  },
+  "nineTailed:BigBallRasengan": {
+    "NAME": "大玉螺旋丸",
+    "DESCRIPTION": "若有影分身则消耗减少 2 [E] 。造成 !D! 点伤害。"
+  },
+  "nineTailed:BijuBomb": {
+    "NAME": "尾兽玉",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。失去 1 个充能球槽位。"
+  },
+  "nineTailed:BijuRasenshuriken": {
+    "NAME": "超尾兽螺旋手里剑",
+    "DESCRIPTION": "本场战斗中每引导过九尾之力则消耗减少 1 [E] 。对随机敌人造成 !D! 点伤害 !M! 次。"
+  },
+  "nineTailed:Blessing": {
+    "NAME": "天赐祝福",
+    "DESCRIPTION": "本回合无法从姿态获得 [E] 。进入 神性 状态。"
+  },
+  "nineTailed:BodyDouble": {
+    "NAME": "影分身之术",
+    "DESCRIPTION": "获得 !B! 点 格挡 两次。若无空充能球槽位，获得 1 个槽位。"
+  },
+  "nineTailed:BoilingStrength": {
+    "NAME": "沸血之力",
+    "DESCRIPTION": "每当你打出能力牌时，获得 1 点 力量 。"
+  },
+  "nineTailed:CartCrusher": {
+    "NAME": "车碾之术",
+    "DESCRIPTION": "固有。对所有敌人造成 !D! 点伤害。将随机能力牌加入手牌。"
+  },
+  "nineTailed:ChakraArms": {
+    "NAME": "查克拉手臂",
+    "DESCRIPTION": "抽 !M! 张牌。弃置 1 张牌。若此牌从手牌弃置，引导 1 份九尾之力。"
+  },
+  "nineTailed:CloneStrike": {
+    "NAME": "影分身连击",
+    "DESCRIPTION": "造成 !D! 点伤害。引导 !M! 个影分身。"
+  },
+  "nineTailed:Crowdsource": {
+    "NAME": "群策之力",
+    "DESCRIPTION": "获得 !B! 点 格挡 3 次。抽 !M! 张牌。"
+  },
+  "nineTailed:Decoys": {
+    "NAME": "诱饵之术",
+    "DESCRIPTION": "抽 !M! 张牌。弃置以此法抽到的所有攻击牌，每弃置一张获得 !B! 点 格挡 。"
+  },
+  "nineTailed:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "nineTailed:DoubleTake": {
+    "NAME": "二重施术",
+    "DESCRIPTION": "弃置 1 张牌。将其 !M! 个复制洗入抽牌堆。消耗。"
+  },
+  "nineTailed:DoubleTeam": {
+    "NAME": "双重攻势",
+    "DESCRIPTION": "造成 !D! 点伤害两次。抽 1 张牌。弃置 1 张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。抽 !M! 张牌。弃置 1 张牌。"
+  },
+  "nineTailed:EnduringFlame": {
+    "NAME": "不灭之炎",
+    "DESCRIPTION": "失去 1 点生命。获得 !B! 点 格挡 。可无限升级。"
+  },
+  "nineTailed:FakeOut": {
+    "NAME": "佯攻之术",
+    "DESCRIPTION": "造成 !D! 点伤害。若此牌从手牌弃置，则伤害永久增加 !M! 点。"
+  },
+  "nineTailed:Fistbump": {
+    "NAME": "拳心相印",
+    "DESCRIPTION": " 虚无 。获得 !M! 点查克拉。"
+  },
+  "nineTailed:Flashback": {
+    "NAME": "瞬身闪回",
+    "DESCRIPTION": "失去 !M! 点生命。将弃牌堆中一张牌的复制洗入抽牌堆。"
+  },
+  "nineTailed:FlyingRaijin": {
+    "NAME": "飞雷神",
+    "DESCRIPTION": "造成 !D! 点伤害。选择标记牌置入手牌。"
+  },
+  "nineTailed:FoxCloak": {
+    "NAME": "妖狐裳",
+    "DESCRIPTION": "获得 !B! 点 格挡 。引导 1 份九尾之力。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。引导 1 份九尾之力。"
+  },
+  "nineTailed:FrogSong": {
+    "NAME": "蛙鸣幻术",
+    "DESCRIPTION": "若处于 平静 状态，所有敌人本回合失去 !M! 点 力量 并退出姿态。否则进入 平静 。"
+  },
+  "nineTailed:FrogStrike": {
+    "NAME": "蛙蹴击",
+    "DESCRIPTION": "造成 !D! 点伤害。若处于 平静 状态，施加 !M! 层 虚弱 并退出姿态。否则进入 平静 。"
+  },
+  "nineTailed:Gathering": {
+    "NAME": "尾兽集结",
+    "DESCRIPTION": "每当你引导九尾之力时，改为引导下一份尾兽之力。引导 1 份九尾之力。",
+    "UPGRADE_DESCRIPTION": "固有。每当你引导九尾之力时，改为引导下一份尾兽之力。引导 1 份九尾之力。"
+  },
+  "nineTailed:HandSeals": {
+    "NAME": "结印之术",
+    "DESCRIPTION": "弃置 1 张牌。抽取等同于其消耗的牌数。消耗。",
+    "UPGRADE_DESCRIPTION": "弃置 1 张牌。抽取等同于其消耗的牌数。"
+  },
+  "nineTailed:HaremJutsu": {
+    "NAME": "后宫之术",
+    "DESCRIPTION": "引导 !M! 个影分身。每引导一个影分身，使所有敌人获得 1 层 易伤 和 虚弱 。消耗。"
+  },
+  "nineTailed:Hiraishin": {
+    "NAME": "飞雷神标记",
+    "DESCRIPTION": "标记一张牌。将「飞雷神」加入手牌，该牌可将标记牌置入手牌。消耗。",
+    "UPGRADE_DESCRIPTION": "固有。标记一张牌。将「飞雷神」加入手牌，该牌可将标记牌置入手牌。消耗。"
+  },
+  "nineTailed:Hop": {
+    "NAME": "蛙跳",
+    "DESCRIPTION": "获得 !B! 点 格挡 。弃置 1 张牌。"
+  },
+  "nineTailed:HumanWave": {
+    "NAME": "人海战术",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 X 次。获得 !B! 点 格挡 X 次。"
+  },
+  "nineTailed:JetBlackGale": {
+    "NAME": "漆黑烈风零式",
+    "DESCRIPTION": "引导 1 个 黑暗 充能球。获得 !M! 点 蓄势 。消耗。",
+    "UPGRADE_DESCRIPTION": "引导 1 个 黑暗 充能球。获得 !M! 点 蓄势 。"
+  },
+  "nineTailed:KuramaMode": {
+    "NAME": "九喇嘛模式",
+    "DESCRIPTION": "每当你打出能力牌时，引导 1 份九尾之力。",
+    "UPGRADE_DESCRIPTION": "固有。每当你打出能力牌时，引导 1 份九尾之力。"
+  },
+  "nineTailed:LavaRasenshuriken": {
+    "NAME": "熔遁螺旋手里剑",
+    "DESCRIPTION": "造成 !D! 点伤害。引导 1 份随机尾兽之力。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。引导 !M! 份随机尾兽之力。"
+  },
+  "nineTailed:MagnetRasengan": {
+    "NAME": "磁遁螺旋丸",
+    "DESCRIPTION": "造成 !D! 点伤害。引导 1 个 雷电 充能球。施加 !M! 层 虚弱 。施加 !M! 层 易伤 。"
+  },
+  "nineTailed:MajesticAttire": {
+    "NAME": "威装须佐",
+    "DESCRIPTION": "本场战斗中每引导过九尾之力则消耗减少 1 [E] 。获得 1 点 力量 。获得 !M! 层 镀层护甲 。"
+  },
+  "nineTailed:MiniRasenshuriken": {
+    "NAME": "迷你螺旋手里剑",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。"
+  },
+  "nineTailed:Mischief": {
+    "NAME": "狐妖戏法",
+    "DESCRIPTION": "每有 1 个增益效果，获得 !B! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      "（你有 ",
+      " 个增益效果。）",
+      " 个增益效果。）"
+    ]
+  },
+  "nineTailed:Mischief2": {
+    "NAME": "狐妖戏法",
+    "DESCRIPTION": "每引导 1 个影分身，获得 !B! 点 格挡 。引导 1 个影分身。"
+  },
+  "nineTailed:MultiClones": {
+    "NAME": "多重影分身",
+    "DESCRIPTION": "引导 X 个你的下一个充能球。",
+    "UPGRADE_DESCRIPTION": "引导 X+1 个你的下一个充能球。"
+  },
+  "nineTailed:NeverGiveUp": {
+    "NAME": "永不放弃",
+    "DESCRIPTION": "获得 !B! 点 格挡 。若生命值≤50%，额外获得 !M! 点 格挡 。"
+  },
+  "nineTailed:Nindo": {
+    "NAME": "忍道",
+    "DESCRIPTION": "失去 1 点生命。抽 !M! 张牌。"
+  },
+  "nineTailed:Ninshu": {
+    "NAME": "忍宗",
+    "DESCRIPTION": "在你的回合结束时，失去 1 点生命并将随机能力牌洗入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "固有。在你的回合结束时，失去 1 点生命并将随机能力牌洗入抽牌堆。"
+  },
+  "nineTailed:Outnumber": {
+    "NAME": "数量压制",
+    "DESCRIPTION": "在你的回合开始时，引导 1 个影分身。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，引导 !M! 个影分身。"
+  },
+  "nineTailed:PlanetaryRasengan": {
+    "NAME": "惑星螺旋丸",
+    "DESCRIPTION": "造成 !D! 点伤害。打出手牌中随机 1 张含「螺旋」的牌。"
+  },
+  "nineTailed:Prophecy": {
+    "NAME": "预言",
+    "DESCRIPTION": "每当你进入 神性 状态时，抽 3 张牌。",
+    "UPGRADE_DESCRIPTION": "固有。每当你进入 神性 状态时，抽 3 张牌。"
+  },
+  "nineTailed:RasenAbsorption": {
+    "NAME": "螺旋吸收",
+    "DESCRIPTION": "将抽牌堆中 !M! 张随机含「螺旋」的牌置入手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "抽牌堆中没有含「螺旋」的牌。"
+    ]
+  },
+  "nineTailed:RasenRampage": {
+    "NAME": "螺旋暴走",
+    "DESCRIPTION": "造成 !D! 点伤害。将此牌的复制洗入抽牌堆。"
+  },
+  "nineTailed:Rasengan": {
+    "NAME": "螺旋丸",
+    "DESCRIPTION": "若有影分身则消耗减少 1 [E] 。造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "每引导 1 个影分身则消耗减少 1 [E] 。造成 !D! 点伤害。"
+  },
+  "nineTailed:Rasenshuriken": {
+    "NAME": "螺旋手里剑",
+    "DESCRIPTION": "若有 2 个以上影分身则消耗减少 2 [E] 。造成 !D! 点伤害 !M! 次。"
+  },
+  "nineTailed:Regroup": {
+    "NAME": "重组阵型",
+    "DESCRIPTION": "激发你的下一个充能球两次。退出姿态。"
+  },
+  "nineTailed:Regrowth": {
+    "NAME": "再生之术",
+    "DESCRIPTION": "获得 !M! 层 再生 。在你的回合开始时，失去 1 点生命。"
+  },
+  "nineTailed:ReverseHaremJutsu": {
+    "NAME": "逆后宫之术",
+    "DESCRIPTION": "激发所有充能球。 蓄势 效果翻倍。消耗。",
+    "UPGRADE_DESCRIPTION": "激发所有充能球。 蓄势 效果变为三倍。消耗。"
+  },
+  "nineTailed:SageMode": {
+    "NAME": "仙人模式",
+    "DESCRIPTION": "每当你进入 平静 状态时，预见 !M! 张牌并获得 !M! 点仙术查克拉。"
+  },
+  "nineTailed:SageStrike": {
+    "NAME": "仙法打击",
+    "DESCRIPTION": "造成 !D! 点伤害两次。每当你切换姿态时，将此牌从弃牌堆返回手牌。"
+  },
+  "nineTailed:Senjutsu": {
+    "NAME": "仙术",
+    "DESCRIPTION": "进入 平静 状态。下回合退出姿态。结束你的回合。",
+    "UPGRADE_DESCRIPTION": "进入 平静 状态。下回合退出姿态。"
+  },
+  "nineTailed:SenseNegativity": {
+    "NAME": "恶意感知",
+    "DESCRIPTION": "若敌人意图攻击，预见 2 张牌并抽 !M! 张牌。"
+  },
+  "nineTailed:Serenity": {
+    "NAME": "心静如水",
+    "DESCRIPTION": "进入 平静 状态。若本场战斗最后打出的牌是技能牌，获得 !M! 点仙术查克拉。"
+  },
+  "nineTailed:SerialSpheres": {
+    "NAME": "连携螺旋",
+    "DESCRIPTION": "每当你抽到含「螺旋」的牌时，抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": "固有。每当你抽到含「螺旋」的牌时，抽 1 张牌。"
+  },
+  "nineTailed:SexyJutsu": {
+    "NAME": "色诱之术",
+    "DESCRIPTION": "施加 !M! 层 易伤 。若本场战斗最后打出的牌是攻击牌，获得 !nineTailed:m2! 点 蓄势 。消耗。"
+  },
+  "nineTailed:ShadowClones": {
+    "NAME": "影分身之术",
+    "DESCRIPTION": "弃置 1 张牌。引导 1 个影分身。",
+    "UPGRADE_DESCRIPTION": "弃置 1 张牌。引导 1 个影分身。退出姿态。"
+  },
+  "nineTailed:SixPaths": {
+    "NAME": "六道之力",
+    "DESCRIPTION": " 虚无 。引导 !M! 个求道玉。消耗。",
+    "UPGRADE_DESCRIPTION": "引导 !M! 个求道玉。消耗。"
+  },
+  "nineTailed:Stampede": {
+    "NAME": "尾兽冲撞",
+    "DESCRIPTION": "弃置 !M! 张牌。每弃置 1 张牌引导 1 个影分身。"
+  },
+  "nineTailed:Stillness": {
+    "NAME": "止水之境",
+    "DESCRIPTION": "弃置 !M! 张牌。获得 4 点仙术查克拉。"
+  },
+  "nineTailed:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "nineTailed:Substitution": {
+    "NAME": "替身术",
+    "DESCRIPTION": "获得 !B! 点 格挡 。若此牌从手牌弃置，获得 !B! 点 格挡 。"
+  },
+  "nineTailed:SummonGamabunta": {
+    "NAME": "通灵·蛤蟆文太",
+    "DESCRIPTION": "本场战斗中每打出 1 张能力牌则消耗减少 1 [E] 。造成 !D! 点伤害 3 次。消耗。"
+  },
+  "nineTailed:SummonToaduo": {
+    "NAME": "通灵·蛤蟆二人组",
+    "DESCRIPTION": "将 2 张随机能力牌加入手牌。消耗。"
+  },
+  "nineTailed:SurpriseAttack": {
+    "NAME": "奇袭之术",
+    "DESCRIPTION": "造成 !D! 点伤害。若本场战斗最后打出的牌是技能牌，获得 !M! 点 蓄势 。"
+  },
+  "nineTailed:TagIn": {
+    "NAME": "尾兽接力",
+    "DESCRIPTION": " 虚无 。从 3 种随机尾兽之力中选择 1 种引导。",
+    "UPGRADE_DESCRIPTION": "从 3 种随机尾兽之力中选择 1 种引导。"
+  },
+  "nineTailed:Tail1Choice": {
+    "NAME": "守鹤之力",
+    "DESCRIPTION": "引导 1 份一尾查克拉。"
+  },
+  "nineTailed:Tail2Choice": {
+    "NAME": "又旅之力",
+    "DESCRIPTION": "引导 1 份二尾查克拉。"
+  },
+  "nineTailed:Tail3Choice": {
+    "NAME": "矶抚之力",
+    "DESCRIPTION": "引导 1 份三尾查克拉。"
+  },
+  "nineTailed:Tail4Choice": {
+    "NAME": "孙悟空之力",
+    "DESCRIPTION": "引导 1 份四尾查克拉。"
+  },
+  "nineTailed:Tail5Choice": {
+    "NAME": "穆王之力",
+    "DESCRIPTION": "引导 1 份五尾查克拉。"
+  },
+  "nineTailed:Tail6Choice": {
+    "NAME": "犀犬之力",
+    "DESCRIPTION": "引导 1 份六尾查克拉。"
+  },
+  "nineTailed:Tail7Choice": {
+    "NAME": "重明之力",
+    "DESCRIPTION": "引导 1 份七尾查克拉。"
+  },
+  "nineTailed:Tail8Choice": {
+    "NAME": "牛鬼之力",
+    "DESCRIPTION": "引导 1 份八尾查克拉。"
+  },
+  "nineTailed:Tail9Choice": {
+    "NAME": "九喇嘛之力",
+    "DESCRIPTION": "引导 1 份九尾查克拉。"
+  },
+  "nineTailed:Tail10Choice": {
+    "NAME": "十尾之力",
+    "DESCRIPTION": "引导 1 份十尾查克拉。"
+  },
+  "nineTailed:TailWhip": {
+    "NAME": "尾兽横扫",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。每引导 1 份九尾之力额外造成 !M! 点伤害。"
+  },
+  "nineTailed:TalkNoJutsu": {
+    "NAME": "嘴遁之术",
+    "DESCRIPTION": "施加 !M! 层 理解 。本场战斗每失去 1 点生命，额外施加 3 层 理解 。"
+  },
+  "nineTailed:TeamCombo": {
+    "NAME": "小队连携",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害 3 次。若此牌从手牌弃置，引导 1 个影分身。",
+    "UPGRADE_DESCRIPTION": "对随机敌人造成 !D! 点伤害 3 次。若此牌从手牌弃置，引导 !M! 个影分身。"
+  },
+  "nineTailed:Teamwork": {
+    "NAME": "团队协作",
+    "DESCRIPTION": " 虚无 。在你的回合开始时，将「拳心相印」加入手牌。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，将「拳心相印」加入手牌。"
+  },
+  "nineTailed:ThousandYearsOfDeath": {
+    "NAME": "千年杀",
+    "DESCRIPTION": "造成 !D! 点伤害。获得等同于未格挡伤害的 蓄势 。"
+  },
+  "nineTailed:ToadOilFlame": {
+    "NAME": "蛤蟆油炎弹",
+    "DESCRIPTION": "造成 !D! 点伤害。你打出的下一张攻击牌消耗为 0 。"
+  },
+  "nineTailed:TouchPass": {
+    "NAME": "触传之术",
+    "DESCRIPTION": "每当你引导影分身时，抽 1 张牌。"
+  },
+  "nineTailed:TuckTail": {
+    "NAME": "尾兽蜷护",
+    "DESCRIPTION": "每引导 1 个充能球，获得 !B! 点 格挡 。"
+  },
+  "nineTailed:UltraRasenshuriken": {
+    "NAME": "极·螺旋手里剑",
+    "DESCRIPTION": "造成 !D! 点伤害。打出手牌中所有含「螺旋」的牌。"
+  },
+  "nineTailed:Unleash": {
+    "NAME": "尾兽解放",
+    "DESCRIPTION": "造成 !D! 点伤害。若本场战斗最后打出的牌是攻击牌，进入 愤怒 状态。消耗。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若本场战斗最后打出的牌是攻击牌，进入 愤怒 状态。"
+  },
+  "nineTailed:Unpredictable": {
+    "NAME": "变幻莫测",
+    "DESCRIPTION": "每当你从手牌弃置牌时，获得 !M! 点 蓄势 和 格挡 。",
+    "UPGRADE_DESCRIPTION": "固有。每当你从手牌弃置牌时，获得 !M! 点 蓄势 和 格挡 。"
+  },
+  "nineTailed:Unwind": {
+    "NAME": "解缚之术",
+    "DESCRIPTION": "无法被打出。若此牌从手牌弃置，抽 1 张牌并退出姿态。",
+    "UPGRADE_DESCRIPTION": "无法被打出。若此牌从手牌弃置，抽 !M! 张牌并退出姿态。",
+    "EXTENDED_DESCRIPTION": [
+      "无法打出此牌。"
+    ]
+  },
+  "nineTailed:UzumakiBarrage": {
+    "NAME": "漩涡连弹",
+    "DESCRIPTION": "本场战斗每引导 1 个影分身，对所有敌人造成 !D! 点伤害。消耗。",
+    "EXTENDED_DESCRIPTION": [
+      "（引导了 1 个影分身。）",
+      "（引导了 !M! 个影分身。）"
+    ]
+  },
+  "nineTailed:WildSwipe": {
+    "NAME": "狂野挥击",
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害。弃置随机 1 张牌。引导 1 份九尾之力。"
+  }
+}

@@ -1,0 +1,155 @@
+{
+        "nineTailed:AmphibiousModePower": {
+                "NAME": "两栖模式",
+                "DESCRIPTIONS": [
+                        "回合开始时，进入 #y平静 姿态。"
+                ]
+        },
+        "nineTailed:AsuraFormPower": {
+                "NAME": "修罗形态",
+                "DESCRIPTIONS": [
+                        "#y尾兽之力 的被动效果额外获得 #b",
+                        " 点加成。"
+                ]
+        },
+        "nineTailed:AsuraForm2Power": {
+                "NAME": "修罗形态",
+                "DESCRIPTIONS": [
+                        "当你 #y引导 #y尾兽之力 时，引导数量变为 #b",
+                        " 倍。"
+                ]
+        },
+        "nineTailed:BijuTailPower": {
+                "NAME": "尾兽集结",
+                "DESCRIPTIONS": [
+                        "当你 #y引导 #y尾兽之力 时，改为引导 #b",
+                        " 个 #y尾兽之力 。"
+                ]
+        },
+        "nineTailed:BoilingStrengthPower": {
+                "NAME": "沸腾之力",
+                "DESCRIPTIONS": [
+                        "每当你打出 #y能力牌 时，获得 #b",
+                        " 点 #y力量 。"
+                ]
+        },
+        "nineTailed:ChakraPower": {
+                "NAME": "查克拉",
+                "DESCRIPTIONS": [
+                        "每当你获得 #b",
+                        " 点 #y查克拉 时，获得 #b1 点 #y能量 。"
+                ]
+        },
+        "nineTailed:GatheringPower": {
+                "NAME": "集结之力",
+                "DESCRIPTIONS": [
+                        "回合结束时，每引导一个 #y尾兽之力 获得 #b",
+                        " 点 #y格挡 。"
+                ]
+        },
+        "nineTailed:KuramaModePower": {
+                "NAME": "九喇嘛模式",
+                "DESCRIPTIONS": [
+                        "每当你打出 #y能力牌 时，引导 #b",
+                        " 个 #y尾兽之力 。",
+                        " 个 #y尾兽之力 。"
+                ]
+        },
+        "nineTailed:NextTurnExitPower": {
+                "NAME": "下回合解除",
+                "DESCRIPTIONS": [
+                        "回合开始时，退出当前 #y姿态 。"
+                ]
+        },
+        "nineTailed:NextTurnMantraPower": {
+                "NAME": "下回合真言",
+                "DESCRIPTIONS": [
+                        "回合开始时，获得 #b",
+                        " 点 #y真言 。"
+                ]
+        },
+        "nineTailed:NinshuPower": {
+                "NAME": "忍宗",
+                "DESCRIPTIONS": [
+                        "回合结束时，失去 #b",
+                        " 点生命值，并将 #b",
+                        " 张随机 #y能力牌 （不限颜色）洗入抽牌堆。",
+                        " 张随机 #y能力牌 （不限颜色）洗入抽牌堆。"
+                ]
+        },
+        "nineTailed:NoEnergyOnStanceChangePower": {
+                "NAME": "祝福",
+                "DESCRIPTIONS": [
+                        "本回合无法从 #y平静 或 #y神格 获得 [E] 。"
+                ]
+        },
+        "nineTailed:OutnumberPower": {
+                "NAME": "数量压制",
+                "DESCRIPTIONS": [
+                        "回合开始时，引导 #b",
+                        " 个 #y影分身 。",
+                        " 个 #y影分身 。"
+                ]
+        },
+        "nineTailed:ProphecyPower": {
+                "NAME": "预言",
+                "DESCRIPTIONS": [
+                        "每当你进入 #y神格 时，抽取 #b",
+                        " 张牌。",
+                        " 张牌。"
+                ]
+        },
+        "nineTailed:SageModePower": {
+                "NAME": "仙人模式",
+                "DESCRIPTIONS": [
+                        "每当你进入 #y平静 时，预见 #b",
+                        " 张牌并获得 #b",
+                        " 点 #y真言 。"
+                ]
+        },
+        "nineTailed:SerialSpheresPower": {
+                "NAME": "连珠玉",
+                "DESCRIPTIONS": [
+                        "每当你抽到包含\"螺旋\"的卡牌时，额外抽取 #b",
+                        " 张牌。",
+                        " 张牌。"
+                ]
+        },
+        "nineTailed:StrainPower": {
+                "NAME": "过载",
+                "DESCRIPTIONS": [
+                        "回合开始时，失去 #b",
+                        " 点生命值。"
+                ]
+        },
+        "nineTailed:TeamworkPower": {
+                "NAME": "团队协作",
+                "DESCRIPTIONS": [
+                        "回合开始时，将 #y拳心相印 加入手牌。",
+                        "回合开始时，将 #b",
+                        " 张 #y拳心相印 加入手牌。"
+                ]
+        },
+        "nineTailed:TouchPassPower": {
+                "NAME": "触身传递",
+                "DESCRIPTIONS": [
+                        "每当你引导 #y影分身 时，抽取 #b",
+                        " 张牌。",
+                        " 张牌。"
+                ]
+        },
+        "nineTailed:UnderstandingPower": {
+                "NAME": "理解",
+                "DESCRIPTIONS": [
+                        "在其回合开始时，若生命值≤ #b",
+                        " 则投降。"
+                ]
+        },
+        "nineTailed:UnpredictablePower": {
+                "NAME": "不可预测",
+                "DESCRIPTIONS": [
+                        "每当你从手牌弃牌时，获得 #b",
+                        " 点 #y蓄势 和 #y格挡 。"
+                ]
+        }
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "PROPER_NAME": "查克拉",
+    "NAMES": [
+      "查克拉"
+    ],
+    "DESCRIPTION": "获得 #b2 点 #y查克拉 时获得 [E] 。"
+  },
+  {
+    "PROPER_NAME": "影分身",
+    "NAMES": [
+      "影分身",
+      "影分身们"
+    ],
+    "DESCRIPTION": "充能球：获得临时 #y力量 和 #y敏捷 ，或 #y蓄势 和 #y格挡 。"
+  },
+  {
+    "PROPER_NAME": "标记",
+    "NAMES": [
+      "标记",
+      "被标记"
+    ],
+    "DESCRIPTION": "打出 #y飞雷神 后，将 #y被标记 的牌从任意位置置入手牌。"
+  },
+  {
+    "PROPER_NAME": "求道玉",
+    "NAMES": [
+      "truthseeker",
+      "求道玉",
+      "求道玉们"
+    ],
+    "DESCRIPTION": "充能球：使所有敌人失去生命值并获得 #y缓冲 。"
+  },
+  {
+    "PROPER_NAME": "理解",
+    "NAMES": [
+      "理解"
+    ],
+    "DESCRIPTION": "当敌人生命值≤其 #y理解 值时投降。"
+  },
+  {
+    "PROPER_NAME": "九尾之力",
+    "NAMES": [
+      "九尾之力",
+      "九尾之力们",
+      "九尾",
+      "九尾们"
+    ],
+    "DESCRIPTION": "充能球：获得 #y查克拉 和 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "尾兽之力",
+    "NAMES": [
+      "尾兽之力",
+      "尾兽之力们"
+    ],
+    "DESCRIPTION": "充能球：拥有独特效果并获得 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "一尾守鹤",
+    "NAMES": [
+      "一尾守鹤",
+      "一尾守鹤们",
+      "尾兽一"
+    ],
+    "DESCRIPTION": "充能球：获得 #y镀层护甲 和 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "二尾又旅",
+    "NAMES": [
+      "二尾又旅",
+      "二尾又旅们"
+    ],
+    "DESCRIPTION": "充能球：获得 #y火焰屏障 和 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "三尾矶抚",
+    "NAMES": [
+      "三尾矶抚",
+      "三尾矶抚们"
+    ],
+    "DESCRIPTION": "充能球：获得 #y狂怒 和 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "四尾孙悟空",
+    "NAMES": [
+      "四尾孙悟空",
+      "四尾孙悟空们"
+    ],
+    "DESCRIPTION": "充能球：获得 #y蓄势 和 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "五尾穆王",
+    "NAMES": [
+      "五尾穆王",
+      "五尾穆王们"
+    ],
+    "DESCRIPTION": "充能球：施加 #y易伤 并获得 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "六尾犀犬",
+    "NAMES": [
+      "六尾犀犬",
+      "六尾犀犬们"
+    ],
+    "DESCRIPTION": "充能球：对所有敌人施加 #y中毒 并获得 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "七尾重明",
+    "NAMES": [
+      "七尾重明",
+      "七尾重明们"
+    ],
+    "DESCRIPTION": "充能球：施加 #y虚弱 并获得 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "八尾牛鬼",
+    "NAMES": [
+      "八尾牛鬼",
+      "八尾牛鬼们"
+    ],
+    "DESCRIPTION": "充能球：获得额外抽牌和 #y能量 。"
+  },
+  {
+    "PROPER_NAME": "十尾神树",
+    "NAMES": [
+      "十尾神树",
+      "十尾神树们"
+    ],
+    "DESCRIPTION": "充能球：打出抽牌堆顶端的牌并获得 #y能量 。"
+  }
+]

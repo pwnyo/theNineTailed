@@ -1,0 +1,12 @@
+{
+  "nineTailed:FlashbackAction": {
+    "TEXT": [
+      "选择一张牌将其复制品洗入抽牌堆。"
+    ]
+  },
+  "nineTailed:HiraishinMarkAction": {
+    "TEXT": [
+      "标记"
+    ]
+  }
+}
